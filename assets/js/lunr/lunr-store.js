@@ -1,84 +1,19 @@
----
-layout: none
----
-
-var store = [
-  {%- for c in site.collections -%}
-    {%- if forloop.last -%}
-      {%- assign l = true -%}
-    {%- endif -%}
-    {%- assign docs = c.docs | where_exp:'doc','doc.search != false' -%}
-    {%- for doc in docs -%}
-      {%- if doc.header.teaser -%}
-        {%- capture teaser -%}{{ doc.header.teaser }}{%- endcapture -%}
-      {%- else -%}
-        {%- assign teaser = site.teaser -%}
-      {%- endif -%}
-      {
-        "title": {{ doc.title | jsonify }},
-        "excerpt":
-          {%- if site.search_full_content == true -%}
-            {{ doc.content | newline_to_br |
-              replace:"<br />", " " |
-              replace:"</p>", " " |
-              replace:"</h1>", " " |
-              replace:"</h2>", " " |
-              replace:"</h3>", " " |
-              replace:"</h4>", " " |
-              replace:"</h5>", " " |
-              replace:"</h6>", " "|
-            strip_html | strip_newlines | jsonify }},
-          {%- else -%}
-            {{ doc.content | newline_to_br |
-              replace:"<br />", " " |
-              replace:"</p>", " " |
-              replace:"</h1>", " " |
-              replace:"</h2>", " " |
-              replace:"</h3>", " " |
-              replace:"</h4>", " " |
-              replace:"</h5>", " " |
-              replace:"</h6>", " "|
-            strip_html | strip_newlines | truncatewords: 50 | jsonify }},
-          {%- endif -%}
-        "categories": {{ doc.categories | jsonify }},
-        "tags": {{ doc.tags | jsonify }},
-        "url": {{ doc.url | relative_url | jsonify }},
-        "teaser": {{ teaser | relative_url | jsonify }}
-      }{%- unless forloop.last and l -%},{%- endunless -%}
-    {%- endfor -%}
-  {%- endfor -%}{%- if site.lunr.search_within_pages -%},
-  {%- assign pages = site.pages | where_exp:'doc','doc.search != false' -%}
-  {%- for doc in pages -%}
-    {%- if forloop.last -%}
-      {%- assign l = true -%}
-    {%- endif -%}
-  {
-    "title": {{ doc.title | jsonify }},
-    "excerpt":
-        {%- if site.search_full_content == true -%}
-          {{ doc.content | newline_to_br |
-            replace:"<br />", " " |
-            replace:"</p>", " " |
-            replace:"</h1>", " " |
-            replace:"</h2>", " " |
-            replace:"</h3>", " " |
-            replace:"</h4>", " " |
-            replace:"</h5>", " " |
-            replace:"</h6>", " "|
-          strip_html | strip_newlines | jsonify }},
-        {%- else -%}
-          {{ doc.content | newline_to_br |
-            replace:"<br />", " " |
-            replace:"</p>", " " |
-            replace:"</h1>", " " |
-            replace:"</h2>", " " |
-            replace:"</h3>", " " |
-            replace:"</h4>", " " |
-            replace:"</h5>", " " |
-            replace:"</h6>", " "|
-          strip_html | strip_newlines | truncatewords: 50 | jsonify }},
-        {%- endif -%}
-      "url": {{ doc.url | absolute_url | jsonify }}
-  }{%- unless forloop.last and l -%},{%- endunless -%}
-  {%- endfor -%}
-{%- endif -%}]
+var store = [{
+        "title": "Three major issues in today's consumer Internet",
+        "excerpt":"Much of today’s `free’ or consumer internet is built on three principles: Involuntary user data exploitation: Recent debates around generative AI have returned attention to this. Novel manipulation of users by malicious actors through personal chat: WhatsApp is used as a political weapon to broadcast misinformation during elections, especially in...","categories": ["Social Networking","Internet"],
+        "tags": [],
+        "url": "/social%20networking/internet/Improve-Internet/",
+        "teaser": null
+      },{
+        "title": "Life in Contempary Academia",
+        "excerpt":"Autonomy  is in short supply because it is not trait that is in demand.   ","categories": ["Habits"],
+        "tags": [],
+        "url": "/habits/Frustrations/",
+        "teaser": null
+      },{
+        "title": "The Subtle Art of Vipassana",
+        "excerpt":"If you can dream—and not make dreams your master;  If you can think—and not make thoughts your aim;  If you can meet with Triumph and Disaster  And treat those two impostors just the same; Rudyard Kipling Rewards and Fairies (1910)  On the day after  my return  ","categories": ["Habits"],
+        "tags": [],
+        "url": "/habits/Vipassana-1/",
+        "teaser": null
+      }]
