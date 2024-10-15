@@ -1,0 +1,844 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<!-- begin _includes/seo.html --><title>Inflatable von Braun space stations: an idea worth revisiting? - Angadh</title>
+<meta name="description" content="Background Kepler’s  SomniumAt the time of my writing this post, his sci-fi story was archived here  in 1608 and Edward Everett Hale’s Brick Moon 1 from 1865 are early fantasy science-fiction of space-faring humans. Kepler faced more flak than fanfare for his workKepler’s mom was put on trial for witchcraft with some connections to Somnium. Also credit for the link where it’s due.  but I was especially surprised to learn about his use of creative writing as a force for exploring ideas around space-faring and extra-terrestrial civilisations. His scientific work in astronomy influenced Newton and others indicating an enduring impact on science, engineering, and human civilisation stemming from a curiosity about the motion of stars. It suffices to say that space habitation has occupied us from a fictional and scientific lens for some time now.                 I’ve only read a summary of Brick Moon, a story of workers building a 200-foot sphere that are accidentally launched into space to become first inhabitants of space. The moon was to serve as a navigational aid for sailors. It also estimates a cost for the construction at ${$}250k$ using $12$ million bricks. &#8617;">
+
+
+  <meta name="author" content="Angadh">
+  
+  <meta property="article:author" content="Angadh">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Angadh">
+<meta property="og:title" content="Inflatable von Braun space stations: an idea worth revisiting?">
+<meta property="og:url" content="/large%20space%20stations/space%20exploration/space-inflatables-1/">
+
+
+  <meta property="og:description" content="Background Kepler’s  SomniumAt the time of my writing this post, his sci-fi story was archived here  in 1608 and Edward Everett Hale’s Brick Moon 1 from 1865 are early fantasy science-fiction of space-faring humans. Kepler faced more flak than fanfare for his workKepler’s mom was put on trial for witchcraft with some connections to Somnium. Also credit for the link where it’s due.  but I was especially surprised to learn about his use of creative writing as a force for exploring ideas around space-faring and extra-terrestrial civilisations. His scientific work in astronomy influenced Newton and others indicating an enduring impact on science, engineering, and human civilisation stemming from a curiosity about the motion of stars. It suffices to say that space habitation has occupied us from a fictional and scientific lens for some time now.                 I’ve only read a summary of Brick Moon, a story of workers building a 200-foot sphere that are accidentally launched into space to become first inhabitants of space. The moon was to serve as a navigational aid for sailors. It also estimates a cost for the construction at ${$}250k$ using $12$ million bricks. &#8617;">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-10-06T22:04:59+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/large%20space%20stations/space%20exploration/space-inflatables-1/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Angadh Nanjangud",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css" id="theme_source">
+
+  <link rel="stylesheet alternate" href="/assets/css/theme2.css" id="theme_source_2">
+
+<script>
+  let theme = sessionStorage.getItem('theme');
+  if(theme === "dark")
+  {
+    sessionStorage.setItem('theme', 'dark');
+    node1 = document.getElementById('theme_source');
+    node2 = document.getElementById('theme_source_2');
+    if (node1 && node2) {
+      node1.setAttribute('rel', 'stylesheet alternate'); 
+      node2.setAttribute('rel', 'stylesheet');
+    }
+  }
+  else
+  {
+    sessionStorage.setItem('theme', 'sunrise');
+  }
+  
+  // Add this function for image switching
+  function updateImages() {
+    console.log('updateImages function called');
+    const isDark = sessionStorage.getItem('theme') === 'dark';
+    const theme = isDark ? 'dark' : 'light';
+    console.log('Current theme:', theme);
+    
+    // Function to update the src of an image
+    function updateImageSrc(img) {
+      const src = img.getAttribute('src');
+      if (!src.includes('for_light_theme') && !src.includes('for_dark_theme')) return; // Skip images without theme suffixes
+	    
+      console.log('Processing image:', src);
+      const baseName = src.replace(/for_(light|dark)_theme\.(jpg|jpeg|png|gif|svg)$/, '');
+      const currentExt = src.split('.').pop().toLowerCase();
+      
+      // List of extensions to try, in order of preference
+      const extensions = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
+      
+      // Move the current extension to the front of the list
+      extensions.unshift(extensions.splice(extensions.indexOf(currentExt), 1)[0]);
+      
+      // Function to try loading an image with a specific extension
+      function tryImage(ext) {
+        const themeImage = `${baseName}for_${theme}_theme.${ext}`;
+        console.log('Trying image:', themeImage);
+	return fetch(themeImage, { method: 'HEAD' }) // Add this line: Use HEAD request instead of GET
+          .then(response => {
+            if (response.ok) {
+              console.log('Image found:', themeImage);
+              img.src = themeImage;
+              return true; // Successfully found and set the image
+            }
+            console.log('Image not found:', themeImage);
+            return false; // Image not found with this extension
+          })
+          .catch(() => {
+            console.log('Error fetching:', themeImage);
+            return false; // Error occurred, try next extension
+          });
+      }
+      
+      // Try each extension in order
+      extensions.reduce((promise, ext) => {
+        return promise.then(result => {
+          if (result) return true; // If we've already found an image, stop
+          return tryImage(ext);
+        });
+      }, Promise.resolve(false));
+    }
+    
+    // Update standard images
+    document.querySelectorAll('img').forEach(updateImageSrc);
+    // Update Tufte marginfigure and sidenote images
+    document.querySelectorAll('.marginnote img, .sidenote img').forEach(updateImageSrc);
+    // Update Tufte fullwidth images
+    document.querySelectorAll('.fullwidth img').forEach(updateImageSrc);
+  }
+  
+  // Call updateImages when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, calling updateImages');
+    updateImages();
+  });
+</script>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Angadh
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/">Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/teaching/">Teaching</a>
+            </li><li class="masthead__menu-item">
+              <a href="/publications/">Research</a>
+            </li></ul>
+        
+	<!-- Add this in your site's header, footer, or any common section visible across pages -->
+
+	
+	<div class="theme-switch-wrapper">
+    	<label class="theme-switch" for="checkbox">
+        	<input type="checkbox" id="checkbox" onchange="toggleTheme()" />
+        	<div class="slider round"></div>
+    	</label>
+
+	<script>
+function toggleTheme() {
+    var checkbox = document.getElementById('checkbox');
+    var themeSource = document.getElementById('theme_source');
+    var themeSource2 = document.getElementById('theme_source_2');
+
+    if (checkbox.checked) {
+        themeSource.setAttribute('rel', 'stylesheet alternate');
+        themeSource2.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'dark');
+    } else {
+        themeSource2.setAttribute('rel', 'stylesheet alternate');
+        themeSource.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'light');
+    }
+}
+
+// Initialize the checkbox state based on the saved theme
+window.onload = function() {
+    var currentTheme = sessionStorage.getItem('theme');
+    var checkbox = document.getElementById('checkbox');
+    if (currentTheme === 'dark') {
+        checkbox.checked = true;
+    } else {
+        checkbox.checked = false;
+    }
+}
+</script>
+
+	</div>
+	
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky">
+    
+      <nav class="toc">
+        <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+        <ul class="toc__menu"><li><a href="#background">Background</a></li><li><a href="#the-vision">The vision</a></li><li><a href="#inflatable-tubular-space-stations-a-counterintuitive-idea">Inflatable tubular space stations: a counterintuitive idea</a></li><li><a href="#why-is-now-a-good-time-to-return-to-inflatable-space-structures">Why is now a good time to return to inflatable space structures?</a></li><li><a href="#notes">Notes</a></li></ul>
+
+      </nav>
+    
+  </div>
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Inflatable von Braun space stations: an idea worth revisiting?">
+    <meta itemprop="description" content="BackgroundKepler’s  SomniumAt the time of my writing this post, his sci-fi story wasarchived here in 1608 and Edward Everett Hale’sBrick Moon 1from 1865 areearly fantasy science-fiction of space-faring humans. Keplerfaced more flak than fanfare for his workKepler’s mom was put ontrialfor witchcraft with some connections to Somnium.Also credit for the link where it’s due. but I was especially surprised to learn about his use of creative writingas a force for exploring ideas around space-faring andextra-terrestrial civilisations. His scientific work in astronomy influencedNewton and others indicating an enduring impact on science, engineering, and humancivilisation stemming from a curiosity about the motion of stars.It suffices to say that space habitation has occupied us from a fictionaland scientific lens for some time now.            I’ve only read a summary of Brick Moon, a story of workers building a 200-foot sphere that are accidentally launched into space to become first inhabitants of space. The moon was to serve as a navigational aid for sailors. It also estimates a cost for the construction at ${$}250k$ using $12$ million bricks. &#8617;      ">
+    <meta itemprop="datePublished" content="2024-10-06T22:04:59+01:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Inflatable von Braun space stations: an idea worth revisiting?
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          12 minute read
+        
+      </span>
+      (1782 words)
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <h2 id="background">Background</h2>
+<p><span class="newthought">Kepler’s</span>  <a href="https://en.wikipedia.org/wiki/Somnium_(novel)">Somnium</a><label for="`somnium`" class="margin-toggle sidenote-number"></label><input type="checkbox" id="`somnium`" class="margin-toggle" /><span class="sidenote">At the time of my writing this post, his sci-fi story was
+archived <a href="https://frostydrew.org/papers.dc/papers/paper-somnium">here</a> </span>
+in 1608 and <a href="https://en.wikipedia.org/wiki/Edward_Everett_Hale">Edward Everett Hale</a>’s
+<a href="https://en.wikipedia.org/wiki/Brick_Moon">Brick Moon</a> <sup id="fnref:a" role="doc-noteref"><a href="#fn:a" class="footnote" rel="footnote">1</a></sup>
+from 1865 are
+early fantasy science-fiction of space-faring humans. Kepler
+faced more flak than fanfare for his work<label for="flak" class="margin-toggle sidenote-number"></label><input type="checkbox" id="flak" class="margin-toggle" /><span class="sidenote">Kepler’s mom was put on
+<a href="https://thonyc.wordpress.com/2014/07/30/johannes-keplers-somnium-and-katharina-keplers-trial-for-witchcraft-the-emergence-of-a-myth/">trial</a>
+for witchcraft with some connections to Somnium.
+Also credit for the link where it’s <a href="https://skullsinthestars.com/2018/02/23/somnium-by-johannes-kepler/">due</a>. </span>
+but I was especially surprised to learn about his use of creative writing
+as a force for exploring ideas around space-faring and
+extra-terrestrial civilisations. His scientific work in astronomy influenced
+Newton and others indicating an enduring impact on science, engineering, and human
+civilisation stemming from a curiosity about the motion of stars.
+It suffices to say that space habitation has occupied us from a fictional
+and scientific lens for some time now.</p>
+
+<p>Today’s technocultural space community of thinkers has conjured or
+realised astonishing visions like the Apollo program and reusable rockets in
+the $20^{th}$ and $21^{st}$ centuries. The technical community no longer
+battles claims of heresy but politics, as if fighting to overcome the limits 
+of physics isn’t hard enough. Bureaucratic operators seek short-term
+justifications for projects and hinder progress towards sci-fi realities
+of large scale space travel and habitation<label for="inflatables-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="inflatables-2" class="margin-toggle" /><span class="sidenote">not so for
+space data services,
+as satellites have been miniaturised, commodified, and productised out of the hands
+of governments. </span>, branding these pursuits as potentially irresponsible to justify with
+taxpayer money. Governments want to solve the flat-lining productivity problem<label for="UKproductivity" class="margin-toggle sidenote-number"></label><input type="checkbox" id="UKproductivity" class="margin-toggle" /><span class="sidenote">I believe such investment justifies technical education which
+then creates skilled populations- some of whom work on new visions that generate
+jobs and others work in these jobs or enter the existing labour market. I can’t
+definitively prove this, of course, but it feels to me a pathway to solving
+the <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/whatistheproductivitypuzzle/2015-07-07">UK’s productivity puzzle</a>. </span>
+but want to do so without investing in visions of a limitlessly abundant future.
+Meanwhile, private investors want rapid returns on investment while making
+bold claims, like wanting flying cars but getting $140$ characters, extending the
+participation in space progress to mostly the superwealthy.</p>
+
+<p>From hereon, this post will focus on the radical notion of space
+superstructures, such as rotating wheel space stations, that expand our
+presence in various Earth orbits and then extend our reach to go deeper into space. The
+post mostly argues for a focus on developing inflatable technologies to
+realise these structures in the near-term but it is possible that this is
+too ambitious a goal. Note that other options for realising space superstructures
+(e.g., robots) are not really considered here but are generally important. Along
+the way, readers may find claims that explain why supporting the development 
+of space superstructures in the near-term is potentially valuable and socially
+relevant.</p>
+
+<h2 id="the-vision">The vision</h2>
+<p>Simply put, the vision I am putting forward is of deploying monolithic
+space stations with crew capacities of at least $100$ astronauts, i.e., 
+$&gt;10x$ the ISS’s typical crew size; I call this the Hundred Person Habitat (HPH).
+To date, no station has offered an order of magnitude increase on its
+predecessors and none are in the pipeline<label for="inflatables-3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="inflatables-3" class="margin-toggle" /><span class="sidenote">The
+in-development Lunar Gateway will operate at an orbit further to the
+International Space Station (ISS) with a crew of 4. See table
+<a href="https://www.angadhn.com/online_textbooks/UG_final_year_project/#large-space-stations-modular-or-monolithic">here</a> </span>.
+Assuming that a pressurized volume $&gt;20x$ of the ISS gives each crew member a 
+hypothetical $\approx 200\,m^3$ of volume though, in practice, the habitable portion is
+roughly identical to the space occupied by on-board equipment/instruments
+for experiments and life support. The station will be a toroid and thus 
+conceptually resembles von Braun’s<label for="potocnik" class="margin-toggle sidenote-number"></label><input type="checkbox" id="potocnik" class="margin-toggle" /><span class="sidenote">He was apparently inspired by Herman Potočnik’s $30\,m$ ring-shaped habitat
+described in <a href="https://books.google.co.uk/books/about/The_Problem_of_Space_Travel.html?id=6m0bCwAAQBAJ&amp;redir_esc=y"><em>The Problem of Space Travel</em></a> </span> rotating wheel station. The below table
+compares the HPH to the ISS and von Braun station:</p>
+
+<!--
+|              Parameters                      | ISS    | von Braun wheel        | Hundred person Habitat |
+| -------------------------------------------- | ------ | ---------------------- | ---------------------- |
+| crew size (# of astronauts)                  | 7-13   | 50-80                  | 100                    |
+| diameter of the station (m)                  | n/a    | 75                     | ~75                    |
+| total volume $m^3$                           | 916    | 6217.85                | 20x of ISS             |
+| habitable %                                  | 42.35% | 60% (assumed)          | ?                      |
+| Max. volume per crew $(\frac{m^3}{person})$  | 64.66  | 52.67 assuming 50 crew | 183.20                 |
+| Rotational speed for artificial gravity (RPM)|  -     | 3                      | 3                      |
+| Gravity on-board  ($m/s^2$)                  |  -     | 1.655                  | 1.655                  |
+-->
+
+<p><label for="space-station-comparison-id" class="margin-toggle"> ⊕</label><input type="checkbox" id="space-station-comparison-id" class="margin-toggle" /><span class="marginnote"><em>Table 1</em>: Comparison of different space station designs. </span></p>
+<div class="table-wrapper">
+  <table class="booktabs">
+    <thead>
+      <tr>
+        <th colspan="4" class="cmid">Space Station Comparison</th>
+      </tr>
+      <tr>
+        <th class="l">Parameters</th>
+        <th>ISS</th>
+        <th>von Braun wheel</th>
+        <th class="r">Hundred person Habitat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Crew size (# of astronauts)</td>
+        <td class="c">7-13</td>
+        <td class="c">50</td>
+        <td class="r">100</td>
+      </tr>
+      <tr>
+        <td>Diameter of the station (m)</td>
+        <td class="c">n/a</td>
+        <td class="c">75</td>
+        <td class="r">~75</td>
+      </tr>
+      <tr>
+        <td>Total volume (m³)</td>
+        <td class="c">916</td>
+        <td class="c">6217.85</td>
+        <td class="r">20x of ISS</td>
+      </tr>
+      <tr>
+        <td>Habitable %</td>
+        <td class="c">42.35%</td>
+        <td class="c">60% (assumed)</td>
+        <td class="r">?</td>
+      </tr>
+      <tr>
+        <td>Max. volume per crew (m³/person)</td>
+        <td class="c">64.66</td>
+        <td class="c">52.67 </td>
+        <td class="r">183.20</td>
+      </tr>
+      <tr>
+        <td>Rotational speed for artificial gravity (RPM)</td>
+        <td class="c">-</td>
+        <td class="c">3</td>
+        <td class="r">3</td>
+      </tr>
+      <tr>
+        <td>Gravity on-board (m/s²)</td>
+        <td class="c">-</td>
+        <td class="c">1.655</td>
+        <td class="r">1.655</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>As opposed to von Braun’s imagined multi-launch architecture, I am
+imposing<label for="notproposing" class="margin-toggle sidenote-number"></label><input type="checkbox" id="notproposing" class="margin-toggle" /><span class="sidenote">Not proposing! </span> that this identically sized structure be achievable from a
+single rocket launch by exploiting an idea as old
+as NASA itself: using an inflatable
+tube structure.</p>
+
+<h2 id="inflatable-tubular-space-stations-a-counterintuitive-idea">Inflatable tubular space stations: a counterintuitive idea</h2>
+<figure><img src="/assets/imgs/Goodyear1961.JPG" /><figcaption class="maincolumn-figure">Testing of an inlatable
+space habitat prototype by Goodyear in 1961.</figcaption></figure>
+
+<p>In 1961, Goodyear Aircraft Corporation prototyped an inflatable tube
+space station (see above) called the Erectable Torus Manned Space
+Laboratory<label for="airlocks" class="margin-toggle sidenote-number"></label><input type="checkbox" id="airlocks" class="margin-toggle" /><span class="sidenote">Around the same time, the Soviets
+were developing inflatable airlocks; a more modestly sized appendage
+to spacecraft that allows astronauts to move between a pressurized
+spacecraft and the vacuum of space. </span>. The idea never made it to
+flight due to concerns that the soft materials it was made from<label for="goodyear-materials" class="margin-toggle sidenote-number"></label><input type="checkbox" id="goodyear-materials" class="margin-toggle" /><span class="sidenote">three-ply nylon cords, held together by butyl elastomer. </span>
+weren’t strong enough to withstand micrometeoroid collisions.
+Nonetheless, this was an early example of a monolithic space station;
+a tenth of von Braun’s wheel station that could be packaged to $2\%$
+of its inflated volume (another cool image below).</p>
+
+<figure><img src="/assets/imgs/LittekenPaper_GoodYear.png" /><figcaption class="maincolumn-figure">
+<a href="https://ntrs.nasa.gov/api/citations/20190001443/downloads/20190001443.pdf">Litteken&#8217;s paper on space inflatables</a>
+has this really nice image of GoodYear&#8217;s inital testing taken from James Hansen&#8217;s
+<a href="https://www.nasa.gov/wp-content/uploads/2023/04/sp-4308.pdf"><em>Spaceflight Revolution</em></a>.
+One can see James Webb underneath the full size inflated station; the images on the
+left show the packaged tube structure.</figcaption></figure>
+
+<p>A long lull on habitable space inflatables followed
+until NASA’s TransHab program (1997) which developed
+high strength materials capable of withstanding collisions with
+micrometeoroids and orbital debris (MMOD). TransHab inspired
+a cylindrical inflatable ISS module ($13\,ft$ in length and $10\,ft$
+in diameter)- BEAM (Bigelow Expandable Activity Module)- in
+operation since 2016. The period between the GoodYear and TransHab
+inflatable space stations laid the foundations for today’s dominant
+design of rigid space stations. In my eyes, this is a classic example
+of where simpler elegant solutions were traded in for ones that are more
+complex when we think about scale. For example, monolithic rigid stations were
+followed by the modular ones, like the ISS, that have required in-space
+assembly, mostly by astronauts, or propellant-intensive rendezvous
+and docking manoeuvres. Building on this, most future scalable designs I have seen
+purport the idea of robotic assembly. My recent learnings on inflatables suggest
+that the same outcome might be realised by a simpler single inflatable system though
+the development process will be less straightforward. The decision to focus
+only on rigid stations/modules for several decades has made these inflatable
+solutions a forgotten one; it appears that we threw out the baby with the bathwater.</p>
+
+<p>When I suggest this idea to people today, it seems a counterintuitive and
+potentially outrageous solution that exposes biases in thinking- even amongst
+experts who are, after all, only human. Firstly, there’s a widespread belief
+that inflatable structures are less safe due to the risk of MMOD collisions.
+The incorrect analogy of balloons bursting is often mistakenly applied but
+modern designs incorporate multiple layers of high-strength materials that are
+remarkably resistant to punctures and could even self-heal. In fact, their
+flexibility could make them more resilient than rigid structures. Secondly,
+prevalence of robotics in automating human tasks has led to an assumption
+that the same approach is optimal everywhere: we see robots building cars
+and assume they should build space stations. But space presents unique
+challenges where simplicity is paramount. Inflatable structures have minimal
+mechanical complexity, reduce failure points, and simplify construction.
+Moreover, our terrestrial experience doesn’t include living in inflatable
+habitats, making it non-obvious as a space solution. We’re accustomed to rigid
+structures so cannot envision lightweight, expandable living spaces as
+a viable alternative. Yet, in the vacuum of space, these structures
+provide vast habitable areas with superior radiation shielding and
+thermal management. This insight has profound implications for future
+space missions. By embracing inflatable technologies, we can
+dramatically reduce launch costs, simplify construction processes,
+and create larger, more versatile space habitats than ever before.
+It’s a reminder that in space engineering, sometimes the most effective
+solutions are those that challenge our Earth-biased intuitions.</p>
+
+<h2 id="why-is-now-a-good-time-to-return-to-inflatable-space-structures">Why is now a good time to return to inflatable space structures?</h2>
+<p>There are probably many more reasons than I describe below as to why
+now<label for="robotics1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="robotics1" class="margin-toggle" /><span class="sidenote">Unlike was done with inflatables, we should maintain/increase support to
+mature in-space robotic assembly and maintenance technology development
+as I imagine that at even larger scales, a reliance on robots is inevitable. </span>
+is a good time to revisit the GoodYear inflatable station idea<label for="robotics2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="robotics2" class="margin-toggle" /><span class="sidenote">In fact,
+such stations are just one application of inflatable 
+technologies I see. They could totally transform space robotics by using pneumatic actuation
+for orbital applications thus eliminating the need for radiation-hardened components like
+joint motors- a pretty massive bottleneck in the development of space robotics. </span>.</p>
+
+<p>The first has to do with the emerging promise of Starship, which is seeing frequent impressive
+tests. In contrast, when GoodYear was developing its concept, the
+<a href="https://www.google.com/search?q=saturn+v+development+year">Saturn V</a>
+was still in early development and the GoodYear project might have been easy to kill; I imagine
+the Moon missions would have also led to a reallocation of resources and
+focus. Second, the impending retirement of the ISS means there is a window
+(or even a need) for a successor with a larger volume for both crew sizes
+and science output. Third, there will be eventually be more commercial users of a large
+inflatable orbital volume than space agencies; in-space manufacturing
+companies like Varda could use these stations to scale their drug manufacturing,
+with the beneficiaries being patients on Earth. Other avenues here are for materials
+science research and protein crystal growth (not my domain of expertise at all).
+If in-space semiconductor manufacturing in microgravity becomes a thing, then
+larger inflatable volumes would, again, answer the question of scaling.
+Similarly, sci-fi outcomes such as at-scale 3-D printing artificial organs
+would benefit those in need of hearts and lungs- demands that are not being met
+by the donor organ market.</p>
+
+<p>All of which is even before we consider making these
+stations rotate to produce an artificial gravity enabling safer long-haul
+journeys for astronaut crews
+heading to Mars or other locations away from the Earth<label for="hansen" class="margin-toggle sidenote-number"></label><input type="checkbox" id="hansen" class="margin-toggle" /><span class="sidenote">I am
+currently reading James Hansen’s
+<a href="https://www.nasa.gov/wp-content/uploads/2023/04/sp-4308.pdf"><em>Spaceflight Revolution</em></a> that should
+help me gain a deeper perspective on the early inflatable station. Fun fact: another of his books was adapted into
+<a href="https://en.wikipedia.org/wiki/First_Man_(film)">First Man</a> with Ryan Gosling playing Neil Armstrong. </span>.</p>
+
+<!-- ## Other opportunities with space inflatables? Long-horizon projections: Where would this take us in 20 years? or Where else could inflatable structures be used? -->
+
+<h2 id="notes">Notes</h2>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:a" role="doc-endnote">
+      <p>I’ve only read a summary of Brick Moon, a story of workers building a 200-foot sphere that are accidentally launched into space to become first inhabitants of space. The moon was to serve as a navigational aid for sailors. It also estimates a cost for the construction at ${$}250k$ using $12$ million bricks. <a href="#fnref:a" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#large-space-stations" class="page__taxonomy-item p-category" rel="tag">Large Space Stations</a><span class="sep">, </span>
+    
+      <a href="/categories/#space-exploration" class="page__taxonomy-item p-category" rel="tag">Space Exploration</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-10-06T22:04:59+01:00">October 6, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/large%20space%20stations/space%20exploration/vonBraunWheels/" class="pagination--pager" title="Some Space Stations in Fiction and Reality
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Leave a comment</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/angadhn" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://soundcloud.com/angadh-nanjangud" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-soundcloud" aria-hidden="true"></i> Soundcloud</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Angadh Nanjangud. Powered by
+	<a href="https://clayh53.github.io/tufte-jekyll/" rel="nofollow">clayh53</a>,
+	<a href="http://claude.ai" rel="nofollow">Claude</a>,
+	<a href="http://chat.openai.com" rel="nofollow">ChatGPT</a> &amp;
+	<a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
+</div>
+<div class="page__footer-copyright">The views presented on this website are the author's own and do not represent the views of their employer(s).</div>
+
+	<div id="viewCounter">Views: 0</div>
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBZQTH82T2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MBZQTH82T2');
+</script>
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "/large%20space%20stations/space%20exploration/space-inflatables-1/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/large%20space%20stations/space%20exploration/space-inflatables-1"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://angadhn.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+ </script>
+ 
+
+    <!-- Begin: ChatGPT stuff for firebase site views counter-->
+<script>
+  // Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBHfzThmGgycGkU3bROZBoVSWON08n8yUc",
+    authDomain: "mywebsite-4914a.firebaseapp.com",
+    projectId: "mywebsite-4914a",
+    storageBucket: "mywebsite-4914a.appspot.com",
+    messagingSenderId: "966713391944",
+    appId: "1:966713391944:web:ba2e3ce5166884ec9c117d",
+    measurementId: "G-5DZQBSQQF2"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // If using Firebase Analytics
+  firebase.analytics();
+
+  var db = firebase.firestore();
+
+function getCleanPath() {
+  let path = window.location.pathname;
+  // Check if the path is just a slash, which is the root of the site
+  if (path === '/') {
+    return 'root'; // Use a placeholder like 'root' for the root path
+  }
+  // Remove leading and trailing slashes and replace internal slashes with a different character
+  path = path.replace(/^\/|\/$/g, '').replace(/\//g, '_');
+  return path;
+}
+  
+
+  // Function to increment view count
+  function updatePageViews() {
+    const pagePath = getCleanPath();
+    const pageRef = db.collection('pageViews').doc('total');
+
+    pageRef.get().then((doc) => {
+      if (doc.exists) {
+        pageRef.update({ views: firebase.firestore.FieldValue.increment(1) });
+      } else {
+        pageRef.set({ views: 1 });
+      }
+    });
+  }
+
+  // Function to display page views
+  // Function to display page views
+function displayPageViews() {
+  const pagePath = getCleanPath(); // Use the getCleanPath function here as well
+  const pageRef = db.collection('pageViews').doc('total');
+
+  pageRef.get().then((doc) => {
+    if (doc.exists) {
+      document.getElementById('viewCounter').innerText = `Views: ${doc.data().views}`;
+    } else {
+      document.getElementById('viewCounter').innerText = 'Views: 0';
+    }
+  }).catch((error) => {
+    console.error("Error getting document:", error); // For debugging
+  });
+}
+
+  // Call the functions when the window loads
+  window.addEventListener('load', function() {
+  updatePageViews();
+  displayPageViews();
+});
+</script>
+    <!-- End: ChatGPT stuff for firebase site views counter-->
+
+    <!-- Claude says to Add this line to include custom.js -->
+    <script src="/assets/js/custom.js"></script>
+  </body>
+</html>
