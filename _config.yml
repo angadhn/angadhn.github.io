@@ -40,7 +40,7 @@ masthead_title           : # overrides the website title displayed in the masthe
 words_per_minute         : 140
 future                   : false
 comments:
-  provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  provider               : "bluesky" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
     shortname            : "angadhn" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
