@@ -23,3 +23,13 @@ search: false
  	margin-left: 10%;
  	margin-right: 10%;
  }
+
+/* Add spacing above comments section */
+#bluesky-comments {
+  margin-top: 2em;  /* Adjust this value as needed */
+}
+
+/* Style for the navigation buttons (if they need more space) */
+.pagination {
+  margin-bottom: 2em;  /* Adjust this value as needed */
+}
