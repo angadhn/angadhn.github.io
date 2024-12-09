@@ -26,7 +26,9 @@ search: false
 
 /* Add spacing above comments section */
 #bluesky-comments {
-  margin-left: -10%;  /* Counteract the layout margin */
-  margin-right: -10%;
-  margin-top: 2em;
-}
+ 	margin-top: 2em;
+ 	@media (min-width: 768px) {  // Only counteract margins on wider screens
+ 		margin-left: -10%;
+ 		margin-right: -10%;
+ 	}
+ }
