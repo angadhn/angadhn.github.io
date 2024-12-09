@@ -15,8 +15,16 @@
   <script src="https://unpkg.com/bluesky-comments@latest/dist/bluesky-comments.umd.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Initialize comments section
       if (document.getElementById('bluesky-comments')) {
         initBlueskyComments('bluesky-comments', { author: 'angadhn.com' });
+      }
+      // Initialize post link
+      if (document.getElementById('bluesky-post-link')) {
+        initBlueskyComments('bluesky-post-link', { 
+          author: 'angadhn.com',
+          mode: 'link-only'  // or whatever mode the widget supports for just showing the link
+        });
       }
     });
   </script>
