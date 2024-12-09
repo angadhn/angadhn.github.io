@@ -26,5 +26,7 @@ search: false
 
 /* Add spacing above comments section */
 #bluesky-comments {
-  margin-top: 2em;  /* Adjust this value as needed */
+  margin-left: -10%;  /* Counteract the layout margin */
+  margin-right: -10%;
+  margin-top: 2em;
 }
