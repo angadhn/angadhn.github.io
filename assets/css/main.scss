@@ -23,12 +23,3 @@ search: false
  	margin-left: 10%;
  	margin-right: 10%;
  }
-
-/* Add spacing above comments section */
-#bluesky-comments {
- 	margin-top: 2em;
- 	@media (min-width: 768px) {  // Only counteract margins on wider screens
- 		margin-left: -10%;
- 		margin-right: -10%;
- 	}
- }
