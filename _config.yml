@@ -134,7 +134,7 @@ author:
       url: "https://scholar.google.com/citations?user=_B6z_BUAAAAJ&hl=en"
     - label: "Bluesky"
       icon: "fab fa-fw fa-bluesky"
-      url: "https://bsky.app/angadhn.com"
+      url: "https://bsky.app/profile/angadhn.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/angadhn"
