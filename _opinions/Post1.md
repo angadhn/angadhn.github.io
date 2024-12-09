@@ -1,6 +1,6 @@
 ---
 title:  "Moravec's Paradox"
-date:   2024-12-09 21:04:59
+date:   2024-12-09 17:45:00
 comments: true
 toc: false
 categories:
