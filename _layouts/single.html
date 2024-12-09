@@ -47,7 +47,9 @@ layout: default
       <section class="page__content" itemprop="text">
         {{ content }}
         {% if page.comments and site.comments.provider == "bluesky" %}
-          <div id="bluesky-post-link"></div>
+          <div class="post-conversation-link">
+            Join the conversation by <a href="https://bsky.app/profile/{{ site.comments.bluesky_username | default: 'angadhn.com' }}">replying on Bluesky</a>.
+          </div>
         {% endif %}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
