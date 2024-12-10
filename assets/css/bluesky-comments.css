@@ -1,6 +1,9 @@
 ._container_1pvtk_1 {
-    max-width: 740px;
-    margin: 0 auto;
+    max-width: 740px !important;
+    margin: 0 auto !important;
+    width: 75% !important;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
 }
 
 ._statsBar_1pvtk_6 {
