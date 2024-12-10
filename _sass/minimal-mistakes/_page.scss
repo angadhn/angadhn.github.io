@@ -55,8 +55,6 @@ body {
     margin-right: 0;
     width: 100%;
     clear: both;
-    max-width: 800px;
-    margin: 0 auto;
 
     .page__content,
     .page__meta,
@@ -67,23 +65,6 @@ body {
       margin-right: 0;
       width: 100%;
       clear: both;
-    }
-
-    .page__content {
-      font-size: 0.9em;
-
-      h1 { font-size: 1.5em; }
-      h2 { font-size: 1.3em; }
-      h3 { font-size: 1.1em; }
-
-      ul, ol {
-        font-size: 0.9em;
-        width: 90%;
-      }
-
-      p {
-        width: 90%;
-      }
     }
   }
 }
@@ -457,142 +438,101 @@ body {
 /*
    Comments
    ========================================================================== */
-
+/*
 .page__comments {
-  // Container styles
-  .bluesky-container {
-    max-width: 740px;
-    margin: 0 auto;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  clear: both;
+}
 
-    // Reset link styles to match Bluesky's defaults
-    a {
-      text-decoration: none;
-      color: inherit;
-      
-      &:hover {
-        text-decoration: none;
-      }
+.page__comments-title {
+  margin-top: 2rem;
+  margin-bottom: 10px;
+  padding-top: 2rem;
+  font-size: $type-size-6;
+  border-top: 1px solid $border-color;
+  text-transform: uppercase;
+}
 
-      &.bluesky-link {
-        text-decoration: underline;
-        
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+.page__comments-form {
+  -webkit-transition: $global-transition;
+  transition: $global-transition;
+
+  &.disabled {
+    input,
+    button,
+    textarea,
+    label {
+      pointer-events: none;
+      cursor: not-allowed;
+      filter: alpha(opacity=65);
+      box-shadow: none;
+      opacity: 0.65;
     }
-  }
-
-  // Stats bar
-  .bluesky-stats-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .bluesky-stat-item {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    white-space: nowrap;
-  }
-
-  // Icons
-  .bluesky-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-
-  // Comments section
-  .bluesky-comments-title {
-    margin-top: 1.5rem;
-    font-size: 1.25rem;
-    font-weight: 700;
-  }
-
-  .bluesky-comments-list {
-    margin-top: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  // Individual comments
-  .bluesky-comment-container {
-    margin: 1rem 0;
-    font-size: 0.875rem;
-  }
-
-  .bluesky-comment-content {
-    display: flex;
-    max-width: 36rem;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    .bluesky-handle {
-      color: $muted-text-color; // Using theme variable instead of hardcoded color
-    }
-  }
-
-  // Author info
-  .bluesky-author-link {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.5rem;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .bluesky-avatar {
-    height: 1rem;
-    width: 1rem;
-    flex-shrink: 0;
-    border-radius: 9999px;
-    background-color: $border-color; // Using theme variable
-  }
-
-  .bluesky-author-name {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-  }
-
-  // Replies
-  .bluesky-replies-container {
-    border-left: 2px solid $border-color; // Using theme variable
-    padding-left: 0.5rem;
-  }
-
-  // Actions
-  .bluesky-actions-container {
-    margin-top: 0.5rem;
-    display: flex;
-    width: 100%;
-    max-width: 150px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    opacity: 0.6;
-  }
-
-  .bluesky-actions-row {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
   }
 }
 
+.comment {
+  @include clearfix();
+  margin: 1em 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.comment__avatar-wrapper {
+  float: left;
+  width: 60px;
+  height: 60px;
+
+  @include breakpoint($large) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.comment__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  @include breakpoint($large) {
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    border: 1px solid $border-color;
+  }
+}
+
+.comment__content-wrapper {
+  float: right;
+  width: calc(100% - 60px);
+
+  @include breakpoint($large) {
+    width: calc(100% - 100px);
+  }
+}
+
+.comment__author {
+  margin: 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.comment__date {
+  @extend .page__meta;
+  margin: 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+*/
 /*
    Related
    ========================================================================== */
@@ -835,8 +775,4 @@ label.margin-toggle:not(.sidenote-number) { display: none; }
     ul,ol { 
         width: 90%; // Match the width of paragraphs in mobile view
     }
-}
-
-.nav__list .nav__items {
-  font-size: 0.8em;
 }
