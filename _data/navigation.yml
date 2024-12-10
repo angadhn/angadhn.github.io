@@ -4,7 +4,7 @@ main:
     #url: https://angadhn.github.io/Angadh_CV.pdf
     #
 
-  - title: "Space Blog"
+  - title: "Longer Form"
     url: /year-archive/
 
   - title: "Teaching"
@@ -13,5 +13,5 @@ main:
   - title: "Research"
     url: /publications/
   
-  - title: "Personal Blog"
+  - title: "Blog"
     url: /opinions/

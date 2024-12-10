@@ -289,7 +289,7 @@ collections:
     permalink: /online_textbooks/:path/
   opinions:
     output: true
-    permalink: /opinions/:path/
+    permalink: /:collection/:title/
 
 # Defaults
 defaults:
