@@ -438,67 +438,139 @@ body {
 /*
    Comments
    ========================================================================== */
+
 .page__comments {
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%;
-  clear: both;
-}
+  // Container styles
+  .bluesky-container {
+    max-width: 740px;
+    margin: 0 auto;
 
-.page__comments-title {
-  margin-top: 2rem;
-  margin-bottom: 10px;
-  padding-top: 2rem;
-  font-size: $type-size-6;
-  border-top: 1px solid $border-color;
-  text-transform: uppercase;
-}
+    // Reset link styles to match Bluesky's defaults
+    a {
+      text-decoration: none;
+      color: inherit;
+      
+      &:hover {
+        text-decoration: none;
+      }
 
-.bluesky-comment {
-  @include clearfix();
-  margin: 1em 0;
-
-  &:not(:last-child) {
-    border-bottom: 1px solid $border-color;
+      &.bluesky-link {
+        text-decoration: underline;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
-}
 
-.bluesky-avatar {
-  float: left;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  // Stats bar
+  .bluesky-stats-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 
-  @include breakpoint($large) {
-    width: 80px;
-    height: 80px;
-    padding: 5px;
-    border: 1px solid $border-color;
+    &:hover {
+      text-decoration: underline;
+    }
   }
-}
 
-.bluesky-content {
-  float: right;
-  width: calc(100% - 60px);
-
-  @include breakpoint($large) {
-    width: calc(100% - 100px);
+  .bluesky-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    white-space: nowrap;
   }
-}
 
-.bluesky-author {
-  margin: 0;
-  a {
-    text-decoration: none;
+  // Icons
+  .bluesky-icon {
+    width: 1.25rem;
+    height: 1.25rem;
   }
-}
 
-.bluesky-date {
-  @extend .page__meta;
-  margin: 0;
-  a {
-    text-decoration: none;
+  // Comments section
+  .bluesky-comments-title {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .bluesky-comments-list {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  // Individual comments
+  .bluesky-comment-container {
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .bluesky-comment-content {
+    display: flex;
+    max-width: 36rem;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .bluesky-handle {
+      color: $muted-text-color; // Using theme variable instead of hardcoded color
+    }
+  }
+
+  // Author info
+  .bluesky-author-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .bluesky-avatar {
+    height: 1rem;
+    width: 1rem;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background-color: $border-color; // Using theme variable
+  }
+
+  .bluesky-author-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  // Replies
+  .bluesky-replies-container {
+    border-left: 2px solid $border-color; // Using theme variable
+    padding-left: 0.5rem;
+  }
+
+  // Actions
+  .bluesky-actions-container {
+    margin-top: 0.5rem;
+    display: flex;
+    width: 100%;
+    max-width: 150px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0.6;
+  }
+
+  .bluesky-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
   }
 }
 
