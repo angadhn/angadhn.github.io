@@ -70,7 +70,7 @@ different matter altogether.
 
 # From Monopolies to Money
 I think the refreshing thing for me (unless I misunderstood) is
-that Graeber agrees with Thiel that monopolies can be good as long
+that Graeber agrees with Thiel that monopolies can be good but only as long
 as they aren't rent extracting. Bureaucratic monopolies have proven
 to be effective in achieving great things qucikly, like Apollo and the Manhattan
 project, under the right conditions. Corporate monopolies, like
@@ -103,7 +103,7 @@ This aligns perfectly with Thiel's general thesis that competition kills innovat
 But the role of debt in promoting stagnation is also a key point, which Graeber 
 reminds us by citing the UK's introduction of student loans that successfully made
 university education less about exploration and more about getting a job. This is
-also where Graeber's position is mor far ranging than Thiel's- his commentary 
+also where Graeber's position is mor far-ranging than Thiel's- his commentary 
 captures the Thielian view of competition but also of debt promoting stagnation. The
 latter is perhaps less concerning to the billionaire elite. As a non-billionaire 
 academic who has tried to start a startup or two, it was hard not to side 
