@@ -13,7 +13,7 @@ _This is a summary towards a longer form essay that will eventually go into "Lon
 
 My friends are big fans of David Graeber's _Bullshit Jobs_ and _Debt_.
 Having been more a listener of his, I find his candor amusing and cutting.
-So when I happened upon this video of him and Peter Thiel talking, I wasn't
+So when I happened upon him and Peter Thiel talking, I wasn't
 going to miss it despite knowing little  about what it was actually
 on{% sidenote 'zeroone' "Turns out this is from the book launch of _Zero to One_." %}.
 Going into it, I anticipated an alignment in their values - moreso than one
@@ -64,7 +64,7 @@ The more interesting thing that results from this is that monopolies that
 emerge from Thiel's start-up viewpoint are eventually entrenched in
 the system in many ways. While many general examples are given, I think
 the most pertinent is towards the end where Thiel is quesitoned about Palantir
-working with the CIA. This underscores Graeber's point that eventually ends up
+working with the CIA. This underscores Graeber's point that one eventually ends up
 working within the system- whether one changes it or becomes a part of it is a
 different matter altogether.
 
@@ -111,7 +111,7 @@ with Graeber that working on projects on the side within existing structures
 even if the pace is glacial by comparison. For the idea is not to work only
 for personal liberation but for something greater.
 
-Here's a link to the talk:
+For those interested in the conversation, here's a link to the talk:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eF0cz9OmCGw?si=27vod6mINY0npdDd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
