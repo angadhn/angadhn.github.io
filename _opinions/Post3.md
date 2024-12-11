@@ -72,7 +72,7 @@ different matter altogether.
 I think the refreshing thing for me (unless I misunderstood) is
 that Graeber agrees with Thiel that monopolies can be good but only as long
 as they aren't rent extracting. Bureaucratic monopolies have proven
-to be effective in achieving great things qucikly, like Apollo and the Manhattan
+to be effective in achieving great things quickly, like Apollo and the Manhattan
 project, under the right conditions. Corporate monopolies, like
 Bell Labs, demonstrate that acceleration can happen through
 productive innovation whereas current monopolies, like financial institutions,
@@ -102,14 +102,16 @@ Today, academics are competing for resources by writing grants in an endless cyc
 This aligns perfectly with Thiel's general thesis that competition kills innovation.
 But the role of debt in promoting stagnation is also a key point, which Graeber 
 reminds us by citing the UK's introduction of student loans that successfully made
-university education less about exploration and more about getting a job. This is
-also where Graeber's position is mor far-ranging than Thiel's- his commentary 
+university education less about exploration and more about getting a job.
+I find Graeber's position more far-ranging than Thiel's- his commentary 
 captures the Thielian view of competition but also of debt promoting stagnation. The
-latter is perhaps less concerning to the billionaire elite. As a non-billionaire 
-academic who has tried to start a startup or two, it was hard not to side 
+matter of debt is perhaps less concerning to the billionaire elite. But Graeber is also
+more tuned to the need of individual players that aren't all billionaires or close
+to Silicon Valley, where networks can promote the eccentrics. How do we help these individuals
+flourish? As a non-billionaire academic who has tried to start a startup or two, it was hard not to side 
 with Graeber that working on projects on the side within existing structures
 even if the pace is glacial by comparison. For the idea is not to work only
-for personal liberation but for something greater.
+for personal liberation but for something greater. And we need to think beyond technology too.
 
 For those interested in the conversation, here's a link to the talk:
 
