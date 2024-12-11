@@ -63,7 +63,7 @@ reindustrializing - hence the technological stagnation.
 The more interesting thing that results from this is that monopolies that
 emerge from Thiel's start-up viewpoint are eventually entrenched in
 the system in many ways. While many general examples are given, I think
-the most pertinent is towards the end where Thiel is quesitoned about Palantir
+the most pertinent is when Thiel is questioned about Palantir
 working with the CIA. This underscores Graeber's point that one eventually ends up
 working within the system- whether one changes it or becomes a part of it is a
 different matter altogether.
