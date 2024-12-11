@@ -72,13 +72,11 @@ different matter altogether.
 I think the refreshing thing for me (unless I misunderstood) is
 that Graeber agrees with Thiel that monopolies can be good as long
 as they aren't rent extracting. Bureaucratic monopolies have proven
-to be effective in achieving some great things like Apollo and the Manhattan
-project which shows that they can be effective and fast under the right
-conditions. Corporate monopolies like Bell Labs, under the right incentives,
-show that we can operate without rent extraction monopolies to make the pie
-larger through production. But currently we have monopolies, like financial
-institutions, that create a culture of stagnation through a "direct assault
-on the human imagination". Aside from the corporate taxes that incentivise rent
+to be effective in achieving great things qucikly, like Apollo and the Manhattan
+project, under the right conditions. Corporate monopolies like
+Bell Labs show how acceleration happens through productive innovation unlike
+some current monopolies, like financial institutions, that create a culture of 
+stagnation through - to use a Graeberism- "a direct assault on the human imagination". Aside from the corporate taxes that incentivise rent
 seeking behaviours, social welfare economic policies
 (such as universal basic income) can overcome the greater creative stagnation.
 
