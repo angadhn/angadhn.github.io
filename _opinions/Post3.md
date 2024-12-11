@@ -111,7 +111,9 @@ to Silicon Valley, where networks can promote the eccentrics. How do we help the
 flourish? As a non-billionaire academic who has tried to start a startup or two, it was hard not to side 
 with Graeber that working on projects on the side within existing structures
 even if the pace is glacial by comparison. For the idea is not to work only
-for personal liberation but for something greater. And we need to think beyond technology too.
+for personal liberation but for something greater.
+And we need to think beyond technology too- we need if we are to unearth the next
+Beatles.
 
 For those interested in the conversation, here's a link to the talk:
 
