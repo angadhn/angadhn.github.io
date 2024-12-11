@@ -71,12 +71,16 @@ different matter altogether.
 # From Monopolies to Money
 I think the refreshing thing for me (unless I misunderstood) is
 that Graeber agrees with Thiel that monopolies can be good as long
-as they aren't rent extracting. Given the right incentives, we could eliminate
-rent extraction monopolies, which are primarily financial institutions,
-and instead have monopolies that make the pie larger through production. but 
-currently they create a culture of stagnation which is a "direct assault
-on the human imagination". Aside from the corporate taxes that incentivise rent seekers, social welfare economic policies (such as universal
-basic income) can overcome the greater creative stagnation.
+as they aren't rent extracting. Bureaucratic monopolies have proven
+to be effective in achieving some great things like Apollo and the Manhattan
+project which shows that they can be effective and fast under the right
+conditions. Corporate monopolies like Bell Labs, under the right incentives,
+show that we can operate without rent extraction monopolies to make the pie
+larger through production. But currently we have monopolies, like financial
+institutions, that create a culture of stagnation through a "direct assault
+on the human imagination". Aside from the corporate taxes that incentivise rent
+seeking behaviours, social welfare economic policies
+(such as universal basic income) can overcome the greater creative stagnation.
 
 {% epigraph "Money isn't just measuring the value of stuff. It's also measuring the value of human actions and it's also a promise of future creativity." 'David Graeber' %}
 Graeber evidences how the UK's social welfare policies unleashed creativity in the
