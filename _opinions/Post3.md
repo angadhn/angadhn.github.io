@@ -78,7 +78,8 @@ Bell Labs show how acceleration happens through productive innovation unlike
 some current monopolies, like financial institutions, that create a culture of 
 stagnation through - to use a Graeberism- "a direct assault on the human imagination". Aside from the corporate taxes that incentivise rent
 seeking behaviours, social welfare economic policies
-(such as universal basic income) can overcome the greater creative stagnation.
+(such as universal basic income) could also overcome the grander
+creative stagnation evident today.
 
 {% epigraph "Money isn't just measuring the value of stuff. It's also measuring the value of human actions and it's also a promise of future creativity." 'David Graeber' %}
 Graeber evidences how the UK's social welfare policies unleashed creativity in the
