@@ -17,7 +17,7 @@ So when I happened upon this video of him and Peter Thiel talking, I wasn't
 going to miss it despite knowing little  about what it was actually
 on{% sidenote 'zeroone' "Turns out this is from the book launch of _Zero to One_." %}.
 Going into it, I anticipated an alignment in their values - moreso than one
-might think purely because the less popular Graeber is anarchist and Thiel is
+might think purely because the comparably less famous Graeber is anarchist and Thiel is
 libertarian; this is why I think of this as a conversation rather than a debate. 
 I suspected their alignment given my own sensibilities that anarchists and early stage 
 startup founders{% sidenote 'anarchistStartups' "It's also why I, despite formally being a space engineer, was inspired to build [Howler](https://www.angadhn.com/opinions/Howler_EV4AI/) and kept at it while listening to Chomsky's [optimistic views on small decentralised media](https://en.wikipedia.org/wiki/ZNetwork) in [Manufacturing Consent](https://youtu.be/BQXsPU25B60?t=8361)." %}
