@@ -4,7 +4,7 @@ main:
     #url: https://angadhn.github.io/Angadh_CV.pdf
     #
 
-  - title: "Longer Form"
+  - title: "Longs"
     url: /year-archive/
 
   - title: "Teaching"
@@ -13,5 +13,5 @@ main:
   - title: "Research"
     url: /publications/
   
-  - title: "Daily"
+  - title: "Shorts"
     url: /opinions/
