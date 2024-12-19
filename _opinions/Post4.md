@@ -27,3 +27,7 @@ its high-level structural design (I just decided to toss in the Soyuz image from
 
 The voice of the narrator is a bit annoying, though.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/M2_NeFbFcSw?si=jzhO14998N7ODhnE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Obviously, the above videos are not directly related to inflatable space stations
+but they do give some perspective on how docking is affected by structural aspects
+of the spacecraft and the station.
