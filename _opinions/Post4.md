@@ -22,10 +22,8 @@ The below video is a quick video showing the Space Shuttle (Atlantis) docking to
 
 The video below is similar to the one by Destin Sandlin in that it gives some insight into the orbital mechanics.
 However, it gives a lot more insight into Soyuz-related launch from Baikonur and
-its high-level structural design. The voice of the narrator is a bit annoying, though.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/M2_NeFbFcSw?si=jzhO14998N7ODhnE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-For my entertainment, I just decided to toss in the Soyuz image from the video.
-
+its high-level structural design (I just decided to toss in the Soyuz image from the video).
 {% maincolumn 'assets/imgs/Soyuz_ESA_video.png' "Soyuz structure." %}
 
+The voice of the narrator is a bit annoying, though.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M2_NeFbFcSw?si=jzhO14998N7ODhnE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
