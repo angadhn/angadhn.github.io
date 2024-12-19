@@ -30,4 +30,5 @@ The voice of the narrator is a bit annoying, though.
 
 Obviously, the above videos are not directly related to inflatable space stations
 but they do give some perspective on how docking is affected by structural aspects
-of the spacecraft and the station.
+of the spacecraft (e.g., we see how the Shuttle is different from the Soyuz)
+and the station.
