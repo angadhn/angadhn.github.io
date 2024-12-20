@@ -17,5 +17,3 @@ thing to watch for anyone working on space station design {% sidenote 'sn-proj' 
 
 What I think this video does better than a Wiki article is that it gives an incredible breakdown of
 the ISS and some of its key components (especially the chapter on docking mechanisms).
-
-I will do a breakdown of the video later in this post.
