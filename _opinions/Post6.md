@@ -34,5 +34,6 @@ to allow the Crew Dragon to dock to the ISS.
 
 {% marginfigure 'fig-ida' 'assets/imgs/IDA.png' 'The IDA is used to connect the Crew Dragon to the ISS.' %}
 
-To learn more about the early part of the ISS's assembly, Jared Owen's video is highly recommended!
-Hope he completes the rest of the ISS assembly sequence in a future video.
+To learn more about the early part of the ISS's assembly, Jared Owen's video
+is [highly recommended](https://angadhn.com/opinions/Post5)! Hope he completes
+the rest of the ISS assembly sequence in a future video.
