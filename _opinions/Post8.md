@@ -4,7 +4,7 @@ date:   2024-12-31 14:17:00
 comments: true
 toc: false
 categories:
-  - Inflatable Space Habitats
+  - Inflatable Space Stations
   - ISS
   - ISS modules
 ---

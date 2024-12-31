@@ -5,6 +5,7 @@ comments: true
 categories:
   - Large Space Stations
   - Space Exploration
+  - Inflatable Space Stations
 ---
 
 ## Background
