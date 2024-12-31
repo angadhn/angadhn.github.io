@@ -7,6 +7,7 @@ categories:
   - Robotics
   - Inflatables
   - Space Stations
+  - ISS
 ---
 
 I started thinking about how docking might work with an inflatable station such as the Goodyear one that I

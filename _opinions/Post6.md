@@ -6,6 +6,7 @@ toc: false
 categories:
   - Space Stations
   - Docking Mechanisms
+  - ISS
 ---
 
 In an earlier post, I linked to Jared Owen's excellent video on space stations and that I

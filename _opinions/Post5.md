@@ -7,6 +7,7 @@ categories:
   - Robotics
   - Inflatables
   - Space Stations
+  - ISS
 ---
 
 Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
