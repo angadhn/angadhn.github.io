@@ -1,6 +1,6 @@
 ---
 title:  "Some notes on BEAM"
-date:   2024-12-25 15:17:00
+date:   2024-12-31 14:17:00
 comments: true
 toc: false
 categories:
