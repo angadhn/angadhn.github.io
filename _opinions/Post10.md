@@ -2,7 +2,7 @@
 title:  "Varoufakis' and Graeber's critique and visions of progress offer no solutions"
 date:   2025-01-06 07:15:00
 comments: true
-toc: false
+toc: falste
 categories:
   - Innovation
   - Creativity
@@ -52,7 +52,15 @@ Moralistic posturing of this kind without action is hard to get behind because
 it exposes a lack of appreciation of, especially today,
 [technology being upstream of politics](https://x.com/BalajiAnthology/status/1599794788974428161#:~:text=Technology%20is%20the%20driving%20force%20of%20history.%20%0A%0AIt%20lies%20upstream%20of%20culture%2C%20and%20thus%20upstream%20of%20politics.)
 and not the other way around. One only needs to look at the recent use of social 
-media in elections across the world to understand this claim's veracity.
+media in elections across the world to understand this claim's veracity. One can
+counterargue that Apollo is an example of politics bucking the claim but one only
+needs to look at the idea's origin: Tsiolkovsky articulated the need for liquid
+propelants, which inspired research into rocket propulsion
+(largely in Germany and America) that was then weaponised and eventually became the
+basis for the Apollo
+program{%sidenote "Ignition" "Worth reading the first chapter of John Drury Clark's [_Ignition_](https://www.amazon.co.uk/Ignition-Informal-Propellants-University-Classics/dp/0813595835)."%}.
+The political choices of weaponisation and space exploration
+was thus downstream of rocket technology progress.
 
 So, reader, I leave you with questions: do we really need another critique on 
 today's world without a semblance of a solution? How long can we run on the fumes 
