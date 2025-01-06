@@ -18,8 +18,8 @@ Yanis' utopian view is one I agree with that we should aim to live in a future
 where “People are no longer obsessed with the accumulation of things.” But his 
 reasoning that accumulation is followed by imperialism is weak. Why? Becuase his 
 premise is that a post-scarcity utopia can be achieved through energy abundance
-(which is really what Star Trek's "Replicators" are: a machine that can make 
-anything from green energy. {%sidenote "Replicators" "I haven't watched Star Trek so I am using his description of them."%}).
+(which is really what Star Trek's "Replicators" are: machines that can make 
+anything from green energy{%sidenote "Replicators" "I haven't watched Star Trek so I am using his description of them."%}).
 The follow-on question, which he doesn't really address, is how can one get to this 
 infinite energy future without a manufacturer of solar panels or some other
 harnessing technology of permanent/renewable energy sources? Can we manufacture
@@ -31,11 +31,11 @@ distribution technologies without resource accumulation, which inevitably requir
 capital and agency. Capital is a basis for enabling agency to create these energy
 abundance technologies just as much as good will/intentions. This capital can
 come from bureaucractic governments, which are slow, or private capital, which can 
-be fast- both can be to a detriment {%sidenote "Bureaucracy" "Which is why we need
+be fast- both can be to a detriment{%sidenote "Bureaucracy" "Which is why we need
 to seriously experiment with new ways to organise action."%}. Thus, I don’t see 
 anyway out of accumulation. In fact, I see it as essential to our energy abundant 
 future- a future where [energy is too cheap to meter](https://worksinprogress.co/issue/making-energy-too-cheap-to-meter/).The questions that then follow 
-are what are our technology options {%sidenote "Technology" "which I will explore
+are what are our technology options{%sidenote "Technology" "which I will explore
 in a future post."%} to achieve this abundance and then we can think 
 about the politics of organised action.
 
