@@ -28,7 +28,7 @@ technologies capable of harnessing and then supplying this infinite energy?
 
 Just because energy is itself freely available doesn’t mean that we can manufacture 
 distribution technologies without resource accumulation, which inevitably requires 
-capital and agency. Capital is a basis for enabling agency to create these energy
+capital and agency. Today, capital is a basis for enabling agency to create these energy
 abundance technologies just as much as good will/intentions. This capital can
 come from bureaucractic governments, which are slow, or private capital, which can 
 be fast- both can be to a detriment{%sidenote "Bureaucracy" "Which is why we need
@@ -38,6 +38,15 @@ future- a future where [energy is too cheap to meter](https://worksinprogress.co
 are what are our technology options{%sidenote "Technology" "which I will explore
 in a future post."%} to achieve this abundance and then we can think 
 about the politics of organised action.
+
+Capital is new; the evolution of our trading behaviours are not. Varoufakis' position ignores
+our roots as not just hunters, but gatherers, which enables trade/barter (i.e., much like I said about
+capital enabling agency but also many other things). To me, it follow that if no one gathers,
+then no one can _have_ and therefor no one share/trade/barter with another. In that vein,
+if everyone gathers (the same stuff) then everyone _can have_ but again, no one need
+share/trade/barter. But in reality effort and motivation are not equally distributed among a
+population, which's why only some people gather some of the stuff which then creates
+conditions for trading.
 
 Both Graeber (whom I love as his wit reminds me of Christopher Hitchens) and
 Yanis have lofty goals but do not present concrete 
