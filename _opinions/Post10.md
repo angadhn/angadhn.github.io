@@ -1,5 +1,5 @@
 ---
-title:  "Varoufakis and Graeber's non-solution"
+title:  "Varoufakis' and Graeber's critique and visions of progress offer no solutions"
 date:   2025-01-06 07:15:00
 comments: true
 toc: true
