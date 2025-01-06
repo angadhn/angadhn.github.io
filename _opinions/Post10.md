@@ -34,9 +34,9 @@ come from bureaucractic governments, which are slow, or private capital, which c
 be fast- both can be to a detriment {%sidenote "Bureaucracy" "Which is why we need
 to seriously experiment with new ways to organise action."%}. Thus, I don’t see 
 anyway out of accumulation. In fact, I see it as essential to our energy abundant 
-future. The questions that then follow are what are our technology options for
-energy abundance and then we can think about the politics of organised action.
-
+future- a future where [energy is too cheap to meter](https://worksinprogress.co/issue/making-energy-too-cheap-to-meter/).The questions that then follow 
+are what are our technology options for energy abundance and then we can think 
+about the politics of organised action.
 
 Both Graeber (whom I love) and Yanis have lofty goals but do not present concrete 
 ideas of getting there from where we currently are. And this, to me, is lazy. What
