@@ -35,7 +35,8 @@ be fast- both can be to a detriment {%sidenote "Bureaucracy" "Which is why we ne
 to seriously experiment with new ways to organise action."%}. Thus, I don’t see 
 anyway out of accumulation. In fact, I see it as essential to our energy abundant 
 future- a future where [energy is too cheap to meter](https://worksinprogress.co/issue/making-energy-too-cheap-to-meter/).The questions that then follow 
-are what are our technology options for energy abundance and then we can think 
+are what are our technology options {%sidenote "Technology" "which I will explore
+in a future post."%} to achieve this abundance and then we can think 
 about the politics of organised action.
 
 Both Graeber (whom I love as his wit reminds me of Christopher Hitchens) and
