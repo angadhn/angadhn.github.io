@@ -38,7 +38,8 @@ future- a future where [energy is too cheap to meter](https://worksinprogress.co
 are what are our technology options for energy abundance and then we can think 
 about the politics of organised action.
 
-Both Graeber (whom I love) and Yanis have lofty goals but do not present concrete 
+Both Graeber (whom I love as he reminds me of Christopher Hitchens) and
+Yanis have lofty goals but do not present concrete 
 ideas of getting there from where we currently are. And this, to me, is lazy. What
 we need to do is to solve a
 [motion planning problem](https://en.wikipedia.org/wiki/Motion_planning)
