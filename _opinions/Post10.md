@@ -10,9 +10,8 @@ categories:
 ---
 
 These were some quick thoughts I shared with a friend after reading
-[Varoufakis](https://unherd.com/2025/01/why-the-left-needs-to-watch-star-trek/). It 
-links to an earlier post on
-"[Graeber and Thiel](https://www.angadhn.com/opinions/Post3/)."
+[Varoufakis' recent article on a Star Trek-inspired Utopia](https://unherd.com/2025/01/why-the-left-needs-to-watch-star-trek/).
+This loosely links to my earlier post on "[Graeber and Thiel](https://www.angadhn.com/opinions/Post3/)".
 
 Yanis' utopian view is one I agree with that we should aim to live in a future 
 where “People are no longer obsessed with the accumulation of things.” But his 
