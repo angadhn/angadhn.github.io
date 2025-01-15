@@ -1,0 +1,713 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<!-- begin _includes/seo.html --><title>Angadh</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Angadh">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Angadh">
+<meta property="og:title" content="Angadh">
+<meta property="og:url" content="https://angadhn.com/">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://angadhn.com/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Angadh Nanjangud",
+      "url": "https://angadhn.com/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css" id="theme_source">
+
+  <link rel="stylesheet alternate" href="/assets/css/theme2.css" id="theme_source_2">
+
+<script>
+  let theme = sessionStorage.getItem('theme');
+  if(theme === "dark")
+  {
+    sessionStorage.setItem('theme', 'dark');
+    node1 = document.getElementById('theme_source');
+    node2 = document.getElementById('theme_source_2');
+    if (node1 && node2) {
+      node1.setAttribute('rel', 'stylesheet alternate'); 
+      node2.setAttribute('rel', 'stylesheet');
+    }
+  }
+  else
+  {
+    sessionStorage.setItem('theme', 'sunrise');
+  }
+  
+  // Add this function for image switching
+  function updateImages() {
+    console.log('updateImages function called');
+    const isDark = sessionStorage.getItem('theme') === 'dark';
+    const theme = isDark ? 'dark' : 'light';
+    console.log('Current theme:', theme);
+    
+    // Function to update the src of an image
+    function updateImageSrc(img) {
+      const src = img.getAttribute('src');
+      if (!src.includes('for_light_theme') && !src.includes('for_dark_theme')) return; // Skip images without theme suffixes
+	    
+      console.log('Processing image:', src);
+      const baseName = src.replace(/for_(light|dark)_theme\.(jpg|jpeg|png|gif|svg)$/, '');
+      const currentExt = src.split('.').pop().toLowerCase();
+      
+      // List of extensions to try, in order of preference
+      const extensions = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
+      
+      // Move the current extension to the front of the list
+      extensions.unshift(extensions.splice(extensions.indexOf(currentExt), 1)[0]);
+      
+      // Function to try loading an image with a specific extension
+      function tryImage(ext) {
+        const themeImage = `${baseName}for_${theme}_theme.${ext}`;
+        console.log('Trying image:', themeImage);
+	return fetch(themeImage, { method: 'HEAD' }) // Add this line: Use HEAD request instead of GET
+          .then(response => {
+            if (response.ok) {
+              console.log('Image found:', themeImage);
+              img.src = themeImage;
+              return true; // Successfully found and set the image
+            }
+            console.log('Image not found:', themeImage);
+            return false; // Image not found with this extension
+          })
+          .catch(() => {
+            console.log('Error fetching:', themeImage);
+            return false; // Error occurred, try next extension
+          });
+      }
+      
+      // Try each extension in order
+      extensions.reduce((promise, ext) => {
+        return promise.then(result => {
+          if (result) return true; // If we've already found an image, stop
+          return tryImage(ext);
+        });
+      }, Promise.resolve(false));
+    }
+    
+    // Update standard images
+    document.querySelectorAll('img').forEach(updateImageSrc);
+    // Update Tufte marginfigure and sidenote images
+    document.querySelectorAll('.marginnote img, .sidenote img').forEach(updateImageSrc);
+    // Update Tufte fullwidth images
+    document.querySelectorAll('.fullwidth img').forEach(updateImageSrc);
+  }
+  
+  // Call updateImages when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, calling updateImages');
+    updateImages();
+  });
+</script>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css"></noscript>
+<!-- Add Bluesky comments stylesheet here -->
+<!-- <link rel="stylesheet" href="https://unpkg.com/bluesky-comments@latest/dist/bluesky-comments.css"> -->
+<link rel="stylesheet" href="/assets/css/bluesky-comments.css">
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Angadh
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/">Longs</a>
+            </li><li class="masthead__menu-item">
+              <a href="/teaching/">Teaching</a>
+            </li><li class="masthead__menu-item">
+              <a href="/publications/">Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opinions/">Shorts</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+	<!-- Add this in your site's header, footer, or any common section visible across pages -->
+
+	
+	<div class="theme-switch-wrapper">
+    	<label class="theme-switch" for="checkbox">
+        	<input type="checkbox" id="checkbox" onchange="toggleTheme()" />
+        	<div class="slider round"></div>
+    	</label>
+
+	<script>
+function toggleTheme() {
+    var checkbox = document.getElementById('checkbox');
+    var themeSource = document.getElementById('theme_source');
+    var themeSource2 = document.getElementById('theme_source_2');
+
+    if (checkbox.checked) {
+        themeSource.setAttribute('rel', 'stylesheet alternate');
+        themeSource2.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'dark');
+    } else {
+        themeSource2.setAttribute('rel', 'stylesheet alternate');
+        themeSource.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'light');
+    }
+}
+
+// Initialize the checkbox state based on the saved theme
+window.onload = function() {
+    var currentTheme = sessionStorage.getItem('theme');
+    var checkbox = document.getElementById('checkbox');
+    if (currentTheme === 'dark') {
+        checkbox.checked = true;
+    } else {
+        checkbox.checked = false;
+    }
+}
+</script>
+
+	</div>
+	
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky">
+    
+      
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://angadhn.com/">
+        <img src="/assets/imgs/MeAndTilly.JPG" alt="Angadh" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://angadhn.com/" itemprop="url">Angadh</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Space, Robotics, and AI.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">London, UK</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:angadh.n@gmail.com" rel="nofollow noopener noreferrer me"><i class="far fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://scholar.google.com/citations?user=_B6z_BUAAAAJ&hl=en" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-google-scholar" aria-hidden="true"></i><span class="label">G-Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://bsky.app/profile/angadhn.com" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span class="label">Bluesky</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/angadhn" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href=" https://theinformationspace.angadhn.com/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-pencil-alt" aria-hidden="true"></i><span class="label">Notes</span></a></li>
+          
+        
+          
+            <li><a href="" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-calendar" aria-hidden="true"></i><span class="label">Meet (soon)</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+    
+  </div>
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <h2 id="my-background-and-interests">My Background and Interests</h2>
+<p><span class="newthought">At present, I am a Lecturer in Spacecraft Engineering</span>  at Queen Mary University of
+London in the UK<label for="One" class="margin-toggle sidenote-number"></label><input type="checkbox" id="One" class="margin-toggle" /><span class="sidenote"><a href="https://www.seresearch.qmul.ac.uk/robotics/people/ananjangud/">My QMUL page</a> </span>.
+Since entering academia in 2020, I have attempted to traverse the twofold research and education
+landscape in a manner that I think expands consciousness- mine as well as of those who
+work with me. This is especially the case (I’d like to think) for students and early career
+researchers.</p>
+
+<p>Everything I learned about my academic field of expertise (classical mechanics and
+multibody dynamics) and its effective written communication was from the
+<a href="https://web.archive.org/web/20230127150437/https://mae.ucdavis.edu/news/memoriam-professor-emeritus-fidelis-eke">late Prof. Fidels O. Eke</a><label for="Two" class="margin-toggle sidenote-number"></label><input type="checkbox" id="Two" class="margin-toggle" /><span class="sidenote"><a href="https://mae.ucdavis.edu/news/memoriam-professor-emeritus-fidelis-eke">His UC Davis obituary</a> </span>,
+a truly extraordinary scholar and gentleman. Towards the completion of my PhD, I was fortunate to
+be accepted by <a href="https://www-robotics.jpl.nasa.gov/who-we-are/people/abhinandan_jain/">Dr. Abhi Jain</a>
+to spend a year at the <a href="https://dartslab.jpl.nasa.gov">NASA Jet Propulsion Laboratory’s DARTSLab</a>,
+where his group works on fundamental aspects of computational/algorithmic multibody robot
+dynamics while applying them in the context of various NASA missions. This was followed by
+a postdocotoral appointment at the <a href="https://www.surrey.ac.uk/surrey-space-centre">Surrey Space Centre</a>-
+here, I drove research for <a href="https://www.sstl.co.uk">SSTL</a> and Airbus into developing missions,
+architectures, and technology development/demonstration plans for robotic
+<a href="http://angadhn.com/publication/2023-06-01-towards-robotic-on-orbit-assembly">in-space assembly</a> while also
+driving development of lab-based technology demonstration testbeds. Here, again, my worldview
+was expanded by <a href="https://www.surrey.ac.uk/people/craig-underwood">Prof. Craig Underwood</a>,
+who possesses an encyclopaedic knowledge of space missions while also being a `proper’ space engineer with
+a deep understanding of technologies across various spacecraft subsystems.</p>
+
+<p>These experiences and mentors
+got me working in space robotics where my group works on fundamental engineering science-based know-hows
+towards realising futuristic space systems/technologies.</p>
+
+<h2 id="my-research-and-pedagogic-philosophy-tasteful-engineering-creativity-via-constructivist-experimentation">My Research and Pedagogic Philosophy: Tasteful engineering creativity via constructivist experimentation</h2>
+<p>My new approach to personal learning and pedagogic growth bears some parallels to Papert’s
+constructivist philosophy. My interpretation of this is that intuition and interest comes from
+experimenting with new and previously unknown interactive tools, much like a child playing with an
+ever-expanding collection of toys, to enhance their understanding of a topic. My belief is that
+this leads to one eventually uncovering<label for="Three" class="margin-toggle sidenote-number"></label><input type="checkbox" id="Three" class="margin-toggle" /><span class="sidenote">In some cases, even <em>discovering</em>. </span> their
+interests, which I see as an important precursor to developing <em>taste</em>. I am writing this while
+reflecting on the efforts of some extraordinary students who, over the Summer of 2024, collectively 
+created an online textbook on Spacecraft Dynamics<sup id="fnref:a" role="doc-noteref"><a href="#fn:a" class="footnote" rel="footnote">1</a></sup> based on previous handwritten lecture notes.</p>
+
+<p>For students, I like to emphasise exploration-based learning, which deviates from
+the conventions of formal academia that are examination-focused (as much as one can do this
+within formal academia). The dangers of eschewing exploration in
+education is bearing the anti-fruit in the extant STEM research model where group
+leaders are focused on enhancing publication metrics
+by collecting more publications in a bid to raise personal research productivity indices<label for="Four" class="margin-toggle sidenote-number"></label><input type="checkbox" id="Four" class="margin-toggle" /><span class="sidenote">A classic case of Goodhart’s law. My issue is that these metrics are not an
+effective measure of the true outputs from academia- the career of advisees <sup id="fnref:b" role="doc-noteref"><a href="#fn:b" class="footnote" rel="footnote">2</a></sup>.
+Of course, this presumes advisees must also be self-motivated to grow their opportunities. </span>.
+My conclusion is that a lot of today’s professoriate are not too different from
+philatelists<sup id="fnref:c" role="doc-noteref"><a href="#fn:c" class="footnote" rel="footnote">3</a></sup> but a potential answer lies in updating incentive structures. Or at least
+clarifying them; a funder should make clear if it wants only journal papers as outputs.
+Similarly, a university there shiuld be incentives for generating well documented
+tools and high-quality datasets.</p>
+
+<h4 id="footnotes">Footnotes</h4>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:a" role="doc-endnote">
+      <p>The students built on prior introductory knowledge of Python (nothing fancy), \(\LaTeX\), and Markdown but more importantly some of them learned how reviewing <a href="https://github.com/angadhn/SpacecraftDynamics/pulls">pull requests</a> works. Some of them were able to teach their friends- via videos and remote pair programming- how to make contributions without my direct supervision. In the process, this team also taught me about sensibly coordinating a larger Github project while flying by the seat of my pants. I would like to think that we all grew a bit- I did! <a href="#fnref:a" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:b" role="doc-endnote">
+      <p>Can one teach another <strong>how</strong> to love something? <a href="#fnref:b" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:c" role="doc-endnote">
+      <p>A commentary will be needed from me to clarify this position, at some point- I do believe that documentation is important and inherently valuable in STEM. However, it is more important to train future scientists to be care about high quality written communication, not quantity alone. Perverse metrics can drive perverted behaviours. <a href="#fnref:c" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/angadhn" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://soundcloud.com/angadh-nanjangud" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-soundcloud" aria-hidden="true"></i> Soundcloud</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Angadh Nanjangud. Powered by
+	<a href="https://clayh53.github.io/tufte-jekyll/" rel="nofollow">clayh53</a>,
+	<a href="http://claude.ai" rel="nofollow">Claude</a>,
+	<a href="http://chat.openai.com" rel="nofollow">ChatGPT</a> &amp;
+	<a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
+</div>
+<div class="page__footer-copyright">The views presented on this website are the author's own and do not represent the views of their employer(s).</div>
+
+	<div id="viewCounter">Views: 0</div>
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBZQTH82T2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MBZQTH82T2');
+</script>
+
+
+
+
+
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+ </script>
+ 
+
+    <!-- Begin: ChatGPT stuff for firebase site views counter-->
+<script>
+  // Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBHfzThmGgycGkU3bROZBoVSWON08n8yUc",
+    authDomain: "mywebsite-4914a.firebaseapp.com",
+    projectId: "mywebsite-4914a",
+    storageBucket: "mywebsite-4914a.appspot.com",
+    messagingSenderId: "966713391944",
+    appId: "1:966713391944:web:ba2e3ce5166884ec9c117d",
+    measurementId: "G-5DZQBSQQF2"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // If using Firebase Analytics
+  firebase.analytics();
+
+  var db = firebase.firestore();
+
+function getCleanPath() {
+  let path = window.location.pathname;
+  // Check if the path is just a slash, which is the root of the site
+  if (path === '/') {
+    return 'root'; // Use a placeholder like 'root' for the root path
+  }
+  // Remove leading and trailing slashes and replace internal slashes with a different character
+  path = path.replace(/^\/|\/$/g, '').replace(/\//g, '_');
+  return path;
+}
+  
+
+  // Function to increment view count
+  function updatePageViews() {
+    const pagePath = getCleanPath();
+    const pageRef = db.collection('pageViews').doc('total');
+
+    pageRef.get().then((doc) => {
+      if (doc.exists) {
+        pageRef.update({ views: firebase.firestore.FieldValue.increment(1) });
+      } else {
+        pageRef.set({ views: 1 });
+      }
+    });
+  }
+
+  // Function to display page views
+  // Function to display page views
+function displayPageViews() {
+  const pagePath = getCleanPath(); // Use the getCleanPath function here as well
+  const pageRef = db.collection('pageViews').doc('total');
+
+  pageRef.get().then((doc) => {
+    if (doc.exists) {
+      document.getElementById('viewCounter').innerText = `Views: ${doc.data().views}`;
+    } else {
+      document.getElementById('viewCounter').innerText = 'Views: 0';
+    }
+  }).catch((error) => {
+    console.error("Error getting document:", error); // For debugging
+  });
+}
+
+  // Call the functions when the window loads
+  window.addEventListener('load', function() {
+  updatePageViews();
+  displayPageViews();
+});
+</script>
+    <!-- End: ChatGPT stuff for firebase site views counter-->
+
+    <!-- Claude says to Add this line to include custom.js -->
+    <script src="/assets/js/custom.js"></script>
+  </body>
+</html>

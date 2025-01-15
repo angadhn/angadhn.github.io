@@ -1,0 +1,735 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<!-- begin _includes/seo.html --><title>Graeber and Thiel - Angadh</title>
+<meta name="description" content="This is a summary towards a longer form essay that will eventually go into “Longer Form” writing">
+
+
+  <meta name="author" content="Angadh">
+  
+  <meta property="article:author" content="Angadh">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Angadh">
+<meta property="og:title" content="Graeber and Thiel">
+<meta property="og:url" content="https://angadhn.com/opinions/Post3/">
+
+
+  <meta property="og:description" content="This is a summary towards a longer form essay that will eventually go into “Longer Form” writing">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-12-11T17:15:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://angadhn.com/opinions/Post3/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Angadh Nanjangud",
+      "url": "https://angadhn.com/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css" id="theme_source">
+
+  <link rel="stylesheet alternate" href="/assets/css/theme2.css" id="theme_source_2">
+
+<script>
+  let theme = sessionStorage.getItem('theme');
+  if(theme === "dark")
+  {
+    sessionStorage.setItem('theme', 'dark');
+    node1 = document.getElementById('theme_source');
+    node2 = document.getElementById('theme_source_2');
+    if (node1 && node2) {
+      node1.setAttribute('rel', 'stylesheet alternate'); 
+      node2.setAttribute('rel', 'stylesheet');
+    }
+  }
+  else
+  {
+    sessionStorage.setItem('theme', 'sunrise');
+  }
+  
+  // Add this function for image switching
+  function updateImages() {
+    console.log('updateImages function called');
+    const isDark = sessionStorage.getItem('theme') === 'dark';
+    const theme = isDark ? 'dark' : 'light';
+    console.log('Current theme:', theme);
+    
+    // Function to update the src of an image
+    function updateImageSrc(img) {
+      const src = img.getAttribute('src');
+      if (!src.includes('for_light_theme') && !src.includes('for_dark_theme')) return; // Skip images without theme suffixes
+	    
+      console.log('Processing image:', src);
+      const baseName = src.replace(/for_(light|dark)_theme\.(jpg|jpeg|png|gif|svg)$/, '');
+      const currentExt = src.split('.').pop().toLowerCase();
+      
+      // List of extensions to try, in order of preference
+      const extensions = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
+      
+      // Move the current extension to the front of the list
+      extensions.unshift(extensions.splice(extensions.indexOf(currentExt), 1)[0]);
+      
+      // Function to try loading an image with a specific extension
+      function tryImage(ext) {
+        const themeImage = `${baseName}for_${theme}_theme.${ext}`;
+        console.log('Trying image:', themeImage);
+	return fetch(themeImage, { method: 'HEAD' }) // Add this line: Use HEAD request instead of GET
+          .then(response => {
+            if (response.ok) {
+              console.log('Image found:', themeImage);
+              img.src = themeImage;
+              return true; // Successfully found and set the image
+            }
+            console.log('Image not found:', themeImage);
+            return false; // Image not found with this extension
+          })
+          .catch(() => {
+            console.log('Error fetching:', themeImage);
+            return false; // Error occurred, try next extension
+          });
+      }
+      
+      // Try each extension in order
+      extensions.reduce((promise, ext) => {
+        return promise.then(result => {
+          if (result) return true; // If we've already found an image, stop
+          return tryImage(ext);
+        });
+      }, Promise.resolve(false));
+    }
+    
+    // Update standard images
+    document.querySelectorAll('img').forEach(updateImageSrc);
+    // Update Tufte marginfigure and sidenote images
+    document.querySelectorAll('.marginnote img, .sidenote img').forEach(updateImageSrc);
+    // Update Tufte fullwidth images
+    document.querySelectorAll('.fullwidth img').forEach(updateImageSrc);
+  }
+  
+  // Call updateImages when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, calling updateImages');
+    updateImages();
+  });
+</script>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css"></noscript>
+<!-- Add Bluesky comments stylesheet here -->
+<!-- <link rel="stylesheet" href="https://unpkg.com/bluesky-comments@latest/dist/bluesky-comments.css"> -->
+<link rel="stylesheet" href="/assets/css/bluesky-comments.css">
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Angadh
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/">Longs</a>
+            </li><li class="masthead__menu-item">
+              <a href="/teaching/">Teaching</a>
+            </li><li class="masthead__menu-item">
+              <a href="/publications/">Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opinions/">Shorts</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+	<!-- Add this in your site's header, footer, or any common section visible across pages -->
+
+	
+	<div class="theme-switch-wrapper">
+    	<label class="theme-switch" for="checkbox">
+        	<input type="checkbox" id="checkbox" onchange="toggleTheme()" />
+        	<div class="slider round"></div>
+    	</label>
+
+	<script>
+function toggleTheme() {
+    var checkbox = document.getElementById('checkbox');
+    var themeSource = document.getElementById('theme_source');
+    var themeSource2 = document.getElementById('theme_source_2');
+
+    if (checkbox.checked) {
+        themeSource.setAttribute('rel', 'stylesheet alternate');
+        themeSource2.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'dark');
+    } else {
+        themeSource2.setAttribute('rel', 'stylesheet alternate');
+        themeSource.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'light');
+    }
+}
+
+// Initialize the checkbox state based on the saved theme
+window.onload = function() {
+    var currentTheme = sessionStorage.getItem('theme');
+    var checkbox = document.getElementById('checkbox');
+    if (currentTheme === 'dark') {
+        checkbox.checked = true;
+    } else {
+        checkbox.checked = false;
+    }
+}
+</script>
+
+	</div>
+	
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky">
+    
+      <nav class="toc">
+        <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+        <ul class="toc__menu"><li><a href="#overcoming-stagnation-working-outside-or-within-systems">Overcoming stagnation: working outside or within systems?</a></li><li><a href="#from-monopolies-to-money">From Monopolies to Money</a></li><li><a href="#competition-and-debt-kill-eccentrics">Competition and Debt Kill Eccentrics</a></li><li><a href="#footnotes">Footnotes</a></li></ul>
+
+      </nav>
+    
+  </div>
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Graeber and Thiel">
+    <meta itemprop="description" content="This is a summary towards a longer form essay that will eventually go into “Longer Form” writing">
+    <meta itemprop="datePublished" content="2024-12-11T17:15:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Graeber and Thiel
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+      (1394 words)
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p><em>This is a summary towards a longer form essay that will eventually go into “Longer Form” writing</em></p>
+
+<p>My friends are big fans of David Graeber’s <em>Bullshit Jobs</em> and <em>Debt</em>.
+Having been more a listener of his, I find his candor amusing and cutting.
+So when I happened upon him and Peter Thiel talking, I wasn’t
+going to miss it despite knowing little  about what it was actually
+on<label for="zeroone" class="margin-toggle sidenote-number"></label><input type="checkbox" id="zeroone" class="margin-toggle" /><span class="sidenote">Turns out this is from the book launch of <em>Zero to One</em>. </span>.
+Going into it, I anticipated an alignment in their values - moreso than one
+might think purely because the comparably less famous Graeber is anarchist and Thiel is
+libertarian; this is why I think of this as a conversation rather than a debate. 
+I suspected their alignment given my own sensibilities that anarchists and early stage 
+startup founders<label for="anarchistStartups" class="margin-toggle sidenote-number"></label><input type="checkbox" id="anarchistStartups" class="margin-toggle" /><span class="sidenote">It’s also why I, despite formally being a space engineer, was inspired to build <a href="https://www.angadhn.com/opinions/Howler_EV4AI/">Howler</a> and kept at it while listening to Chomsky’s <a href="https://youtu.be/BQXsPU25B60?t=8361">optimistic views</a> on <a href="https://en.wikipedia.org/wiki/ZNetwork">small decentralised media</a> in Manufacturing Consent. </span>
+have a lot in common, in the mold of Aaron Swartz or early-SpaceX Elon Musk.</p>
+
+<h1 id="overcoming-stagnation-working-outside-or-within-systems">Overcoming stagnation: working outside or within systems?</h1>
+<p>While they agreed over the fundamental issue that we live in a world of
+technological and creative stagnation and the need for actions, they differed over
+methods of action. Thiel’s perspectives often circle back to a technological lens,
+where he can champion the solutions in <em>Zero to One</em>: working in small coordinated
+but non-democratic teams which are well outside systems/institutions.
+In contrast, Graeber’s is to work in small groups that are democratic
+and decentralized based on his experience within anarchist groups.</p>
+
+<p>As a technologist, I initially agreed with Thiel’s position and was also
+unsure of Graeber’s approach. But as Thiel explained his uncertainty,
+citing anecdotal evidence that democratic startups
+eventually fall apart where hierarchical ones<label for="hierarchical" class="margin-toggle sidenote-number"></label><input type="checkbox" id="hierarchical" class="margin-toggle" /><span class="sidenote">which I think he is careful to not call dictatorial. </span>
+thrive, I tended to disagree with Thiel. In my experience,
+founder-led startups will mostly begin with engineers and the average one tends to skew
+towards being less concerned about social and political issues which are, in my opinion,
+actually responsible for the systems we see today that they are working against.
+If we were more concerned with developing solutions of scale and breadth that require
+directors, and not dictators, I can see the logic in Graeber’s view. His solution is
+for groups to embrace a rotating policy that eschews permanent leadership structures.
+Of course, Graeber’s not interested in pursuit of power or profits but in creating
+an egalitarian world<sup id="fnref:a" role="doc-noteref"><a href="#fn:a" class="footnote" rel="footnote">1</a></sup>.</p>
+
+<p>Further, Graeber argues that monopolies like Apple, Google and Facebook
+operate in competitive markets and largely stifle innovation because systematic
+profits aren’t achieved through production of goods/services but through
+rent extraction; an example is Apple using the App Store to extract “rent” from
+developers that prevents new monopolies from emerging. What is making this rent 
+extraction possible? Well, one is likely the abolition of regulated monopolies 
+(think Bell Labs) but the other thing we lost with that is the higher corporate
+tax<label for="`graeberBellLabs`" class="margin-toggle sidenote-number"></label><input type="checkbox" id="`graeberBellLabs`" class="margin-toggle" /><span class="sidenote">He unpacks this beautifully <a href="https://www.youtube.com/embed/5Gq16RO2XB0?si=1v7SCr8LJSenr16P&amp;start=653">in another video</a>- high corporate taxes in the Bell Labs-era counterintuitively drove innovation because 60% corporate tax incentivized investing pre-tax profits into higher staff salaries alongside R&amp;D spending, which was written off. This way the taxes never made it to the government but also didn’t line the pockets of corporations but drove overall productivity. </span>.
+Today’s corporate tax rates are lower so companies invest profits in financial 
+activities and engage in <em>rent extracting</em> predatory activities and drive 
+up debt. This, to a layman economist like me, seems like a better explanation of
+why lower corporate taxes explain the drop in productivity and why we aren’t
+reindustrializing - hence the technological stagnation.</p>
+
+<p>The more interesting thing that results from this is that monopolies that
+emerge from Thiel’s start-up viewpoint are eventually entrenched in
+the system in many ways. While many general examples are given, I think
+the most pertinent is when Thiel is questioned about Palantir
+working with the CIA. This underscores Graeber’s point that one eventually ends up
+working within the system- whether one changes it or becomes a part of it is a
+different matter altogether.</p>
+
+<h1 id="from-monopolies-to-money">From Monopolies to Money</h1>
+<p>I think the refreshing thing for me (unless I misunderstood) is
+that Graeber agrees with Thiel that monopolies can be good but only as long
+as they aren’t rent extracting. Bureaucratic monopolies have proven
+to be effective in achieving great things quickly, like Apollo and the Manhattan
+project, under the right conditions. Corporate monopolies, like
+Bell Labs, demonstrate that acceleration can happen through
+productive innovation whereas current monopolies, like financial institutions,
+create a culture of stagnation through - to use a Graeberism- “a direct assault on the human imagination”. Aside from the corporate taxes that incentivise rent
+seeking behaviours, social welfare economic policies
+(such as universal basic income) could also overcome the grander
+creative stagnation evident today.</p>
+
+<div class="epigraph"><blockquote><p>Money isn't just measuring the value of stuff. It's also measuring the value of human actions and it's also a promise of future creativity.</p><footer>David Graeber</footer></blockquote></div>
+<p>Graeber evidences how the UK’s social welfare policies unleashed creativity in the
+60s, a period that coincided with the emergence of new bands, like the Beatles,
+and musical trends every few years. But today’s conditional welfare
+policies, which he says are from the Blair era, hinder discovering today’s Beatles.</p>
+
+<div class="epigraph"><blockquote><p>Now John Lennon is like lifting boxes in some department store's welfare conditionality so we are never gonna hear the new the new trend.</p><footer>David Graeber</footer></blockquote></div>
+
+<h1 id="competition-and-debt-kill-eccentrics">Competition and Debt Kill Eccentrics</h1>
+<p>Though we are in the company of the leading contrarians of our time,
+they are in short supply. The public, like my mom, still think that
+academia is a home for eccentric thinkers but that is no longer the case
+which Graeber and Thiel remind us:</p>
+<div class="epigraph"><blockquote><p>Almost any functional society, almost any society which has ever existed, has something which they do with brilliant, imaginative, but extremely impractical people. We don't know what to do with them anymore. They’re all living in their mothers’ basements saying weird things on the internet, and you can’t tell which are crazy and which actually have something to contribute. You used to put them in academia, but now academia is all about self-marketing. Being in academia, I can see very easily what’s happened in my own discipline where any kind of new thinking is really discouraged.</p><footer>David Graeber</footer></blockquote></div>
+
+<div class="epigraph"><blockquote><p>The eccentric university professor is a species that is going extinct fast.</p><footer>Peter Thiel</footer></blockquote></div>
+
+<p>Today, academics are competing for resources by writing grants in an endless cycle.
+This aligns perfectly with Thiel’s general thesis that competition kills innovation.
+But the role of debt in promoting stagnation is also a key point, which Graeber 
+reminds us by citing the UK’s introduction of student loans that successfully made
+university education less about exploration and more about getting a job.
+I find Graeber’s position more far-ranging than Thiel’s- his commentary 
+captures the Thielian view of competition but also of debt promoting stagnation. The
+matter of debt is perhaps less concerning to the billionaire elite. But Graeber is also
+more tuned to the need of individual players that aren’t all billionaires or close
+to Silicon Valley, where networks can promote the eccentrics. How do we help these individuals
+flourish? As a non-billionaire academic who has tried to start a startup or two, it was hard not to side 
+with Graeber that working on projects on the side within existing structures
+even if the pace is glacial by comparison. For the idea is not to work only
+for personal liberation but for something greater.
+And we need to think beyond technology too- we need if we are to unearth the next
+Beatles.</p>
+
+<p>For those interested in the conversation, here’s a link to the talk:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eF0cz9OmCGw?si=27vod6mINY0npdDd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:a" role="doc-endnote">
+      <p>To some extent answers an internal question I have of why academics, despite being individualist, are motivated to work in groups or departments because they believe in egalitarianism<label for="graeberTenure" class="margin-toggle sidenote-number"></label><input type="checkbox" id="graeberTenure" class="margin-toggle" /><span class="sidenote">Which might explain why Graeber’s collectivist philosophy resulted in not making tenure at Yale. Absurd! </span>. But I will contrast again that academia attracts too many early stage researchers without a rudder in early stages. And worse, makes those who have a rudder lose it over time. And this is where startup-style systems differ - the existence of rewards are clear in terms of both power and profit even if it is without purpose. <a href="#fnref:a" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#creativity" class="page__taxonomy-item p-category" rel="tag">Creativity</a><span class="sep">, </span>
+    
+      <a href="/categories/#innovation" class="page__taxonomy-item p-category" rel="tag">Innovation</a><span class="sep">, </span>
+    
+      <a href="/categories/#stagnation" class="page__taxonomy-item p-category" rel="tag">Stagnation</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-12-11T17:15:00+00:00">December 11, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://bsky.app/intent/compose?text=Graeber+and+Thiel:%20https%3A%2F%2Fangadhn.com%2Fopinions%2FPost3%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Bluesky"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span></a>
+
+  <a href="https://twitter.com/intent/tweet?text=Graeber+and+Thiel%20https%3A%2F%2Fangadhn.com%2Fopinions%2FPost3%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fangadhn.com%2Fopinions%2FPost3%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fangadhn.com%2Fopinions%2FPost3%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+      
+  <nav class="pagination">
+    
+      <a href="/opinions/Post2/" class="pagination--pager" title="Inflatable Things
+">Previous</a>
+    
+    
+      <a href="/opinions/Post4/" class="pagination--pager" title="ISS Rendezvous (and some) Docking
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      
+    <div id="bluesky-comments"></div>
+  
+
+<!-- Add Bluesky scripts at the bottom -->
+
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/bluesky-comments@latest/dist/bluesky-comments.umd.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('bluesky-comments')) {
+        initBlueskyComments('bluesky-comments', { author: 'angadhn.com' });
+      }
+    });
+  </script>
+
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/angadhn" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://soundcloud.com/angadh-nanjangud" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-soundcloud" aria-hidden="true"></i> Soundcloud</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Angadh Nanjangud. Powered by
+	<a href="https://clayh53.github.io/tufte-jekyll/" rel="nofollow">clayh53</a>,
+	<a href="http://claude.ai" rel="nofollow">Claude</a>,
+	<a href="http://chat.openai.com" rel="nofollow">ChatGPT</a> &amp;
+	<a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
+</div>
+<div class="page__footer-copyright">The views presented on this website are the author's own and do not represent the views of their employer(s).</div>
+
+	<div id="viewCounter">Views: 0</div>
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBZQTH82T2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MBZQTH82T2');
+</script>
+
+
+
+
+
+
+
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+ </script>
+ 
+
+    <!-- Begin: ChatGPT stuff for firebase site views counter-->
+<script>
+  // Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBHfzThmGgycGkU3bROZBoVSWON08n8yUc",
+    authDomain: "mywebsite-4914a.firebaseapp.com",
+    projectId: "mywebsite-4914a",
+    storageBucket: "mywebsite-4914a.appspot.com",
+    messagingSenderId: "966713391944",
+    appId: "1:966713391944:web:ba2e3ce5166884ec9c117d",
+    measurementId: "G-5DZQBSQQF2"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // If using Firebase Analytics
+  firebase.analytics();
+
+  var db = firebase.firestore();
+
+function getCleanPath() {
+  let path = window.location.pathname;
+  // Check if the path is just a slash, which is the root of the site
+  if (path === '/') {
+    return 'root'; // Use a placeholder like 'root' for the root path
+  }
+  // Remove leading and trailing slashes and replace internal slashes with a different character
+  path = path.replace(/^\/|\/$/g, '').replace(/\//g, '_');
+  return path;
+}
+  
+
+  // Function to increment view count
+  function updatePageViews() {
+    const pagePath = getCleanPath();
+    const pageRef = db.collection('pageViews').doc('total');
+
+    pageRef.get().then((doc) => {
+      if (doc.exists) {
+        pageRef.update({ views: firebase.firestore.FieldValue.increment(1) });
+      } else {
+        pageRef.set({ views: 1 });
+      }
+    });
+  }
+
+  // Function to display page views
+  // Function to display page views
+function displayPageViews() {
+  const pagePath = getCleanPath(); // Use the getCleanPath function here as well
+  const pageRef = db.collection('pageViews').doc('total');
+
+  pageRef.get().then((doc) => {
+    if (doc.exists) {
+      document.getElementById('viewCounter').innerText = `Views: ${doc.data().views}`;
+    } else {
+      document.getElementById('viewCounter').innerText = 'Views: 0';
+    }
+  }).catch((error) => {
+    console.error("Error getting document:", error); // For debugging
+  });
+}
+
+  // Call the functions when the window loads
+  window.addEventListener('load', function() {
+  updatePageViews();
+  displayPageViews();
+});
+</script>
+    <!-- End: ChatGPT stuff for firebase site views counter-->
+
+    <!-- Claude says to Add this line to include custom.js -->
+    <script src="/assets/js/custom.js"></script>
+  </body>
+</html>
