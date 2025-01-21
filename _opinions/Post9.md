@@ -2,8 +2,9 @@
 title:  "Weekend readings (4$^{th}$ and 5$^{th}$ January 2025)"
 date:   2025-01-05 17:15:00
 comments: true
-toc: true
+toc: false
 categories:
+  - Reading Links
   - Innovation
   - Creativity
   - Stagnation
