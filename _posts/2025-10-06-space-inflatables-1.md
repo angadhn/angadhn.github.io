@@ -9,9 +9,18 @@ categories:
 redirect_to: https://angadh.com/inflatable-von-braun-stations
 ---
 
-<meta http-equiv="refresh" content="0; url=https://angadh.com/inflatable-von-braun-stations">
+<div style="margin-bottom: 20px;">
+  <p>This page has moved to <a href="https://angadh.com/inflatable-von-braun-stations">https://angadh.com/inflatable-von-braun-stations</a></p>
+</div>
 
-<p>If you are not redirected automatically, follow this <a href="https://angadh.com/inflatable-von-braun-stations">link</a>.</p>
+<script>
+if (!window.sessionStorage.getItem('redirected')) {
+    window.sessionStorage.setItem('redirected', 'true');
+    setTimeout(function() {
+        window.location.href = 'https://angadh.com/inflatable-von-braun-stations';
+    }, 1500);
+}
+</script>
 
 ## Background
 {% newthought "Kepler's" %} [Somnium](https://en.wikipedia.org/wiki/Somnium_(novel)){% sidenote
