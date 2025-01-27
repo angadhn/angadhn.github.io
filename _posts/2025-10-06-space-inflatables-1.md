@@ -6,7 +6,12 @@ categories:
   - Large Space Stations
   - Space Exploration
   - Inflatable Space Stations
+redirect_to: https://angadh.com/inflatable-von-braun-stations
 ---
+
+<meta http-equiv="refresh" content="0; url=https://angadh.com/inflatable-von-braun-stations">
+
+<p>If you are not redirected automatically, follow this <a href="https://angadh.com/inflatable-von-braun-stations">link</a>.</p>
 
 ## Background
 {% newthought "Kepler's" %} [Somnium](https://en.wikipedia.org/wiki/Somnium_(novel)){% sidenote
@@ -170,7 +175,7 @@ to spacecraft that allows astronauts to move between a pressurized
 spacecraft and the vacuum of space." %}. The idea never made it to
 flight due to concerns that the soft materials it was made from{% sidenote
 'goodyear-materials' 'three-ply nylon cords, held together by butyl elastomer.'%}
-weren’t strong enough to withstand micrometeoroid collisions.
+weren't strong enough to withstand micrometeoroid collisions.
 Nonetheless, this was an early example of a monolithic space station;
 a tenth of von Braun's wheel station that could be packaged to $2\%$
 of its inflated volume (another cool image below).
