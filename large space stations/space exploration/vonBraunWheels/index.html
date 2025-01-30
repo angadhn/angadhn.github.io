@@ -1,0 +1,738 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<!-- begin _includes/seo.html --><title>Some Space Stations in Fiction and Reality - Angadh</title>
+<meta name="description" content="An earlier post in my teaching resources for  a final year undergraduate project had a pretty helpful AI-generatedthanks to Claude  table. This is a quick post about Wernher von Braun’s 1950’s conceptual rotating wheel station with some basic comparisons to the ISS (1998-present) and 1968’s Space Station V from 2001: A Space OdysseyWatch this as homework! .">
+
+
+  <meta name="author" content="Angadh">
+  
+  <meta property="article:author" content="Angadh">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Angadh">
+<meta property="og:title" content="Some Space Stations in Fiction and Reality">
+<meta property="og:url" content="https://angadhn.com/large%20space%20stations/space%20exploration/vonBraunWheels/">
+
+
+  <meta property="og:description" content="An earlier post in my teaching resources for  a final year undergraduate project had a pretty helpful AI-generatedthanks to Claude  table. This is a quick post about Wernher von Braun’s 1950’s conceptual rotating wheel station with some basic comparisons to the ISS (1998-present) and 1968’s Space Station V from 2001: A Space OdysseyWatch this as homework! .">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-09-29T15:30:00+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://angadhn.com/large%20space%20stations/space%20exploration/vonBraunWheels/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Angadh Nanjangud",
+      "url": "https://angadhn.com/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css" id="theme_source">
+
+  <link rel="stylesheet alternate" href="/assets/css/theme2.css" id="theme_source_2">
+
+<script>
+  let theme = sessionStorage.getItem('theme');
+  if(theme === "dark")
+  {
+    sessionStorage.setItem('theme', 'dark');
+    node1 = document.getElementById('theme_source');
+    node2 = document.getElementById('theme_source_2');
+    if (node1 && node2) {
+      node1.setAttribute('rel', 'stylesheet alternate'); 
+      node2.setAttribute('rel', 'stylesheet');
+    }
+  }
+  else
+  {
+    sessionStorage.setItem('theme', 'sunrise');
+  }
+  
+  // Add this function for image switching
+  function updateImages() {
+    console.log('updateImages function called');
+    const isDark = sessionStorage.getItem('theme') === 'dark';
+    const theme = isDark ? 'dark' : 'light';
+    console.log('Current theme:', theme);
+    
+    // Function to update the src of an image
+    function updateImageSrc(img) {
+      const src = img.getAttribute('src');
+      if (!src.includes('for_light_theme') && !src.includes('for_dark_theme')) return; // Skip images without theme suffixes
+	    
+      console.log('Processing image:', src);
+      const baseName = src.replace(/for_(light|dark)_theme\.(jpg|jpeg|png|gif|svg)$/, '');
+      const currentExt = src.split('.').pop().toLowerCase();
+      
+      // List of extensions to try, in order of preference
+      const extensions = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
+      
+      // Move the current extension to the front of the list
+      extensions.unshift(extensions.splice(extensions.indexOf(currentExt), 1)[0]);
+      
+      // Function to try loading an image with a specific extension
+      function tryImage(ext) {
+        const themeImage = `${baseName}for_${theme}_theme.${ext}`;
+        console.log('Trying image:', themeImage);
+	return fetch(themeImage, { method: 'HEAD' }) // Add this line: Use HEAD request instead of GET
+          .then(response => {
+            if (response.ok) {
+              console.log('Image found:', themeImage);
+              img.src = themeImage;
+              return true; // Successfully found and set the image
+            }
+            console.log('Image not found:', themeImage);
+            return false; // Image not found with this extension
+          })
+          .catch(() => {
+            console.log('Error fetching:', themeImage);
+            return false; // Error occurred, try next extension
+          });
+      }
+      
+      // Try each extension in order
+      extensions.reduce((promise, ext) => {
+        return promise.then(result => {
+          if (result) return true; // If we've already found an image, stop
+          return tryImage(ext);
+        });
+      }, Promise.resolve(false));
+    }
+    
+    // Update standard images
+    document.querySelectorAll('img').forEach(updateImageSrc);
+    // Update Tufte marginfigure and sidenote images
+    document.querySelectorAll('.marginnote img, .sidenote img').forEach(updateImageSrc);
+    // Update Tufte fullwidth images
+    document.querySelectorAll('.fullwidth img').forEach(updateImageSrc);
+  }
+  
+  // Call updateImages when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, calling updateImages');
+    updateImages();
+  });
+</script>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css"></noscript>
+<!-- Add Bluesky comments stylesheet here -->
+<!-- <link rel="stylesheet" href="https://unpkg.com/bluesky-comments@latest/dist/bluesky-comments.css"> -->
+<link rel="stylesheet" href="/assets/css/bluesky-comments.css">
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Angadh
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/">Longs</a>
+            </li><li class="masthead__menu-item">
+              <a href="/teaching/">Teaching</a>
+            </li><li class="masthead__menu-item">
+              <a href="/publications/">Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opinions/">Shorts</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+	<!-- Add this in your site's header, footer, or any common section visible across pages -->
+
+	
+	<div class="theme-switch-wrapper">
+    	<label class="theme-switch" for="checkbox">
+        	<input type="checkbox" id="checkbox" onchange="toggleTheme()" />
+        	<div class="slider round"></div>
+    	</label>
+
+	<script>
+function toggleTheme() {
+    var checkbox = document.getElementById('checkbox');
+    var themeSource = document.getElementById('theme_source');
+    var themeSource2 = document.getElementById('theme_source_2');
+
+    if (checkbox.checked) {
+        themeSource.setAttribute('rel', 'stylesheet alternate');
+        themeSource2.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'dark');
+    } else {
+        themeSource2.setAttribute('rel', 'stylesheet alternate');
+        themeSource.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'light');
+    }
+}
+
+// Initialize the checkbox state based on the saved theme
+window.onload = function() {
+    var currentTheme = sessionStorage.getItem('theme');
+    var checkbox = document.getElementById('checkbox');
+    if (currentTheme === 'dark') {
+        checkbox.checked = true;
+    } else {
+        checkbox.checked = false;
+    }
+}
+</script>
+
+	</div>
+	
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky">
+    
+      <nav class="toc">
+        <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+        <ul class="toc__menu"><li><a href="#von-brauns-rotating-wheel-space-station">Von Braun’s Rotating Wheel Space Station</a><ul><li><a href="#how-did-von-braun-imagine-its-realisation">How did von Braun imagine its realisation?</a></li></ul></li><li><a href="#comparing-to-iss-and-space-station-v-2001-a-space-odyssey">Comparing to ISS and Space Station V (2001: A Space Odyssey)</a></li><li><a href="#some-gaps-in-von-braun-design">Some gaps in von Braun design</a></li></ul>
+
+      </nav>
+    
+  </div>
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Some Space Stations in Fiction and Reality">
+    <meta itemprop="description" content="An earlier post in my teaching resources for  a finalyear undergraduate project had a pretty helpfulAI-generatedthanks to Claude table.This is a quick post about Wernher von Braun’s 1950’sconceptual rotating wheel station with some basic comparisonsto the ISS (1998-present) and 1968’s Space Station V from 2001: A SpaceOdysseyWatch this as homework! .">
+    <meta itemprop="datePublished" content="2024-09-29T15:30:00+01:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Some Space Stations in Fiction and Reality
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+      (857 words)
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p><span class="newthought">An earlier post in my teaching resources for</span>  a final
+year undergraduate project had a pretty helpful
+AI-generated<label for="thankclaude" class="margin-toggle sidenote-number"></label><input type="checkbox" id="thankclaude" class="margin-toggle" /><span class="sidenote">thanks to <a href="claude.ai">Claude</a> </span>
+<a href="https://www.angadhn.com/online_textbooks/UG_final_year_project/#large-space-stations-modular-or-monolithic">table</a>.
+This is a quick post about Wernher von Braun’s 1950’s
+<a href="https://www.youtube.com/watch?v=5JJL8CUfF-o">conceptual rotating wheel station</a> with some basic comparisons
+to the ISS (1998-present) and 1968’s Space Station V from 2001: A Space
+Odyssey<label for="spaceOdyssey" class="margin-toggle sidenote-number"></label><input type="checkbox" id="spaceOdyssey" class="margin-toggle" /><span class="sidenote">Watch this as homework! </span>.</p>
+
+<h2 id="von-brauns-rotating-wheel-space-station">Von Braun’s Rotating Wheel Space Station</h2>
+<p>Wernher von Braun’s <a href="https://www.youtube.com/watch?v=5JJL8CUfF-o">video</a> envisioned a rotating wheel
+space station with 9 sections for:</p>
+<ol>
+  <li>Headquarters and Communications</li>
+  <li>Earth Weather Observation/Prediction</li>
+  <li>Military Reconnaissance using Optical and Radar Telescopes</li>
+  <li>Emergency Hospital Section</li>
+  <li>Astronomy</li>
+  <li>Calculation Machines and a lower/outer deck with maintenance facilities</li>
+  <li>A/C equipment</li>
+  <li>Living quarters</li>
+  <li>Botanical and Zoological Laboratory
+The video shows two decks per section, which I assume is 6 $m$ in heigh (i.e. the habitable portion between the
+outer rim and inner rim). Wikipedia says the concept had 3 decks but as I haven’t looked that up, I will stick to two
+6 $m$ decks for now.</li>
+</ol>
+
+<p>The system is powered by an atomic reactor attached on one side of its central hub; its heat will drive a
+turbo generator to power the station. Radio and radar antennas sit atop the reactor. The other side of the hub has
+an airlock for astronauts to access/exit the space station via smaller spacecraft. Like a bicycle wheel, the system
+had thin spokes are condensers for the turbo generator and air-conditioning plant. Three larger tubes are elevator
+shafts that connect the hub to the main habitable sections of the wheel station. The station would:</p>
+<ul>
+  <li>host 50 astronauts though <a href="https://en.wikipedia.org/wiki/Rotating_wheel_space_station#History">Wikipedia</a> states 80 people.</li>
+  <li>rotate at roughly 3 rpm to produce artificial gravity on the rim; and</li>
+  <li>be a torus of 250 $ft$ (76  $m$) diameter. The distance from the center of the tube to the center of the torus is $R = 70/2 = 35 \, m$ and the minor radius of the tube is $r = 6/2 = 3 \, m$. The volume of this torus is then the station’s total pressurized volume, which is given by \((V_{tot})_{vB} = 2 {\pi^2} R {r^2}\).</li>
+</ul>
+
+<p>So, we can estimate that the von Braun space station has a:</p>
+<ul>
+  <li>Total Pressurized Volume: = 6217.85 $m^3$</li>
+  <li>Habitable Volume = 3730.71 $m^3$</li>
+</ul>
+
+<p>Here, I assumed that 60% of the pressurized volume is habitable. This is a considerably more optimistic percentage
+compared to the 42% of ISS.</p>
+
+<h3 id="how-did-von-braun-imagine-its-realisation">How did von Braun imagine its realisation?</h3>
+<p><label for="mf-id-1" class="margin-toggle">⊕</label><input type="checkbox" id="mf-id-1" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="/assets/imgs/AssemblyOfRim.png" /><br />Assembly of the Modular Rotating Wheel Space Station.</span>
+<label for="mf-id-2" class="margin-toggle">⊕</label><input type="checkbox" id="mf-id-2" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="/assets/imgs/CondenserPipesInstallation.png" /><br />Condenser pipes being unwound for installation.</span></p>
+
+<p>The short-version is that he assumed predominantly modular robotic assembly and a minor reliance on inflatables
+for the airlock. First, the hub is inflated using compressed air from built-in tanks. Protection from meteors
+is ensured by putting thin metal plates; this is unnecessary today as we have developed high-strength textiles
+that are used on inflatable space stations. A second launch brings with it an airlock, which is again attached
+by robots; this allows the pressurized hub to be used as a temporary quarters as the station assembly continues
+with astronaut-robot teams.
+Pre-fabricated and tested on the ground after which it is dismantled and assembled robotically in-orbit.
+A number successive launches (he says) ensure the “parts of the station  are assembled in the correct order”.
+Nylon tethers prevent parts from drifting away. The reactor appears to be the next big piece that is installed
+so I assume this is the third launch. This is followed by the elevator shafts and the rim sections being brought
+together. We can assume a single launch for each module: $3$ elevator tubes and 9 rim modules (assuming one per
+section). Assuming condenser pipes are installed from one launch (but the structure itself needs to be unwound robotically, which seems unreasonable/unreal at the moment as a robotic task.</p>
+
+<p>Lastly, the installation of instruments/equipment (a simple catch-all term for imaging antennas and
+the lab facilities compute for astronomical/Earth Observation data analysis, I think) and two small
+rocket motors on the rim. These rocket motors “blast for a few seconds” to revolve the station at about
+$3 \, RPM$.</p>
+
+<h2 id="comparing-to-iss-and-space-station-v-2001-a-space-odyssey">Comparing to ISS and Space Station V (2001: A Space Odyssey)</h2>
+<p><label for="table-1-id" class="margin-toggle"> ⊕</label><input type="checkbox" id="table-1-id" class="margin-toggle" /><span class="marginnote"><em>Table 1</em>:  Comparing the ISS to fictional ideas. </span></p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>ISS</th>
+      <th>von Braun</th>
+      <th>Space Station V</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>crew size (# of astronauts)</td>
+      <td>7-13</td>
+      <td>50-80</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>diameter of the station (m)</td>
+      <td>n/a</td>
+      <td>75</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <td>total volume $m^3$</td>
+      <td>916</td>
+      <td>6217.85</td>
+      <td>26647.93</td>
+    </tr>
+    <tr>
+      <td>habitable %</td>
+      <td>42.35%</td>
+      <td>60% (assumed)</td>
+      <td>?</td>
+    </tr>
+    <tr>
+      <td>Max. volume per crew $(\frac{m^3}{person})$</td>
+      <td>64.66</td>
+      <td>52.67 assuming 50 crew</td>
+      <td>13223.46</td>
+    </tr>
+    <tr>
+      <td>Rotational speed for artificial gravity (RPM)</td>
+      <td>-</td>
+      <td>3</td>
+      <td>2.44</td>
+    </tr>
+    <tr>
+      <td>Gravity on-board  ($m/s^2$)</td>
+      <td>-</td>
+      <td>1.655</td>
+      <td>9.81</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="some-gaps-in-von-braun-design">Some gaps in von Braun design</h2>
+<ol>
+  <li>Assumes a launch every 24 hours- not close to it then and not really close to that kind of cadence today. What could we do today?</li>
+  <li>Doesn’t really say how many launches are needed to realize assembly in the video. This can probably be found elsewhere but my estimate from watching the video is 15-18 launches.</li>
+  <li>The process involves a number of assembly robots but we barely have one of these today. And whatever is there not autonomous.</li>
+  <li>Materials used in assembly are unknown.</li>
+  <li>Telescope sizes for reconnaisance and astronomy are unknown.</li>
+  <li>Power requirements are unknown.</li>
+  <li>What else?</li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#large-space-stations" class="page__taxonomy-item p-category" rel="tag">Large Space Stations</a><span class="sep">, </span>
+    
+      <a href="/categories/#space-exploration" class="page__taxonomy-item p-category" rel="tag">Space Exploration</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-09-29T15:30:00+01:00">September 29, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/large%20space%20stations/space%20exploration/inflatable%20space%20stations/space-inflatables-1/" class="pagination--pager" title="Inflatable von Braun space stations: an idea worth revisiting?
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      
+    <div id="bluesky-comments"></div>
+  
+
+<!-- Add Bluesky scripts at the bottom -->
+
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/bluesky-comments@latest/dist/bluesky-comments.umd.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('bluesky-comments')) {
+        initBlueskyComments('bluesky-comments', { author: 'angadhn.com' });
+      }
+    });
+  </script>
+
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/angadhn" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://soundcloud.com/angadh-nanjangud" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-soundcloud" aria-hidden="true"></i> Soundcloud</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Angadh Nanjangud. Powered by
+	<a href="https://clayh53.github.io/tufte-jekyll/" rel="nofollow">clayh53</a>,
+	<a href="http://claude.ai" rel="nofollow">Claude</a>,
+	<a href="http://chat.openai.com" rel="nofollow">ChatGPT</a> &amp;
+	<a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
+</div>
+<div class="page__footer-copyright">The views presented on this website are the author's own and do not represent the views of their employer(s).</div>
+
+	<div id="viewCounter">Views: 0</div>
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBZQTH82T2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MBZQTH82T2');
+</script>
+
+
+
+
+
+
+
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+ </script>
+ 
+
+    <!-- Begin: ChatGPT stuff for firebase site views counter-->
+<script>
+  // Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBHfzThmGgycGkU3bROZBoVSWON08n8yUc",
+    authDomain: "mywebsite-4914a.firebaseapp.com",
+    projectId: "mywebsite-4914a",
+    storageBucket: "mywebsite-4914a.appspot.com",
+    messagingSenderId: "966713391944",
+    appId: "1:966713391944:web:ba2e3ce5166884ec9c117d",
+    measurementId: "G-5DZQBSQQF2"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // If using Firebase Analytics
+  firebase.analytics();
+
+  var db = firebase.firestore();
+
+function getCleanPath() {
+  let path = window.location.pathname;
+  // Check if the path is just a slash, which is the root of the site
+  if (path === '/') {
+    return 'root'; // Use a placeholder like 'root' for the root path
+  }
+  // Remove leading and trailing slashes and replace internal slashes with a different character
+  path = path.replace(/^\/|\/$/g, '').replace(/\//g, '_');
+  return path;
+}
+  
+
+  // Function to increment view count
+  function updatePageViews() {
+    const pagePath = getCleanPath();
+    const pageRef = db.collection('pageViews').doc('total');
+
+    pageRef.get().then((doc) => {
+      if (doc.exists) {
+        pageRef.update({ views: firebase.firestore.FieldValue.increment(1) });
+      } else {
+        pageRef.set({ views: 1 });
+      }
+    });
+  }
+
+  // Function to display page views
+  // Function to display page views
+function displayPageViews() {
+  const pagePath = getCleanPath(); // Use the getCleanPath function here as well
+  const pageRef = db.collection('pageViews').doc('total');
+
+  pageRef.get().then((doc) => {
+    if (doc.exists) {
+      document.getElementById('viewCounter').innerText = `Views: ${doc.data().views}`;
+    } else {
+      document.getElementById('viewCounter').innerText = 'Views: 0';
+    }
+  }).catch((error) => {
+    console.error("Error getting document:", error); // For debugging
+  });
+}
+
+  // Call the functions when the window loads
+  window.addEventListener('load', function() {
+  updatePageViews();
+  displayPageViews();
+});
+</script>
+    <!-- End: ChatGPT stuff for firebase site views counter-->
+
+    <!-- Claude says to Add this line to include custom.js -->
+    <script src="/assets/js/custom.js"></script>
+  </body>
+</html>

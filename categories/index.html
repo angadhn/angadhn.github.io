@@ -1,0 +1,10098 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<!-- begin _includes/seo.html --><title>Posts by Category - Angadh</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Angadh">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Angadh">
+<meta property="og:title" content="Posts by Category">
+<meta property="og:url" content="https://angadhn.com/categories/">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://angadhn.com/categories/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Angadh Nanjangud",
+      "url": "https://angadhn.com/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css" id="theme_source">
+
+  <link rel="stylesheet alternate" href="/assets/css/theme2.css" id="theme_source_2">
+
+<script>
+  let theme = sessionStorage.getItem('theme');
+  if(theme === "dark")
+  {
+    sessionStorage.setItem('theme', 'dark');
+    node1 = document.getElementById('theme_source');
+    node2 = document.getElementById('theme_source_2');
+    if (node1 && node2) {
+      node1.setAttribute('rel', 'stylesheet alternate'); 
+      node2.setAttribute('rel', 'stylesheet');
+    }
+  }
+  else
+  {
+    sessionStorage.setItem('theme', 'sunrise');
+  }
+  
+  // Add this function for image switching
+  function updateImages() {
+    console.log('updateImages function called');
+    const isDark = sessionStorage.getItem('theme') === 'dark';
+    const theme = isDark ? 'dark' : 'light';
+    console.log('Current theme:', theme);
+    
+    // Function to update the src of an image
+    function updateImageSrc(img) {
+      const src = img.getAttribute('src');
+      if (!src.includes('for_light_theme') && !src.includes('for_dark_theme')) return; // Skip images without theme suffixes
+	    
+      console.log('Processing image:', src);
+      const baseName = src.replace(/for_(light|dark)_theme\.(jpg|jpeg|png|gif|svg)$/, '');
+      const currentExt = src.split('.').pop().toLowerCase();
+      
+      // List of extensions to try, in order of preference
+      const extensions = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
+      
+      // Move the current extension to the front of the list
+      extensions.unshift(extensions.splice(extensions.indexOf(currentExt), 1)[0]);
+      
+      // Function to try loading an image with a specific extension
+      function tryImage(ext) {
+        const themeImage = `${baseName}for_${theme}_theme.${ext}`;
+        console.log('Trying image:', themeImage);
+	return fetch(themeImage, { method: 'HEAD' }) // Add this line: Use HEAD request instead of GET
+          .then(response => {
+            if (response.ok) {
+              console.log('Image found:', themeImage);
+              img.src = themeImage;
+              return true; // Successfully found and set the image
+            }
+            console.log('Image not found:', themeImage);
+            return false; // Image not found with this extension
+          })
+          .catch(() => {
+            console.log('Error fetching:', themeImage);
+            return false; // Error occurred, try next extension
+          });
+      }
+      
+      // Try each extension in order
+      extensions.reduce((promise, ext) => {
+        return promise.then(result => {
+          if (result) return true; // If we've already found an image, stop
+          return tryImage(ext);
+        });
+      }, Promise.resolve(false));
+    }
+    
+    // Update standard images
+    document.querySelectorAll('img').forEach(updateImageSrc);
+    // Update Tufte marginfigure and sidenote images
+    document.querySelectorAll('.marginnote img, .sidenote img').forEach(updateImageSrc);
+    // Update Tufte fullwidth images
+    document.querySelectorAll('.fullwidth img').forEach(updateImageSrc);
+  }
+  
+  // Call updateImages when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, calling updateImages');
+    updateImages();
+  });
+</script>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css"></noscript>
+<!-- Add Bluesky comments stylesheet here -->
+<!-- <link rel="stylesheet" href="https://unpkg.com/bluesky-comments@latest/dist/bluesky-comments.css"> -->
+<link rel="stylesheet" href="/assets/css/bluesky-comments.css">
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+  </head>
+
+  <body class="layout--categories wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Angadh
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/">Longs</a>
+            </li><li class="masthead__menu-item">
+              <a href="/teaching/">Teaching</a>
+            </li><li class="masthead__menu-item">
+              <a href="/publications/">Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opinions/">Shorts</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+	<!-- Add this in your site's header, footer, or any common section visible across pages -->
+
+	
+	<div class="theme-switch-wrapper">
+    	<label class="theme-switch" for="checkbox">
+        	<input type="checkbox" id="checkbox" onchange="toggleTheme()" />
+        	<div class="slider round"></div>
+    	</label>
+
+	<script>
+function toggleTheme() {
+    var checkbox = document.getElementById('checkbox');
+    var themeSource = document.getElementById('theme_source');
+    var themeSource2 = document.getElementById('theme_source_2');
+
+    if (checkbox.checked) {
+        themeSource.setAttribute('rel', 'stylesheet alternate');
+        themeSource2.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'dark');
+    } else {
+        themeSource2.setAttribute('rel', 'stylesheet alternate');
+        themeSource.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'light');
+    }
+}
+
+// Initialize the checkbox state based on the saved theme
+window.onload = function() {
+    var currentTheme = sessionStorage.getItem('theme');
+    var checkbox = document.getElementById('checkbox');
+    if (currentTheme === 'dark') {
+        checkbox.checked = true;
+    } else {
+        checkbox.checked = false;
+    }
+}
+</script>
+
+	</div>
+	
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://angadhn.com/">
+        <img src="/assets/imgs/MeAndTilly.JPG" alt="Angadh" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://angadhn.com/" itemprop="url">Angadh</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Space, Robotics, and AI.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">London, UK</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:angadh.n@gmail.com" rel="nofollow noopener noreferrer me"><i class="far fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://scholar.google.com/citations?user=_B6z_BUAAAAJ&hl=en" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-google-scholar" aria-hidden="true"></i><span class="label">G-Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://bsky.app/profile/angadhn.com" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span class="label">Bluesky</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/angadhn" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href=" https://theinformationspace.angadhn.com/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-pencil-alt" aria-hidden="true"></i><span class="label">Notes</span></a></li>
+          
+        
+          
+            <li><a href="" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-calendar" aria-hidden="true"></i><span class="label">Meet (soon)</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">Posts by Category</h1>
+    
+    
+
+
+
+
+
+
+
+<ul class="taxonomy__index">
+  
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#space-stations">
+              <strong>Space Stations</strong> <span class="taxonomy__count">6</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#space-stations">
+              <strong>Space Stations</strong> <span class="taxonomy__count">6</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#space-stations">
+              <strong>Space Stations</strong> <span class="taxonomy__count">6</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#space-stations">
+              <strong>Space Stations</strong> <span class="taxonomy__count">6</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#space-stations">
+              <strong>Space Stations</strong> <span class="taxonomy__count">6</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#space-stations">
+              <strong>Space Stations</strong> <span class="taxonomy__count">6</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+  
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+  
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#robotics">
+              <strong>Robotics</strong> <span class="taxonomy__count">4</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#robotics">
+              <strong>Robotics</strong> <span class="taxonomy__count">4</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#inflatables">
+              <strong>Inflatables</strong> <span class="taxonomy__count">4</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#robotics">
+              <strong>Robotics</strong> <span class="taxonomy__count">4</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#inflatables">
+              <strong>Inflatables</strong> <span class="taxonomy__count">4</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#iss">
+              <strong>ISS</strong> <span class="taxonomy__count">4</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#robotics">
+              <strong>Robotics</strong> <span class="taxonomy__count">4</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#inflatables">
+              <strong>Inflatables</strong> <span class="taxonomy__count">4</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#iss">
+              <strong>ISS</strong> <span class="taxonomy__count">4</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#iss">
+              <strong>ISS</strong> <span class="taxonomy__count">4</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#iss">
+              <strong>ISS</strong> <span class="taxonomy__count">4</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#inflatables">
+              <strong>Inflatables</strong> <span class="taxonomy__count">4</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+  
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#innovation">
+              <strong>Innovation</strong> <span class="taxonomy__count">3</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#creativity">
+              <strong>Creativity</strong> <span class="taxonomy__count">3</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#stagnation">
+              <strong>Stagnation</strong> <span class="taxonomy__count">3</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#innovation">
+              <strong>Innovation</strong> <span class="taxonomy__count">3</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#creativity">
+              <strong>Creativity</strong> <span class="taxonomy__count">3</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#stagnation">
+              <strong>Stagnation</strong> <span class="taxonomy__count">3</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#innovation">
+              <strong>Innovation</strong> <span class="taxonomy__count">3</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#creativity">
+              <strong>Creativity</strong> <span class="taxonomy__count">3</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#stagnation">
+              <strong>Stagnation</strong> <span class="taxonomy__count">3</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+  
+    
+      
+        
+        
+        
+          <li>
+            <a href="#large-space-stations">
+              <strong>Large Space Stations</strong> <span class="taxonomy__count">2</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#space-exploration">
+              <strong>Space Exploration</strong> <span class="taxonomy__count">2</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#inflatable-space-stations">
+              <strong>Inflatable Space Stations</strong> <span class="taxonomy__count">2</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#large-space-stations">
+              <strong>Large Space Stations</strong> <span class="taxonomy__count">2</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#space-exploration">
+              <strong>Space Exploration</strong> <span class="taxonomy__count">2</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#inflatable-space-stations">
+              <strong>Inflatable Space Stations</strong> <span class="taxonomy__count">2</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#reading-links">
+              <strong>Reading Links</strong> <span class="taxonomy__count">2</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#reading-links">
+              <strong>Reading Links</strong> <span class="taxonomy__count">2</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+  
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#social-media">
+              <strong>Social Media</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#grants">
+              <strong>Grants</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#human-intelligence">
+              <strong>Human Intelligence</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#artificial-intelligence">
+              <strong>Artificial Intelligence</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#docking-mechanisms">
+              <strong>Docking Mechanisms</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#commercial-space-stations">
+              <strong>Commercial Space Stations</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#iss-modules">
+              <strong>ISS modules</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+      
+        
+        
+        
+      
+        
+        
+        
+          <li>
+            <a href="#energy">
+              <strong>Energy</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#brain">
+              <strong>Brain</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#academia">
+              <strong>Academia</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#personal-website">
+              <strong>Personal Website</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#notes">
+              <strong>Notes</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        
+        
+        
+          <li>
+            <a href="#space-robotics">
+              <strong>Space Robotics</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#collisions">
+              <strong>Collisions</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+        
+        
+        
+          <li>
+            <a href="#dynamics-and-control">
+              <strong>Dynamics and Control</strong> <span class="taxonomy__count">1</span>
+            </a>
+          </li>
+        
+      
+    
+  
+</ul>
+
+
+
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="space-stations" class="taxonomy__section">
+          <h2 class="archive__subtitle">Space Stations</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post6/" rel="permalink">The ISS’s Connector Mechanisms
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (299 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In an earlier post, I linked to Jared Owen’s excellent video on space stations and that I
+would follow up with a summary of his chapter on docking ports.
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post7/" rel="permalink">Commercial Space Stations in development.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (58 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Scott Manley has made summarized the state of play with commercial space stations
+nicely below while offering insights on the Chinese Space Station and Stars...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post11/" rel="permalink">Reading List for Inflatable Space Stations
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (73 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  In preparing my WiP piece, I have been reading Hansen’s Spaceflight Revolution. This led me to find Berglund’s patent for the Hexagon Space Station.
+  I a...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="space-stations" class="taxonomy__section">
+          <h2 class="archive__subtitle">Space Stations</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post6/" rel="permalink">The ISS’s Connector Mechanisms
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (299 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In an earlier post, I linked to Jared Owen’s excellent video on space stations and that I
+would follow up with a summary of his chapter on docking ports.
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post7/" rel="permalink">Commercial Space Stations in development.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (58 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Scott Manley has made summarized the state of play with commercial space stations
+nicely below while offering insights on the Chinese Space Station and Stars...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post11/" rel="permalink">Reading List for Inflatable Space Stations
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (73 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  In preparing my WiP piece, I have been reading Hansen’s Spaceflight Revolution. This led me to find Berglund’s patent for the Hexagon Space Station.
+  I a...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="space-stations" class="taxonomy__section">
+          <h2 class="archive__subtitle">Space Stations</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post6/" rel="permalink">The ISS’s Connector Mechanisms
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (299 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In an earlier post, I linked to Jared Owen’s excellent video on space stations and that I
+would follow up with a summary of his chapter on docking ports.
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post7/" rel="permalink">Commercial Space Stations in development.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (58 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Scott Manley has made summarized the state of play with commercial space stations
+nicely below while offering insights on the Chinese Space Station and Stars...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post11/" rel="permalink">Reading List for Inflatable Space Stations
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (73 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  In preparing my WiP piece, I have been reading Hansen’s Spaceflight Revolution. This led me to find Berglund’s patent for the Hexagon Space Station.
+  I a...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <section id="space-stations" class="taxonomy__section">
+          <h2 class="archive__subtitle">Space Stations</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post6/" rel="permalink">The ISS’s Connector Mechanisms
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (299 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In an earlier post, I linked to Jared Owen’s excellent video on space stations and that I
+would follow up with a summary of his chapter on docking ports.
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post7/" rel="permalink">Commercial Space Stations in development.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (58 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Scott Manley has made summarized the state of play with commercial space stations
+nicely below while offering insights on the Chinese Space Station and Stars...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post11/" rel="permalink">Reading List for Inflatable Space Stations
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (73 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  In preparing my WiP piece, I have been reading Hansen’s Spaceflight Revolution. This led me to find Berglund’s patent for the Hexagon Space Station.
+  I a...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <section id="space-stations" class="taxonomy__section">
+          <h2 class="archive__subtitle">Space Stations</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post6/" rel="permalink">The ISS’s Connector Mechanisms
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (299 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In an earlier post, I linked to Jared Owen’s excellent video on space stations and that I
+would follow up with a summary of his chapter on docking ports.
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post7/" rel="permalink">Commercial Space Stations in development.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (58 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Scott Manley has made summarized the state of play with commercial space stations
+nicely below while offering insights on the Chinese Space Station and Stars...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post11/" rel="permalink">Reading List for Inflatable Space Stations
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (73 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  In preparing my WiP piece, I have been reading Hansen’s Spaceflight Revolution. This led me to find Berglund’s patent for the Hexagon Space Station.
+  I a...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="space-stations" class="taxonomy__section">
+          <h2 class="archive__subtitle">Space Stations</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post6/" rel="permalink">The ISS’s Connector Mechanisms
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (299 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In an earlier post, I linked to Jared Owen’s excellent video on space stations and that I
+would follow up with a summary of his chapter on docking ports.
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post7/" rel="permalink">Commercial Space Stations in development.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (58 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Scott Manley has made summarized the state of play with commercial space stations
+nicely below while offering insights on the Chinese Space Station and Stars...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post11/" rel="permalink">Reading List for Inflatable Space Stations
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (73 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  In preparing my WiP piece, I have been reading Hansen’s Spaceflight Revolution. This led me to find Berglund’s patent for the Hexagon Space Station.
+  I a...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <section id="robotics" class="taxonomy__section">
+          <h2 class="archive__subtitle">Robotics</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post1/" rel="permalink">Moravec’s Paradox
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (551 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Over lunch, I watched Chelsea Finn
+discuss Moravec’s Paradox
+with people across age and skills groups from kids to expert researchers. It is the idea that hu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <section id="robotics" class="taxonomy__section">
+          <h2 class="archive__subtitle">Robotics</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post1/" rel="permalink">Moravec’s Paradox
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (551 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Over lunch, I watched Chelsea Finn
+discuss Moravec’s Paradox
+with people across age and skills groups from kids to expert researchers. It is the idea that hu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="inflatables" class="taxonomy__section">
+          <h2 class="archive__subtitle">Inflatables</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post11/" rel="permalink">Reading List for Inflatable Space Stations
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (73 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  In preparing my WiP piece, I have been reading Hansen’s Spaceflight Revolution. This led me to find Berglund’s patent for the Hexagon Space Station.
+  I a...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <section id="robotics" class="taxonomy__section">
+          <h2 class="archive__subtitle">Robotics</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post1/" rel="permalink">Moravec’s Paradox
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (551 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Over lunch, I watched Chelsea Finn
+discuss Moravec’s Paradox
+with people across age and skills groups from kids to expert researchers. It is the idea that hu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="inflatables" class="taxonomy__section">
+          <h2 class="archive__subtitle">Inflatables</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post11/" rel="permalink">Reading List for Inflatable Space Stations
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (73 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  In preparing my WiP piece, I have been reading Hansen’s Spaceflight Revolution. This led me to find Berglund’s patent for the Hexagon Space Station.
+  I a...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="iss" class="taxonomy__section">
+          <h2 class="archive__subtitle">ISS</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post6/" rel="permalink">The ISS’s Connector Mechanisms
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (299 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In an earlier post, I linked to Jared Owen’s excellent video on space stations and that I
+would follow up with a summary of his chapter on docking ports.
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post8/" rel="permalink">Some notes on BEAM
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (518 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Rajib Dasgupta’s 2016 interview as NASA BEAM (Bigelow Expandable Activity Module)
+project manager is quite informative for those interested in inflatable spa...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+        <section id="robotics" class="taxonomy__section">
+          <h2 class="archive__subtitle">Robotics</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post1/" rel="permalink">Moravec’s Paradox
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (551 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Over lunch, I watched Chelsea Finn
+discuss Moravec’s Paradox
+with people across age and skills groups from kids to expert researchers. It is the idea that hu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="inflatables" class="taxonomy__section">
+          <h2 class="archive__subtitle">Inflatables</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post11/" rel="permalink">Reading List for Inflatable Space Stations
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (73 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  In preparing my WiP piece, I have been reading Hansen’s Spaceflight Revolution. This led me to find Berglund’s patent for the Hexagon Space Station.
+  I a...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="iss" class="taxonomy__section">
+          <h2 class="archive__subtitle">ISS</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post6/" rel="permalink">The ISS’s Connector Mechanisms
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (299 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In an earlier post, I linked to Jared Owen’s excellent video on space stations and that I
+would follow up with a summary of his chapter on docking ports.
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post8/" rel="permalink">Some notes on BEAM
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (518 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Rajib Dasgupta’s 2016 interview as NASA BEAM (Bigelow Expandable Activity Module)
+project manager is quite informative for those interested in inflatable spa...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="iss" class="taxonomy__section">
+          <h2 class="archive__subtitle">ISS</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post6/" rel="permalink">The ISS’s Connector Mechanisms
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (299 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In an earlier post, I linked to Jared Owen’s excellent video on space stations and that I
+would follow up with a summary of his chapter on docking ports.
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post8/" rel="permalink">Some notes on BEAM
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (518 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Rajib Dasgupta’s 2016 interview as NASA BEAM (Bigelow Expandable Activity Module)
+project manager is quite informative for those interested in inflatable spa...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="iss" class="taxonomy__section">
+          <h2 class="archive__subtitle">ISS</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post6/" rel="permalink">The ISS’s Connector Mechanisms
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (299 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In an earlier post, I linked to Jared Owen’s excellent video on space stations and that I
+would follow up with a summary of his chapter on docking ports.
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post8/" rel="permalink">Some notes on BEAM
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (518 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Rajib Dasgupta’s 2016 interview as NASA BEAM (Bigelow Expandable Activity Module)
+project manager is quite informative for those interested in inflatable spa...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <section id="inflatables" class="taxonomy__section">
+          <h2 class="archive__subtitle">Inflatables</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post2/" rel="permalink">Inflatable Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (79 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have previously written about inflatable tubes as a
+means to realise a von Braun wheel. The idea of using inflatabes isn’t particularly new, but Saul Griff...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4/" rel="permalink">ISS Rendezvous (and some) Docking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+      (208 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I started thinking about how docking might work with an inflatable station such as the Goodyear one that I
+discussed here.
+I have been trying to think about ...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post5/" rel="permalink">One of the best ISS videos I have seen.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (83 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jared Owen has made a really cool animation that breaks down the ISS; I decided to watch this
+purely because it had a chapter on docking ports (thanks, YouTu...</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post11/" rel="permalink">Reading List for Inflatable Space Stations
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (73 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  In preparing my WiP piece, I have been reading Hansen’s Spaceflight Revolution. This led me to find Berglund’s patent for the Hexagon Space Station.
+  I a...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <section id="innovation" class="taxonomy__section">
+          <h2 class="archive__subtitle">Innovation</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post3/" rel="permalink">Graeber and Thiel
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+      (1394 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This is a summary towards a longer form essay that will eventually go into “Longer Form” writing
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post9/" rel="permalink">Weekend readings (4$^{th}$ and 5$^{th}$ January 2025)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (57 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Graeber opines on flying cars and technological stagnation,
+which is a good companion to my earlier post on his debate with Thiel.
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post10/" rel="permalink">Varoufakis’ and Graeber’s critique and visions of progress offer no solutions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+      (694 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">These were some quick thoughts I shared with a friend after reading
+Varoufakis’ recent article on a Star Trek-inspired Utopia.
+This loosely links to my earli...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="creativity" class="taxonomy__section">
+          <h2 class="archive__subtitle">Creativity</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post3/" rel="permalink">Graeber and Thiel
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+      (1394 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This is a summary towards a longer form essay that will eventually go into “Longer Form” writing
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post9/" rel="permalink">Weekend readings (4$^{th}$ and 5$^{th}$ January 2025)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (57 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Graeber opines on flying cars and technological stagnation,
+which is a good companion to my earlier post on his debate with Thiel.
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post10/" rel="permalink">Varoufakis’ and Graeber’s critique and visions of progress offer no solutions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+      (694 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">These were some quick thoughts I shared with a friend after reading
+Varoufakis’ recent article on a Star Trek-inspired Utopia.
+This loosely links to my earli...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="stagnation" class="taxonomy__section">
+          <h2 class="archive__subtitle">Stagnation</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post3/" rel="permalink">Graeber and Thiel
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+      (1394 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This is a summary towards a longer form essay that will eventually go into “Longer Form” writing
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post9/" rel="permalink">Weekend readings (4$^{th}$ and 5$^{th}$ January 2025)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (57 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Graeber opines on flying cars and technological stagnation,
+which is a good companion to my earlier post on his debate with Thiel.
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post10/" rel="permalink">Varoufakis’ and Graeber’s critique and visions of progress offer no solutions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+      (694 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">These were some quick thoughts I shared with a friend after reading
+Varoufakis’ recent article on a Star Trek-inspired Utopia.
+This loosely links to my earli...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="innovation" class="taxonomy__section">
+          <h2 class="archive__subtitle">Innovation</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post3/" rel="permalink">Graeber and Thiel
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+      (1394 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This is a summary towards a longer form essay that will eventually go into “Longer Form” writing
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post9/" rel="permalink">Weekend readings (4$^{th}$ and 5$^{th}$ January 2025)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (57 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Graeber opines on flying cars and technological stagnation,
+which is a good companion to my earlier post on his debate with Thiel.
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post10/" rel="permalink">Varoufakis’ and Graeber’s critique and visions of progress offer no solutions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+      (694 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">These were some quick thoughts I shared with a friend after reading
+Varoufakis’ recent article on a Star Trek-inspired Utopia.
+This loosely links to my earli...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="creativity" class="taxonomy__section">
+          <h2 class="archive__subtitle">Creativity</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post3/" rel="permalink">Graeber and Thiel
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+      (1394 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This is a summary towards a longer form essay that will eventually go into “Longer Form” writing
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post9/" rel="permalink">Weekend readings (4$^{th}$ and 5$^{th}$ January 2025)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (57 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Graeber opines on flying cars and technological stagnation,
+which is a good companion to my earlier post on his debate with Thiel.
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post10/" rel="permalink">Varoufakis’ and Graeber’s critique and visions of progress offer no solutions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+      (694 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">These were some quick thoughts I shared with a friend after reading
+Varoufakis’ recent article on a Star Trek-inspired Utopia.
+This loosely links to my earli...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="stagnation" class="taxonomy__section">
+          <h2 class="archive__subtitle">Stagnation</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post3/" rel="permalink">Graeber and Thiel
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+      (1394 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This is a summary towards a longer form essay that will eventually go into “Longer Form” writing
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post9/" rel="permalink">Weekend readings (4$^{th}$ and 5$^{th}$ January 2025)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (57 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Graeber opines on flying cars and technological stagnation,
+which is a good companion to my earlier post on his debate with Thiel.
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post10/" rel="permalink">Varoufakis’ and Graeber’s critique and visions of progress offer no solutions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+      (694 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">These were some quick thoughts I shared with a friend after reading
+Varoufakis’ recent article on a Star Trek-inspired Utopia.
+This loosely links to my earli...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+        <section id="innovation" class="taxonomy__section">
+          <h2 class="archive__subtitle">Innovation</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post3/" rel="permalink">Graeber and Thiel
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+      (1394 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This is a summary towards a longer form essay that will eventually go into “Longer Form” writing
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post9/" rel="permalink">Weekend readings (4$^{th}$ and 5$^{th}$ January 2025)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (57 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Graeber opines on flying cars and technological stagnation,
+which is a good companion to my earlier post on his debate with Thiel.
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post10/" rel="permalink">Varoufakis’ and Graeber’s critique and visions of progress offer no solutions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+      (694 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">These were some quick thoughts I shared with a friend after reading
+Varoufakis’ recent article on a Star Trek-inspired Utopia.
+This loosely links to my earli...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="creativity" class="taxonomy__section">
+          <h2 class="archive__subtitle">Creativity</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post3/" rel="permalink">Graeber and Thiel
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+      (1394 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This is a summary towards a longer form essay that will eventually go into “Longer Form” writing
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post9/" rel="permalink">Weekend readings (4$^{th}$ and 5$^{th}$ January 2025)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (57 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Graeber opines on flying cars and technological stagnation,
+which is a good companion to my earlier post on his debate with Thiel.
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post10/" rel="permalink">Varoufakis’ and Graeber’s critique and visions of progress offer no solutions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+      (694 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">These were some quick thoughts I shared with a friend after reading
+Varoufakis’ recent article on a Star Trek-inspired Utopia.
+This loosely links to my earli...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="stagnation" class="taxonomy__section">
+          <h2 class="archive__subtitle">Stagnation</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post3/" rel="permalink">Graeber and Thiel
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+      (1394 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This is a summary towards a longer form essay that will eventually go into “Longer Form” writing
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post9/" rel="permalink">Weekend readings (4$^{th}$ and 5$^{th}$ January 2025)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (57 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Graeber opines on flying cars and technological stagnation,
+which is a good companion to my earlier post on his debate with Thiel.
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post10/" rel="permalink">Varoufakis’ and Graeber’s critique and visions of progress offer no solutions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+      (694 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">These were some quick thoughts I shared with a friend after reading
+Varoufakis’ recent article on a Star Trek-inspired Utopia.
+This loosely links to my earli...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+
+  
+    
+      
+      
+      
+        <section id="large-space-stations" class="taxonomy__section">
+          <h2 class="archive__subtitle">Large Space Stations</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/large%20space%20stations/space%20exploration/inflatable%20space%20stations/space-inflatables-1/" rel="permalink">Inflatable von Braun space stations: an idea worth revisiting?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (7 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  This page has moved
+  Redirecting to https://angadh.com/inflatablevonbraun
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/large%20space%20stations/space%20exploration/vonBraunWheels/" rel="permalink">Some Space Stations in Fiction and Reality
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+      (857 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">An earlier post in my teaching resources for  a final
+year undergraduate project had a pretty helpful
+AI-generatedthanks to Claude 
+table.
+This is a quick po...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="space-exploration" class="taxonomy__section">
+          <h2 class="archive__subtitle">Space Exploration</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/large%20space%20stations/space%20exploration/inflatable%20space%20stations/space-inflatables-1/" rel="permalink">Inflatable von Braun space stations: an idea worth revisiting?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (7 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  This page has moved
+  Redirecting to https://angadh.com/inflatablevonbraun
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/large%20space%20stations/space%20exploration/vonBraunWheels/" rel="permalink">Some Space Stations in Fiction and Reality
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+      (857 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">An earlier post in my teaching resources for  a final
+year undergraduate project had a pretty helpful
+AI-generatedthanks to Claude 
+table.
+This is a quick po...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="inflatable-space-stations" class="taxonomy__section">
+          <h2 class="archive__subtitle">Inflatable Space Stations</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/large%20space%20stations/space%20exploration/inflatable%20space%20stations/space-inflatables-1/" rel="permalink">Inflatable von Braun space stations: an idea worth revisiting?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (7 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  This page has moved
+  Redirecting to https://angadh.com/inflatablevonbraun
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post8/" rel="permalink">Some notes on BEAM
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (518 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Rajib Dasgupta’s 2016 interview as NASA BEAM (Bigelow Expandable Activity Module)
+project manager is quite informative for those interested in inflatable spa...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+        <section id="large-space-stations" class="taxonomy__section">
+          <h2 class="archive__subtitle">Large Space Stations</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/large%20space%20stations/space%20exploration/inflatable%20space%20stations/space-inflatables-1/" rel="permalink">Inflatable von Braun space stations: an idea worth revisiting?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (7 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  This page has moved
+  Redirecting to https://angadh.com/inflatablevonbraun
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/large%20space%20stations/space%20exploration/vonBraunWheels/" rel="permalink">Some Space Stations in Fiction and Reality
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+      (857 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">An earlier post in my teaching resources for  a final
+year undergraduate project had a pretty helpful
+AI-generatedthanks to Claude 
+table.
+This is a quick po...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="space-exploration" class="taxonomy__section">
+          <h2 class="archive__subtitle">Space Exploration</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/large%20space%20stations/space%20exploration/inflatable%20space%20stations/space-inflatables-1/" rel="permalink">Inflatable von Braun space stations: an idea worth revisiting?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (7 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  This page has moved
+  Redirecting to https://angadh.com/inflatablevonbraun
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/large%20space%20stations/space%20exploration/vonBraunWheels/" rel="permalink">Some Space Stations in Fiction and Reality
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+      (857 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">An earlier post in my teaching resources for  a final
+year undergraduate project had a pretty helpful
+AI-generatedthanks to Claude 
+table.
+This is a quick po...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <section id="inflatable-space-stations" class="taxonomy__section">
+          <h2 class="archive__subtitle">Inflatable Space Stations</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/large%20space%20stations/space%20exploration/inflatable%20space%20stations/space-inflatables-1/" rel="permalink">Inflatable von Braun space stations: an idea worth revisiting?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (7 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  This page has moved
+  Redirecting to https://angadh.com/inflatablevonbraun
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post8/" rel="permalink">Some notes on BEAM
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (518 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Rajib Dasgupta’s 2016 interview as NASA BEAM (Bigelow Expandable Activity Module)
+project manager is quite informative for those interested in inflatable spa...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <section id="reading-links" class="taxonomy__section">
+          <h2 class="archive__subtitle">Reading Links</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post9/" rel="permalink">Weekend readings (4$^{th}$ and 5$^{th}$ January 2025)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (57 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Graeber opines on flying cars and technological stagnation,
+which is a good companion to my earlier post on his debate with Thiel.
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post12/" rel="permalink">Reading Links
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (426 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Couple of highlights from my online readings this week:
+
+  I see the Henry Adams curve mentioned a lot; I think one of those posts led me to search a bit mor...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <section id="reading-links" class="taxonomy__section">
+          <h2 class="archive__subtitle">Reading Links</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post9/" rel="permalink">Weekend readings (4$^{th}$ and 5$^{th}$ January 2025)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (57 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Graeber opines on flying cars and technological stagnation,
+which is a good companion to my earlier post on his debate with Thiel.
+
+</p>
+  </article>
+</div>
+
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post12/" rel="permalink">Reading Links
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (426 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Couple of highlights from my online readings this week:
+
+  I see the Henry Adams curve mentioned a lot; I think one of those posts led me to search a bit mor...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+        <section id="social-media" class="taxonomy__section">
+          <h2 class="archive__subtitle">Social Media</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Howler_EV4AI/" rel="permalink">Howler
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+      (1420 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">AIGrant
+Pitch
+
+</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="grants" class="taxonomy__section">
+          <h2 class="archive__subtitle">Grants</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Howler_EV4AI/" rel="permalink">Howler
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+      (1420 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">AIGrant
+Pitch
+
+</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="human-intelligence" class="taxonomy__section">
+          <h2 class="archive__subtitle">Human Intelligence</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post1/" rel="permalink">Moravec’s Paradox
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (551 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Over lunch, I watched Chelsea Finn
+discuss Moravec’s Paradox
+with people across age and skills groups from kids to expert researchers. It is the idea that hu...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="artificial-intelligence" class="taxonomy__section">
+          <h2 class="archive__subtitle">Artificial Intelligence</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post1/" rel="permalink">Moravec’s Paradox
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (551 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Over lunch, I watched Chelsea Finn
+discuss Moravec’s Paradox
+with people across age and skills groups from kids to expert researchers. It is the idea that hu...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="docking-mechanisms" class="taxonomy__section">
+          <h2 class="archive__subtitle">Docking Mechanisms</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post6/" rel="permalink">The ISS’s Connector Mechanisms
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (299 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In an earlier post, I linked to Jared Owen’s excellent video on space stations and that I
+would follow up with a summary of his chapter on docking ports.
+</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="commercial-space-stations" class="taxonomy__section">
+          <h2 class="archive__subtitle">Commercial Space Stations</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post7/" rel="permalink">Commercial Space Stations in development.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (58 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Scott Manley has made summarized the state of play with commercial space stations
+nicely below while offering insights on the Chinese Space Station and Stars...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="iss-modules" class="taxonomy__section">
+          <h2 class="archive__subtitle">ISS modules</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post8/" rel="permalink">Some notes on BEAM
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (518 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Rajib Dasgupta’s 2016 interview as NASA BEAM (Bigelow Expandable Activity Module)
+project manager is quite informative for those interested in inflatable spa...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+    
+  
+    
+      
+      
+      
+    
+      
+      
+      
+        <section id="energy" class="taxonomy__section">
+          <h2 class="archive__subtitle">Energy</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post12/" rel="permalink">Reading Links
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (426 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Couple of highlights from my online readings this week:
+
+  I see the Henry Adams curve mentioned a lot; I think one of those posts led me to search a bit mor...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="brain" class="taxonomy__section">
+          <h2 class="archive__subtitle">Brain</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post12/" rel="permalink">Reading Links
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (426 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Couple of highlights from my online readings this week:
+
+  I see the Henry Adams curve mentioned a lot; I think one of those posts led me to search a bit mor...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="academia" class="taxonomy__section">
+          <h2 class="archive__subtitle">Academia</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post12/" rel="permalink">Reading Links
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+      (426 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Couple of highlights from my online readings this week:
+
+  I see the Henry Adams curve mentioned a lot; I think one of those posts led me to search a bit mor...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+        <section id="personal-website" class="taxonomy__section">
+          <h2 class="archive__subtitle">Personal Website</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post13/" rel="permalink">Low Friction Note Taking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (111 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I am a big fan of Obsidian- it is my note-taking tool of choice but
+my use has reduced since I started maintaining this blog. Nonetheless,
+I still host my no...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="notes" class="taxonomy__section">
+          <h2 class="archive__subtitle">Notes</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post13/" rel="permalink">Low Friction Note Taking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+      (111 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I am a big fan of Obsidian- it is my note-taking tool of choice but
+my use has reduced since I started maintaining this blog. Nonetheless,
+I still host my no...</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+    
+      
+      
+      
+        <section id="space-robotics" class="taxonomy__section">
+          <h2 class="archive__subtitle">Space Robotics</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4million/" rel="permalink">Nekoo et al. In-space collisions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (375 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">These are some notes on the paper “Free-floating space
+manipulator impacting a floating object: Modeling and
+output SDRE controller design”
+by Nekoo et al.
+</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="collisions" class="taxonomy__section">
+          <h2 class="archive__subtitle">Collisions</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4million/" rel="permalink">Nekoo et al. In-space collisions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (375 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">These are some notes on the paper “Free-floating space
+manipulator impacting a floating object: Modeling and
+output SDRE controller design”
+by Nekoo et al.
+</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+      
+      
+      
+        <section id="dynamics-and-control" class="taxonomy__section">
+          <h2 class="archive__subtitle">Dynamics and Control</h2>
+          <div class="entries-list">
+            
+              
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/opinions/Post4million/" rel="permalink">Nekoo et al. In-space collisions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+      (375 words)
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">These are some notes on the paper “Free-floating space
+manipulator impacting a floating object: Modeling and
+output SDRE controller design”
+by Nekoo et al.
+</p>
+  </article>
+</div>
+
+            
+          </div>
+          <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+        </section>
+      
+    
+  
+
+
+  </div>
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/angadhn" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://soundcloud.com/angadh-nanjangud" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-soundcloud" aria-hidden="true"></i> Soundcloud</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Angadh Nanjangud. Powered by
+	<a href="https://clayh53.github.io/tufte-jekyll/" rel="nofollow">clayh53</a>,
+	<a href="http://claude.ai" rel="nofollow">Claude</a>,
+	<a href="http://chat.openai.com" rel="nofollow">ChatGPT</a> &amp;
+	<a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
+</div>
+<div class="page__footer-copyright">The views presented on this website are the author's own and do not represent the views of their employer(s).</div>
+
+	<div id="viewCounter">Views: 0</div>
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBZQTH82T2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MBZQTH82T2');
+</script>
+
+
+
+
+
+ 
+
+    <!-- Begin: ChatGPT stuff for firebase site views counter-->
+<script>
+  // Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBHfzThmGgycGkU3bROZBoVSWON08n8yUc",
+    authDomain: "mywebsite-4914a.firebaseapp.com",
+    projectId: "mywebsite-4914a",
+    storageBucket: "mywebsite-4914a.appspot.com",
+    messagingSenderId: "966713391944",
+    appId: "1:966713391944:web:ba2e3ce5166884ec9c117d",
+    measurementId: "G-5DZQBSQQF2"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // If using Firebase Analytics
+  firebase.analytics();
+
+  var db = firebase.firestore();
+
+function getCleanPath() {
+  let path = window.location.pathname;
+  // Check if the path is just a slash, which is the root of the site
+  if (path === '/') {
+    return 'root'; // Use a placeholder like 'root' for the root path
+  }
+  // Remove leading and trailing slashes and replace internal slashes with a different character
+  path = path.replace(/^\/|\/$/g, '').replace(/\//g, '_');
+  return path;
+}
+  
+
+  // Function to increment view count
+  function updatePageViews() {
+    const pagePath = getCleanPath();
+    const pageRef = db.collection('pageViews').doc('total');
+
+    pageRef.get().then((doc) => {
+      if (doc.exists) {
+        pageRef.update({ views: firebase.firestore.FieldValue.increment(1) });
+      } else {
+        pageRef.set({ views: 1 });
+      }
+    });
+  }
+
+  // Function to display page views
+  // Function to display page views
+function displayPageViews() {
+  const pagePath = getCleanPath(); // Use the getCleanPath function here as well
+  const pageRef = db.collection('pageViews').doc('total');
+
+  pageRef.get().then((doc) => {
+    if (doc.exists) {
+      document.getElementById('viewCounter').innerText = `Views: ${doc.data().views}`;
+    } else {
+      document.getElementById('viewCounter').innerText = 'Views: 0';
+    }
+  }).catch((error) => {
+    console.error("Error getting document:", error); // For debugging
+  });
+}
+
+  // Call the functions when the window loads
+  window.addEventListener('load', function() {
+  updatePageViews();
+  displayPageViews();
+});
+</script>
+    <!-- End: ChatGPT stuff for firebase site views counter-->
+
+    <!-- Claude says to Add this line to include custom.js -->
+    <script src="/assets/js/custom.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1002 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<!-- begin _includes/seo.html --><title>Final Year Project: Space Station Design - Angadh</title>
+<meta name="description" content="An introduction to multibody dynamics and the use of symbolic computation in modelling them.">
+
+
+  <meta name="author" content="Angadh">
+  
+  <meta property="article:author" content="Angadh">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Angadh">
+<meta property="og:title" content="Final Year Project: Space Station Design">
+<meta property="og:url" content="https://angadhn.com/online_textbooks/UG_final_year_project/">
+
+
+  <meta property="og:description" content="An introduction to multibody dynamics and the use of symbolic computation in modelling them.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-01-30T10:33:53+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://angadhn.com/online_textbooks/UG_final_year_project/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Angadh Nanjangud",
+      "url": "https://angadhn.com/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css" id="theme_source">
+
+  <link rel="stylesheet alternate" href="/assets/css/theme2.css" id="theme_source_2">
+
+<script>
+  let theme = sessionStorage.getItem('theme');
+  if(theme === "dark")
+  {
+    sessionStorage.setItem('theme', 'dark');
+    node1 = document.getElementById('theme_source');
+    node2 = document.getElementById('theme_source_2');
+    if (node1 && node2) {
+      node1.setAttribute('rel', 'stylesheet alternate'); 
+      node2.setAttribute('rel', 'stylesheet');
+    }
+  }
+  else
+  {
+    sessionStorage.setItem('theme', 'sunrise');
+  }
+  
+  // Add this function for image switching
+  function updateImages() {
+    console.log('updateImages function called');
+    const isDark = sessionStorage.getItem('theme') === 'dark';
+    const theme = isDark ? 'dark' : 'light';
+    console.log('Current theme:', theme);
+    
+    // Function to update the src of an image
+    function updateImageSrc(img) {
+      const src = img.getAttribute('src');
+      if (!src.includes('for_light_theme') && !src.includes('for_dark_theme')) return; // Skip images without theme suffixes
+	    
+      console.log('Processing image:', src);
+      const baseName = src.replace(/for_(light|dark)_theme\.(jpg|jpeg|png|gif|svg)$/, '');
+      const currentExt = src.split('.').pop().toLowerCase();
+      
+      // List of extensions to try, in order of preference
+      const extensions = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
+      
+      // Move the current extension to the front of the list
+      extensions.unshift(extensions.splice(extensions.indexOf(currentExt), 1)[0]);
+      
+      // Function to try loading an image with a specific extension
+      function tryImage(ext) {
+        const themeImage = `${baseName}for_${theme}_theme.${ext}`;
+        console.log('Trying image:', themeImage);
+	return fetch(themeImage, { method: 'HEAD' }) // Add this line: Use HEAD request instead of GET
+          .then(response => {
+            if (response.ok) {
+              console.log('Image found:', themeImage);
+              img.src = themeImage;
+              return true; // Successfully found and set the image
+            }
+            console.log('Image not found:', themeImage);
+            return false; // Image not found with this extension
+          })
+          .catch(() => {
+            console.log('Error fetching:', themeImage);
+            return false; // Error occurred, try next extension
+          });
+      }
+      
+      // Try each extension in order
+      extensions.reduce((promise, ext) => {
+        return promise.then(result => {
+          if (result) return true; // If we've already found an image, stop
+          return tryImage(ext);
+        });
+      }, Promise.resolve(false));
+    }
+    
+    // Update standard images
+    document.querySelectorAll('img').forEach(updateImageSrc);
+    // Update Tufte marginfigure and sidenote images
+    document.querySelectorAll('.marginnote img, .sidenote img').forEach(updateImageSrc);
+    // Update Tufte fullwidth images
+    document.querySelectorAll('.fullwidth img').forEach(updateImageSrc);
+  }
+  
+  // Call updateImages when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, calling updateImages');
+    updateImages();
+  });
+</script>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css"></noscript>
+<!-- Add Bluesky comments stylesheet here -->
+<!-- <link rel="stylesheet" href="https://unpkg.com/bluesky-comments@latest/dist/bluesky-comments.css"> -->
+<link rel="stylesheet" href="/assets/css/bluesky-comments.css">
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Angadh
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/">Longs</a>
+            </li><li class="masthead__menu-item">
+              <a href="/teaching/">Teaching</a>
+            </li><li class="masthead__menu-item">
+              <a href="/publications/">Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opinions/">Shorts</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+	<!-- Add this in your site's header, footer, or any common section visible across pages -->
+
+	
+	<div class="theme-switch-wrapper">
+    	<label class="theme-switch" for="checkbox">
+        	<input type="checkbox" id="checkbox" onchange="toggleTheme()" />
+        	<div class="slider round"></div>
+    	</label>
+
+	<script>
+function toggleTheme() {
+    var checkbox = document.getElementById('checkbox');
+    var themeSource = document.getElementById('theme_source');
+    var themeSource2 = document.getElementById('theme_source_2');
+
+    if (checkbox.checked) {
+        themeSource.setAttribute('rel', 'stylesheet alternate');
+        themeSource2.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'dark');
+    } else {
+        themeSource2.setAttribute('rel', 'stylesheet alternate');
+        themeSource.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'light');
+    }
+}
+
+// Initialize the checkbox state based on the saved theme
+window.onload = function() {
+    var currentTheme = sessionStorage.getItem('theme');
+    var checkbox = document.getElementById('checkbox');
+    if (currentTheme === 'dark') {
+        checkbox.checked = true;
+    } else {
+        checkbox.checked = false;
+    }
+}
+</script>
+
+	</div>
+	
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky">
+    
+      <nav class="toc">
+        <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+        <ul class="toc__menu"><li><a href="#who-this-page-serves">Who this page serves?</a></li><li><a href="#project-areas">Project Areas</a><ul><li><a href="#in-space-manufacturing-eg-organs-electronics-and-pharmaceuticals-drugs">In-Space Manufacturing (e.g., Organs, Electronics, and Pharmaceuticals Drugs)</a></li><li><a href="#large-space-stations-modular-or-monolithic">Large Space Stations (Modular or Monolithic)</a></li><li><a href="#large-space-telescopes-25-metres-or-more">Large Space Telescopes (25 metres or more)</a></li><li><a href="#in-space-servicingrepairrefuelling-systems">In-Space Servicing/Repair/Refuelling Systems</a></li><li><a href="#space-based-geoengineering">Space-based Geoengineering</a></li><li><a href="#debris-removal">Debris Removal</a></li></ul></li><li><a href="#technical-areas-needing-attention">Technical Areas needing attention</a></li><li><a href="#project-blurb-for-inspiration-only">Project Blurb (for Inspiration Only)</a></li><li><a href="#weekly-workshop-philosophy">Weekly Workshop Philosophy</a></li><li><a href="#informal-assessments">Informal Assessments</a></li><li><a href="#formal-assessments">Formal Assessments</a></li><li><a href="#useful-resources">Useful Resources:</a><ul><li><a href="#tools-for-writing-and-research-managemenent">Tools for Writing and Research Managemenent:</a></li><li><a href="#some-technical-references">Some Technical References:</a></li><li><a href="#footnotes">Footnotes</a></li></ul></li></ul>
+
+      </nav>
+    
+  </div>
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Final Year Project: Space Station Design">
+    <meta itemprop="description" content="An introduction to multibody dynamics and the use of symbolic computation in modelling them.">
+    <meta itemprop="datePublished" content="2025-01-30T10:33:53+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Final Year Project: Space Station Design
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+      (1452 words)
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p><label for="mf-id-1" class="margin-toggle">⊕</label><input type="checkbox" id="mf-id-1" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="/assets/imgs/HQ_Final_Logo_for_light_theme.png" /><br />Logo for SpaceHQ.
+We like to think of ourseleves as a ragtag group of outliers trying to figure out how we
+can build larger structures in space. An example challenge is how we can go from 
+modular stations such as ISS, as seen on the left of our logo, to rotating wheel
+space stations, on the right of our logo.</span></p>
+
+<h2 id="who-this-page-serves">Who this page serves?</h2>
+<p><span class="newthought">This is likely only useful for</span>  QMUL’s final year undergraduate students in who are taking
+<a href="https://www.qmul.ac.uk/modules/items/ems690u-integrated-design-project.html">EMS690U final year project</a>
+under my supervision. It will make little to no sense for anyone else (inlcuding those from QMUL) as
+there will be a lot covered in the in-person workshops. This is merely to augment to that; it is not
+meant as a standalone piece.</p>
+
+<h2 id="project-areas">Project Areas</h2>
+<p>The core thesis of the project is that large (or even ultra-large) space structures
+could help us inspirational or useful things. Human habitation and space-based astronomy
+are classic examples of the former whereas 
+former whereas in-space manufacturing or tackling
+overcome existential risks/threats</p>
+<h3 id="in-space-manufacturing-eg-organs-electronics-and-pharmaceuticals-drugs">In-Space Manufacturing (e.g., Organs, Electronics, and Pharmaceuticals Drugs)</h3>
+<p><strong><u>Pursuers</u></strong>: Commercial businesses backed by either venture capital and/or
+space agencies.</p>
+
+<p><a href="https://www.nasa.gov/missions/station/iss-research/3d-bioprinting/">3-D printing artificial organs</a>
+would be a boon to those on the donor organs wait-list. ISS astronauts are also working on this technology
+to if these
+<a href="https://www.space.com/international-space-station-3d-printed-hearts-astronauts-deep-space-travel">artificial organs can withstand the space environment</a>.</p>
+
+<p><strong><u>Existing Players</u></strong></p>
+<ul>
+  <li><strong>Semiconductors and Electronics</strong>
+    <ul>
+      <li><a href="https://www.spaceforge.com">Space Forge</a> have spokent about 3D
+  printing semiconductors and generally manufacturing advanced materials; at
+  an even I attended, they spoke about how microgravity allows new alloys
+  to be made that don’t separate due to a lack of gravity.</li>
+    </ul>
+  </li>
+  <li><strong>Pharmaceuticals Drugs</strong>
+    <ul>
+      <li><a href="https://www.varda.com">Varda Space</a></li>
+      <li><a href="https://www.bioorbit.space/">BioOrbit</a> was still nascent when I wrote this in 
+ October 2024.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="large-space-stations-modular-or-monolithic">Large Space Stations (Modular or Monolithic)</h3>
+<p><strong><u>Domain</u></strong>: National space agencies have built space stations so far.
+Commercial entities are now trying to get a piece of the pie.</p>
+
+<p><label for="table-2-id" class="margin-toggle"> ⊕</label><input type="checkbox" id="table-2-id" class="margin-toggle" /><span class="marginnote"><em>Table 1</em>: A table of space stations launched and planned. </span></p>
+<div class="table-wrapper">
+  <table class="booktabs">
+    <thead>
+      <tr>
+        <th colspan="4" class="cmid">Space Stations</th>
+      </tr>
+      <tr>
+        <th class="l">Funding</th>
+        <th>Name (Year)</th>
+        <th class="r">Capacity</th>
+        <th class="r">Type/Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="18">Govt. funded</td>
+        <td><a href="https://en.wikipedia.org/wiki/Salyut_1">Salyut 1</a> (1971)</td>
+        <td class="r">3</td>
+        <td class="r">Monolithic</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Salyut_2">Salyut 2</a> (1973)</td>
+        <td class="r">2</td>
+        <td class="r">Monolithic, military. Debris collision failure</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Salyut_3">Salyut 3</a> (1974-1975)</td>
+        <td class="r">2</td>
+        <td class="r">Monolithic, military</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Salyut_4">Salyut 4</a> (1974-1977)</td>
+        <td class="r">3</td>
+        <td class="r">Monolithic</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Salyut_5">Salyut 5</a> (1976-1977)</td>
+        <td class="r">2</td>
+        <td class="r">Monolithic, military</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Salyut_6">Salyut 6</a> (1977-1982)</td>
+        <td class="r">3</td>
+        <td class="r">Semi-modular</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Salyut_7">Salyut 7</a> (1982-1991)</td>
+        <td class="r">3</td>
+        <td class="r">Semi-modular</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Skylab">Skylab</a> (1973-1979)</td>
+        <td class="r">3</td>
+        <td class="r">Monolithic</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Almaz">Almaz</a> (1973-1976)</td>
+        <td class="r">2-3</td>
+        <td class="r">Monolithic, military</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Mir">Mir</a> (1986-2001)</td>
+        <td class="r">3</td>
+        <td class="r">Modular</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/International_Space_Station">International Space Station</a> (2000-present)</td>
+        <td class="r">7</td>
+        <td class="r">Modular, international</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Tiangong-1">Tiangong-1</a> (2011-2018)</td>
+        <td class="r">3</td>
+        <td class="r">Monolithic prototype</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Tiangong-2">Tiangong-2</a> (2016-2019)</td>
+        <td class="r">2</td>
+        <td class="r">Monolithic prototype</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Tiangong_space_station">Tiangong Space Station</a> (2021-present)</td>
+        <td class="r">3</td>
+        <td class="r">Modular</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Lunar_Gateway">Lunar Gateway</a> (planned 2024)</td>
+        <td class="r">4</td>
+        <td class="r">Modular, lunar orbit</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Russian_Orbital_Service_Station">ROSS</a> (planned 2027)</td>
+        <td class="r">4</td>
+        <td class="r">Modular, Russian national</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Indian_Space_Station">Indian Space Station</a> (planned 2035)</td>
+        <td class="r">3</td>
+        <td class="r">Likely modular, details TBA</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Tiangong_space_station#Future_expansion">China's next-gen station</a> (planned, date TBA)</td>
+        <td class="r">6</td>
+        <td class="r">Likely modular, expanded Tiangong</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="border-bottom: 2px solid;"></td>
+      </tr>
+      <tr>
+        <td rowspan="8">Private</td>
+        <td><a href="https://en.wikipedia.org/wiki/Axiom_Station">Axiom Station</a> (planned 2025)</td>
+        <td class="r">4</td>
+        <td class="r">Modular, initially ISS-attached</td>
+      </tr>
+      <tr>
+        <td><a href="https://vast.space/">Vast-1</a> (planned 2025)</td>
+        <td class="r">4</td>
+        <td class="r">Single module prototype</td>
+      </tr>
+      <tr>
+        <td><a href="https://vast.space/">Haven-1</a> (planned 2027)</td>
+        <td class="r">8</td>
+        <td class="r">Larger follow-up to Vast-1</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Starlab_Space_Station">Starlab</a> (planned 2028)</td>
+        <td class="r">4</td>
+        <td class="r">Single-launch station</td>
+      </tr>
+      <tr>
+        <td><a href="https://explorationcompany.space/">The Exploration Company's Nyx</a> (planned 2028)</td>
+        <td class="r">4</td>
+        <td class="r">Modular, expandable design</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Orbital_Reef">Orbital Reef</a> (status uncertain)</td>
+        <td class="r">10</td>
+        <td class="r">Modular, project paused in 2023</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Voyager_Station">Voyager Station</a> (conceptual)</td>
+        <td class="r">400</td>
+        <td class="r">Rotating wheel design, highly speculative</td>
+      </tr>
+      <tr>
+        <td><a href="https://en.wikipedia.org/wiki/Orbital_Reef">Orbital Reef</a> (planned 2027)</td>
+        <td class="r">10</td>
+        <td class="r">Duplicate entry, remove</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--
+| **Funding**  | **Name (Year)**                                                                                                       | **Capacity** | **Type/Comments**                              |
+| ------------ | --------------------------------------------------------------------------------------------------------------------- | ------------ | ---------------------------------------------- |
+|              | [Salyut 1](https://en.wikipedia.org/wiki/Salyut_1) (1971)                                                             | 3            | Monolithic                                     |
+|              | [Salyut 2](https://en.wikipedia.org/wiki/Salyut_2) (1973)                                                             | 2            | Monolithic, military. Debris collision failure |
+|              | [Salyut 3](https://en.wikipedia.org/wiki/Salyut_3) (1974-1975)                                                        | 2            | Monolithic, military                           |
+|              | [Salyut 4](https://en.wikipedia.org/wiki/Salyut_4) (1974-1977)                                                        | 3            | Monolithic                                     |
+|              | [Salyut 5](https://en.wikipedia.org/wiki/Salyut_5) (1976-1977)                                                        | 2            | Monolithic, military                           |
+|              | [Salyut 6](https://en.wikipedia.org/wiki/Salyut_6) (1977-1982)                                                        | 3            | Semi-modular                                   |
+|              | [Salyut 7](https://en.wikipedia.org/wiki/Salyut_7) (1982-1991)                                                        | 3            | Semi-modular                                   |
+| Govt. funded | [Skylab](https://en.wikipedia.org/wiki/Skylab) (1973-1979)                                                            | 3            | Monolithic                                     |
+|              | [Almaz](https://en.wikipedia.org/wiki/Almaz) (1973-1976)                                                              | 2-3          | Monolithic, military                           |
+|              | [Mir](https://en.wikipedia.org/wiki/Mir) (1986-2001)                                                                  | 3            | Modular                                        |
+|              | [International Space Station](https://en.wikipedia.org/wiki/International_Space_Station) (2000-present)               | 7            | Modular, international                         |
+|              | [Tiangong-1](https://en.wikipedia.org/wiki/Tiangong-1) (2011-2018)                                                    | 3            | Monolithic prototype                           |
+|              | [Tiangong-2](https://en.wikipedia.org/wiki/Tiangong-2) (2016-2019)                                                    | 2            | Monolithic prototype                           |
+|              | [Tiangong Space Station](https://en.wikipedia.org/wiki/Tiangong_space_station) (2021-present)                         | 3            | Modular                                        |
+|              | [Lunar Gateway](https://en.wikipedia.org/wiki/Lunar_Gateway) (planned 2024)                                           | 4            | Modular, lunar orbit                           |
+|              | [ROSS](https://en.wikipedia.org/wiki/Russian_Orbital_Service_Station) (planned 2027)                                  | 4            | Modular, Russian national                      |
+|              | [Indian Space Station](https://en.wikipedia.org/wiki/Indian_Space_Station) (planned 2035)                             | 3            | Likely modular, details TBA                    |
+|              | [China's next-gen station](https://en.wikipedia.org/wiki/Tiangong_space_station#Future_expansion) (planned, date TBA) | 6            | Likely modular, expanded Tiangong              |
+|              |                                                                                                                       |              |                                                |
+|              | [Axiom Station](https://en.wikipedia.org/wiki/Axiom_Station) (planned 2025)                                           | 4            | Modular, initially ISS-attached                |
+|              | [Vast-1](https://vast.space/) (planned 2025)                                                                          | 4            | Single module prototype                        |
+|              | [Haven-1](https://vast.space/) (planned 2027)                                                                         | 8            | Larger follow-up to Vast-1                     |
+| Private      | [Starlab](https://en.wikipedia.org/wiki/Starlab_Space_Station) (planned 2028)                                         | 4            | Single-launch station                          |
+|              | [The Exploration Company's Nyx](https://explorationcompany.space/) (planned 2028)                                     | 4            | Modular, expandable design                     |
+|              | [Orbital Reef](https://en.wikipedia.org/wiki/Orbital_Reef) (status uncertain)                                         | 10           | Modular, project paused in 2023                |
+|              | [Voyager Station](https://en.wikipedia.org/wiki/Voyager_Station) (conceptual)                                         | 400          | Rotating wheel design, highly speculative      |
+-->
+
+<h3 id="large-space-telescopes-25-metres-or-more">Large Space Telescopes (25 metres or more)</h3>
+<p><strong><u>Domain</u></strong>: Space agencies and commercial</p>
+
+<h3 id="in-space-servicingrepairrefuelling-systems">In-Space Servicing/Repair/Refuelling Systems</h3>
+<p><strong><u>Domain</u></strong>: Commercial</p>
+
+<h3 id="space-based-geoengineering">Space-based Geoengineering</h3>
+<p><strong><u>Domain</u></strong>: Commercial</p>
+
+<h3 id="debris-removal">Debris Removal</h3>
+<p><strong><u>Domain</u></strong>: Commercial
+<strong><u>Existing Players</u></strong></p>
+
+<p>-<a href="http://clearspace.today">ClearSpace</a></p>
+
+<h2 id="technical-areas-needing-attention">Technical Areas needing attention</h2>
+<p>I will keep adding to this list as
+I learn of areas:</p>
+<ul>
+  <li>
+    <p>Sample return is a technically expensive area of work. At the October 2024 talk 
+at IOP, I think it was Andrew Bacon who spewed some statistics
+of sample return being unchanged since the Shuttle era. It was
+$£40,000/kg$ (USD) in the Shuttle era and is currently $£45,000/kg$ (USD) for
+the SpaceX Dragon 2. I presume this is in 2024 currency as this was said in dialogue.</p>
+  </li>
+  <li>
+    <p>Rendezvous and Proximity Operations (RPO) are a technical gap that Astroscale mentioned
+at the same October 2024 talk.</p>
+  </li>
+</ul>
+
+<h2 id="project-blurb-for-inspiration-only">Project Blurb (for Inspiration Only)</h2>
+<p>There is a rapidly growing number of man-made satellites in Earth’s orbit, fulfilling
+a wide range of tasks. As satellite technology develops, there is a growing interest
+in the design of satellites such as the International Space Station (ISS), that are
+capable of sustaining human occupation for extended periods. The design requirements
+of these occupied satellite systems are complex and depend upon the number of
+occupants, the expected duration of occupation (i.e. the number of years an astronaut would
+spend on the satellite) and the overarching purpose of the space station.</p>
+
+<p>Each group will examine a different type of space station, which serves different purposes, including</p>
+<ul>
+  <li>A habitat for long-term occupation</li>
+  <li>One with the optical telescopes or other imagers for disaster-monitoring, persistent Earth observations,
+or space-based astronomy</li>
+  <li>In-space factory for production of semi-conductors</li>
+</ul>
+
+<p>Students will focus on a single application from the above list and will consider
+different levels of human occupants, range from less than 10 to several thousand people.
+The specific objectives include determining precise system-level requirements, estimating
+costs associated with different possible designs, and developing an Attitude and
+Orbit Control System. Students will need to survey available launch vehicles (incl.
+SpaceX’s Starship Super Heavy) to develop cost estimates and a mission plan/architecture
+for the assembly. The latter will involve developing a high-level concept of operations
+needed to assemble the desired space station using either robots or astronauts. Again,
+a trade-off analysis is necessary as a precursor that estimates cost, speed, time, risks, etc.
+for each assembly style. By the end of the project, students will be expected to conclude with
+a recommendation on the station design, the chosen assembly architecture in the ConOps (aka
+Concept of Operations) for their given occupancy limit, and orbit/attitude control system simulations.</p>
+
+<h2 id="weekly-workshop-philosophy">Weekly Workshop Philosophy</h2>
+<p>In line with the <a href="http://angadhn.com/online_textbooks/UG_final_year_project/#formal-assessments">formal assessments (listed below)</a> but also to prepare you as future leaders in engineering,
+our weekly 2-hour workshops are geared primarily towards getting you to developing broader skills than
+university might typically prepare you for in the early years. Some examples of skills you will develop
+over the coming weeks are listed below (but this is by no means an exhaustive list):</p>
+<ol>
+  <li><strong>Public Speaking</strong>: elevator pitch style in the early weeks to eventually being able to give rapid updates
+in the later weeks.</li>
+  <li><strong>Writing</strong>: Developing writing skills.</li>
+  <li><strong>Insight Generation</strong>: Reflecting on technologies<sup id="fnref:a" role="doc-noteref"><a href="#fn:a" class="footnote" rel="footnote">1</a></sup> and the underlying
+philosophy for their development.</li>
+</ol>
+
+<h2 id="informal-assessments">Informal Assessments</h2>
+<p>Thus, we have the following two informal assessments:</p>
+<ol>
+  <li>Weekly in-class presentations by each member of every group the entire academic year.</li>
+  <li>6-page technical report to be submitted in Week 6 of Semester B.</li>
+</ol>
+
+<h2 id="formal-assessments">Formal Assessments</h2>
+<p><label for="table-2-id" class="margin-toggle"> ⊕</label><input type="checkbox" id="table-2-id" class="margin-toggle" /><span class="marginnote"><em>Table 2</em>: 2024-25 Assessment List and Submission Deadlines. </span></p>
+<div class="table-wrapper">
+  <table class="booktabs">
+    <thead>
+      <tr>
+        <th colspan="2" class="cmid">Formal Assessments</th>
+      </tr>
+      <tr>
+        <th class="l">Assessment</th>
+        <th class="r">Due Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1. Front End Individual Design Report (15%)</td>
+        <td class="r">6th December 2024, 16:59</td>
+      </tr>
+      <tr>
+        <td>2. Group Project Proposal/Feasibility Study (10%)</td>
+        <td class="r">TBC</td>
+      </tr>
+      <tr>
+        <td>3. Peer Evaluation with Self Reflection and Action Plan Sem A (Formative)</td>
+        <td class="r">TBC</td>
+      </tr>
+      <tr>
+        <td>4. Self Reflection Sem B and Engagement Mark (10%)</td>
+        <td class="r">TBC</td>
+      </tr>
+      <tr>
+        <td>5. Individual Detailed Design Report (40%)</td>
+        <td class="r">TBC</td>
+      </tr>
+      <tr>
+        <td>6. Final Group Presentation, Individual viva and Back-up Evidence (25%)</td>
+        <td class="r">TBC</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="useful-resources">Useful Resources:</h2>
+<p>This list will grow but useful resources at the time of writing are listed below.</p>
+<h3 id="tools-for-writing-and-research-managemenent">Tools for Writing and Research Managemenent:</h3>
+<ol>
+  <li><a href="https://www.overleaf.com/latex/templates/qmul-sems-undergraduate-report-template/qdypzhkttgyt">\(\LaTeX\) template on Overleaf</a>
+that I have posted.</li>
+  <li><a href="https://www.zotero.org">Zotero</a> is an excellent and free tool for collecting all the papers you use for
+your research. These will be used as citations in the Reference section of your report(s). For these
+reasons, tools like Zotero are also called reference management tools. Worth downloading and reading/wathcing some
+tutorials online.</li>
+  <li><a href="https://scholar.google.com">Google Scholar</a> is superb for finding scholarly papers in addition to 
+the resources provided on QM+. A browser plugin can also be installed via Zotero that connects to Google
+Scholar to quickly import papers that you find interesting; link here for
+<a href="https://www.zotero.org/download/connectors">Zotero Connector</a>.</li>
+  <li><a href="https://inkscape.org">Inkscape</a> is one example of a useful tool for making high quality images.
+<a href="https://www.apple.com/uk/keynote/">Keynote </a>and PowerPoint are
+also useful tools not only for making presentations but also for quickly making schematics or editing images.</li>
+</ol>
+
+<h3 id="some-technical-references">Some Technical References:</h3>
+<ol>
+  <li>Space Systems Engineering Textbooks. The bible for this is typically <a href="https://www.amazon.com/Space-Mission-Engineering-Technology-Library/dp/1881883159">SMAD by James Wertz
+Some goods one are by Stark and Fortescue</a> which is also made available via the
+<a href="https://archive.org/details/spacemissionanal0003edunse">Internet Archive</a>. Another is by
+<a href="https://www.amazon.com/Spacecraft-Systems-Engineering-Peter-Fortescue/dp/047075012X/ref=sr_1_1?crid=1Q26KNFTZBRSQ&amp;dib=eyJ2IjoiMSJ9.e0d04EB9lgaq4_O9stPoRdmatNHD5PIdX9hZzjEJaZjVglvWUD5JhGJ3eK5mZ7nJqUYuSfL7tKb1kte3X2Ebqmz_mbqegw7XFk98ScwyQvRcQvGKdmAHEonLpOQKcJ6Q.6z31353CMhm9mEjpNLrAcUx1-TDFRUHJSIUju5o05Iw&amp;dib_tag=se&amp;keywords=stark+fortescue&amp;qid=1726750506&amp;s=books&amp;sprefix=stark+foretescu%2Cstripbooks-intl-ship%2C145&amp;sr=1-1">Fortescue et al.</a>
+which QMUL students can access on QM+.</li>
+  <li>If you want to look into how books such as above can inform the development of large space structures, you can
+read my paper on how to <a href="https://www.angadhn.com/publication/2023-06-01-towards-robotic-on-orbit-assembly">robotically assemble 25 metre space telescopes</a>
+and another <a href="https://kiss.caltech.edu/papers/largestructure/papers/architecture.pdf">CalTech/NASA-JPL paper on 80 metre telescopes</a>.</li>
+  <li>My blogposts on:
+    <ul>
+      <li><a href="http://www.angadhn.com/large%20space%20stations/space%20exploration/vonBraunWheels/">Comparing wheel space stations to the ISS</a></li>
+      <li><a href="http://www.angadhn.com/inflatable%20space%20habitats/inflatable%20space%20habitats/">Inflatable von Braun stations</a></li>
+    </ul>
+  </li>
+  <li>A LOT of textbooks that I have collected in many areas (not just space) that you can use for your reports is available <a href="https://github.com/spaceHQ-ltd/Textbooks">here</a>.</li>
+</ol>
+
+<h3 id="footnotes">Footnotes</h3>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:a" role="doc-endnote">
+      <p>Here, I do not just mean space technolgoies but even those that you use in preparing your reports such as GitHub and \(\LaTeX\). <a href="#fnref:a" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-01-30T10:33:53+00:00">January 30, 2025</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://bsky.app/intent/compose?text=Final+Year+Project%3A+Space+Station+Design:%20https%3A%2F%2Fangadhn.com%2Fonline_textbooks%2FUG_final_year_project%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Bluesky"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span></a>
+
+  <a href="https://twitter.com/intent/tweet?text=Final+Year+Project%3A+Space+Station+Design%20https%3A%2F%2Fangadhn.com%2Fonline_textbooks%2FUG_final_year_project%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fangadhn.com%2Fonline_textbooks%2FUG_final_year_project%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fangadhn.com%2Fonline_textbooks%2FUG_final_year_project%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/online_textbooks/computational_dynamics/" class="pagination--pager" title="Symbolic Computational Dynamics
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      
+    <div id="bluesky-comments"></div>
+  
+
+<!-- Add Bluesky scripts at the bottom -->
+
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/bluesky-comments@latest/dist/bluesky-comments.umd.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('bluesky-comments')) {
+        initBlueskyComments('bluesky-comments', { author: 'angadhn.com' });
+      }
+    });
+  </script>
+
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/angadhn" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://soundcloud.com/angadh-nanjangud" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-soundcloud" aria-hidden="true"></i> Soundcloud</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Angadh Nanjangud. Powered by
+	<a href="https://clayh53.github.io/tufte-jekyll/" rel="nofollow">clayh53</a>,
+	<a href="http://claude.ai" rel="nofollow">Claude</a>,
+	<a href="http://chat.openai.com" rel="nofollow">ChatGPT</a> &amp;
+	<a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
+</div>
+<div class="page__footer-copyright">The views presented on this website are the author's own and do not represent the views of their employer(s).</div>
+
+	<div id="viewCounter">Views: 0</div>
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBZQTH82T2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MBZQTH82T2');
+</script>
+
+
+
+
+
+
+
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+ </script>
+ 
+
+    <!-- Begin: ChatGPT stuff for firebase site views counter-->
+<script>
+  // Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBHfzThmGgycGkU3bROZBoVSWON08n8yUc",
+    authDomain: "mywebsite-4914a.firebaseapp.com",
+    projectId: "mywebsite-4914a",
+    storageBucket: "mywebsite-4914a.appspot.com",
+    messagingSenderId: "966713391944",
+    appId: "1:966713391944:web:ba2e3ce5166884ec9c117d",
+    measurementId: "G-5DZQBSQQF2"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // If using Firebase Analytics
+  firebase.analytics();
+
+  var db = firebase.firestore();
+
+function getCleanPath() {
+  let path = window.location.pathname;
+  // Check if the path is just a slash, which is the root of the site
+  if (path === '/') {
+    return 'root'; // Use a placeholder like 'root' for the root path
+  }
+  // Remove leading and trailing slashes and replace internal slashes with a different character
+  path = path.replace(/^\/|\/$/g, '').replace(/\//g, '_');
+  return path;
+}
+  
+
+  // Function to increment view count
+  function updatePageViews() {
+    const pagePath = getCleanPath();
+    const pageRef = db.collection('pageViews').doc('total');
+
+    pageRef.get().then((doc) => {
+      if (doc.exists) {
+        pageRef.update({ views: firebase.firestore.FieldValue.increment(1) });
+      } else {
+        pageRef.set({ views: 1 });
+      }
+    });
+  }
+
+  // Function to display page views
+  // Function to display page views
+function displayPageViews() {
+  const pagePath = getCleanPath(); // Use the getCleanPath function here as well
+  const pageRef = db.collection('pageViews').doc('total');
+
+  pageRef.get().then((doc) => {
+    if (doc.exists) {
+      document.getElementById('viewCounter').innerText = `Views: ${doc.data().views}`;
+    } else {
+      document.getElementById('viewCounter').innerText = 'Views: 0';
+    }
+  }).catch((error) => {
+    console.error("Error getting document:", error); // For debugging
+  });
+}
+
+  // Call the functions when the window loads
+  window.addEventListener('load', function() {
+  updatePageViews();
+  displayPageViews();
+});
+</script>
+    <!-- End: ChatGPT stuff for firebase site views counter-->
+
+    <!-- Claude says to Add this line to include custom.js -->
+    <script src="/assets/js/custom.js"></script>
+  </body>
+</html>

@@ -1,0 +1,699 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<!-- begin _includes/seo.html --><title>Howler - Angadh</title>
+<meta name="description" content="AIGrant Pitch">
+
+
+  <meta name="author" content="Angadh">
+  
+  <meta property="article:author" content="Angadh">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Angadh">
+<meta property="og:title" content="Howler">
+<meta property="og:url" content="https://angadhn.com/opinions/Howler_EV4AI/">
+
+
+  <meta property="og:description" content="AIGrant Pitch">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-06-22T13:14:30+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://angadhn.com/opinions/Howler_EV4AI/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Angadh Nanjangud",
+      "url": "https://angadhn.com/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css" id="theme_source">
+
+  <link rel="stylesheet alternate" href="/assets/css/theme2.css" id="theme_source_2">
+
+<script>
+  let theme = sessionStorage.getItem('theme');
+  if(theme === "dark")
+  {
+    sessionStorage.setItem('theme', 'dark');
+    node1 = document.getElementById('theme_source');
+    node2 = document.getElementById('theme_source_2');
+    if (node1 && node2) {
+      node1.setAttribute('rel', 'stylesheet alternate'); 
+      node2.setAttribute('rel', 'stylesheet');
+    }
+  }
+  else
+  {
+    sessionStorage.setItem('theme', 'sunrise');
+  }
+  
+  // Add this function for image switching
+  function updateImages() {
+    console.log('updateImages function called');
+    const isDark = sessionStorage.getItem('theme') === 'dark';
+    const theme = isDark ? 'dark' : 'light';
+    console.log('Current theme:', theme);
+    
+    // Function to update the src of an image
+    function updateImageSrc(img) {
+      const src = img.getAttribute('src');
+      if (!src.includes('for_light_theme') && !src.includes('for_dark_theme')) return; // Skip images without theme suffixes
+	    
+      console.log('Processing image:', src);
+      const baseName = src.replace(/for_(light|dark)_theme\.(jpg|jpeg|png|gif|svg)$/, '');
+      const currentExt = src.split('.').pop().toLowerCase();
+      
+      // List of extensions to try, in order of preference
+      const extensions = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
+      
+      // Move the current extension to the front of the list
+      extensions.unshift(extensions.splice(extensions.indexOf(currentExt), 1)[0]);
+      
+      // Function to try loading an image with a specific extension
+      function tryImage(ext) {
+        const themeImage = `${baseName}for_${theme}_theme.${ext}`;
+        console.log('Trying image:', themeImage);
+	return fetch(themeImage, { method: 'HEAD' }) // Add this line: Use HEAD request instead of GET
+          .then(response => {
+            if (response.ok) {
+              console.log('Image found:', themeImage);
+              img.src = themeImage;
+              return true; // Successfully found and set the image
+            }
+            console.log('Image not found:', themeImage);
+            return false; // Image not found with this extension
+          })
+          .catch(() => {
+            console.log('Error fetching:', themeImage);
+            return false; // Error occurred, try next extension
+          });
+      }
+      
+      // Try each extension in order
+      extensions.reduce((promise, ext) => {
+        return promise.then(result => {
+          if (result) return true; // If we've already found an image, stop
+          return tryImage(ext);
+        });
+      }, Promise.resolve(false));
+    }
+    
+    // Update standard images
+    document.querySelectorAll('img').forEach(updateImageSrc);
+    // Update Tufte marginfigure and sidenote images
+    document.querySelectorAll('.marginnote img, .sidenote img').forEach(updateImageSrc);
+    // Update Tufte fullwidth images
+    document.querySelectorAll('.fullwidth img').forEach(updateImageSrc);
+  }
+  
+  // Call updateImages when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, calling updateImages');
+    updateImages();
+  });
+</script>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css"></noscript>
+<!-- Add Bluesky comments stylesheet here -->
+<!-- <link rel="stylesheet" href="https://unpkg.com/bluesky-comments@latest/dist/bluesky-comments.css"> -->
+<link rel="stylesheet" href="/assets/css/bluesky-comments.css">
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ 
+Instructions used from here: https://renatogolia.com/2020/10/22/creating-this-blog-theme/
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/imgs/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="mask-icon" href="/assets/imgs/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#e5e5e5">
+<meta name="msapplication-config" content="/assets/imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Angadh
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/">Longs</a>
+            </li><li class="masthead__menu-item">
+              <a href="/teaching/">Teaching</a>
+            </li><li class="masthead__menu-item">
+              <a href="/publications/">Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/opinions/">Shorts</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+	<!-- Add this in your site's header, footer, or any common section visible across pages -->
+
+	
+	<div class="theme-switch-wrapper">
+    	<label class="theme-switch" for="checkbox">
+        	<input type="checkbox" id="checkbox" onchange="toggleTheme()" />
+        	<div class="slider round"></div>
+    	</label>
+
+	<script>
+function toggleTheme() {
+    var checkbox = document.getElementById('checkbox');
+    var themeSource = document.getElementById('theme_source');
+    var themeSource2 = document.getElementById('theme_source_2');
+
+    if (checkbox.checked) {
+        themeSource.setAttribute('rel', 'stylesheet alternate');
+        themeSource2.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'dark');
+    } else {
+        themeSource2.setAttribute('rel', 'stylesheet alternate');
+        themeSource.setAttribute('rel', 'stylesheet');
+        sessionStorage.setItem('theme', 'light');
+    }
+}
+
+// Initialize the checkbox state based on the saved theme
+window.onload = function() {
+    var currentTheme = sessionStorage.getItem('theme');
+    var checkbox = document.getElementById('checkbox');
+    if (currentTheme === 'dark') {
+        checkbox.checked = true;
+    } else {
+        checkbox.checked = false;
+    }
+}
+</script>
+
+	</div>
+	
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky">
+    
+      <nav class="toc">
+        <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+        <ul class="toc__menu"><li><a href="#aigrant">AIGrant</a><ul><li><a href="#pitch">Pitch</a></li><li><a href="#demo">Demo</a></li></ul></li><li><a href="#ycombinator">YCombinator</a></li><li><a href="#emergent-ventures-4-ai-grant-proposal">Emergent Ventures 4 AI: Grant Proposal</a><ul><li><a href="#hi-im-angadh">Hi, I’m Angadh</a></li><li><a href="#i-agree-western-university-education-is-a-poor-value-proposition">I agree western university education is a poor value-proposition.</a></li><li><a href="#idea">Idea</a></li><li><a href="#novelty">Novelty</a></li><li><a href="#progress">Progress</a></li><li><a href="#how-ev-helps">How EV helps</a></li></ul></li><li><a href="#footnotes">Footnotes</a></li></ul>
+
+      </nav>
+    
+  </div>
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Howler">
+    <meta itemprop="description" content="AIGrantPitch">
+    <meta itemprop="datePublished" content="2022-06-22T13:14:30+01:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Howler
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+      (1420 words)
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <h1 id="aigrant">AIGrant</h1>
+<h2 id="pitch">Pitch</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C8x2bBiaFRs?si=SQAvL0OKU132P2WJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+
+<h2 id="demo">Demo</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VbslBJX4Rfw?si=0VuB5dtqsDkyczMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+
+<h1 id="ycombinator">YCombinator</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SoVezD4F5-k?si=6nM5tToakeFEIhjY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+
+<p>The below is my proposal to Emergent Ventures 4 AI submitted in June
+2022<label for="EV4AI" class="margin-toggle sidenote-number"></label><input type="checkbox" id="EV4AI" class="margin-toggle" /><span class="sidenote">The proposal was not successful and reading it now,
+I can see why. But I think the app I built is still pretty cool, even if it is no
+longer on the App Store </span>. I also pitched Howler to AIGrant and YCombinator; demos and videos of it are below and my submission to Emergent Venures is after.</p>
+
+<h1 id="emergent-ventures-4-ai-grant-proposal">Emergent Ventures 4 AI: Grant Proposal</h1>
+<h2 id="hi-im-angadh">Hi, I’m Angadh</h2>
+
+<p>In June 2017, after ~10 months as a Visiting Researcher at NASA JPL,
+I was trying to convince a JPL Chief Technologist of deserving a permanent
+role as a freshly minted aerospace engineering PhD with relevant work
+experience. Just like in ~50 similar meetings, I was asked about my
+nationality which was followed by their template response of
+<a href="https://en.wikipedia.org/wiki/International_Traffic_in_Arms_Regulations">International Traffic in Arms Regulations</a>
+constraining JPL from hiring folks like me without American passports or green cards.
+On this occasion, I was also asked how I was making rent and feeding myself in
+Los Angeles with a $10,000 fellowship. Unprepared for that question, tears quickly
+welled up- I excused myself and ran to the nearest bathroom stall to compose myself.
+As an upper caste Indian male who has lived more than half his life abroad<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>,
+this incident taught me the relative limits of privilege.</p>
+
+<p>A couple months later, I moved to the UK where I have since been working on the problem that I wish to solve: how to simultaneously improve access to information, expertise, and opportunities to provide a pedestal to privilege for those without (relative to me and globally). Today, this work is facilitated by my extant privilege as an engineering academic with a permanent contract and skills as an autodidact programmer.</p>
+
+<p>My solution to the aforementioned problem is to build systems that:</p>
+<ul>
+  <li>enable others to develop expertise via access to relevant information and/or resources; and</li>
+  <li>allow my team to present our knowledge/creation to interested parties, some of whom might support our work.</li>
+</ul>
+
+<p>Two systems that I am working on are called:</p>
+<ol>
+  <li>
+    <p><strong>Space HQ</strong>: my academic research lab within Queen Mary University of London (QMUL), where our current mission is to develop next-generation intelligent space robots to realise our vision to commercially build and operate hundred-person orbiting space stations in Low Earth Orbit (~12x of ISS’s occupancy). Our current focus is on developing cloud-based space robotics teaching and research <a href="http://www.angadhn.com/ComputationalDynamics/kinematics/introduction.html">resources</a> accessible to anyone. Currently, these are primarily used in <strong>teaching</strong> undergraduate computational spacecraft engineering courses in my courses at QMUL; and research in my group in using computational tools to develop robotics technologies for in-space assembly of space structures. One might imagine that such space robotics education resource can be monetized into a certificate program, while allowing Space HQ to retain some graduates to work on the core objecive of larger scale space habitation. Additionally, providing a matchmaking marketplace for Space HQ grads and employers (similar to that seen in Indian universities) can offer another means of generating revenue.</p>
+  </li>
+  <li>
+    <p><strong>Howler®</strong>: is an idea for a non-toxic social media, discussed in the Idea section.</p>
+  </li>
+</ol>
+
+<p>How these solutions help? Invariably, I envision both systems evolving into startups that are engines for generating employment opportunities that have the knock-on effect of re-distributing (or, maybe, disrupting?) privilege. For example, registering Space HQ Ltd as a UK PLC has facilitated engagement with the UK’s space innovation network (e.g., <a href="https://sa.catapult.org.uk">Satellite Applications Catapult</a>. As the space industry operates different to software in many aspects, networking is critical for early stage startups; we are now part of the UK’s <a href="https://spaceenergyinitiative.org.uk">Space Energy Initiative</a> that aims to deliver Space Based Solar Power, which requires robotic in-space assembly technologies that Space HQ will develop. Securing a contract from this partnership will enable my research group members to continue onto Space HQ Ltd. I am hoping (and quietly confident) that working on these two efforts will compound to bear a net positive impact on society in terms of opportunities created.</p>
+
+<h2 id="i-agree-western-university-education-is-a-poor-value-proposition">I agree western university education is a poor value-proposition.</h2>
+<p>I have come to agree with this by contrasting my time in Western academia (PhD in California and a permanent academic position in London) to my undergraduate experience in Bangalore. Indian universities operate as a marketplace for employers and jobseekers by inviting companies for on-campus recruitment in the final year. Western universities operate like a prestigious newspaper selling you a subscription to one paper (degree certificate). A more comical comparison might be that these universities sell a ticket at a platform where trains no longer stop and there is no destination.</p>
+
+<h2 id="idea">Idea</h2>
+<figure><img src="/assets/imgs/HowlerLogo_for_dark_theme.png" /><figcaption class="maincolumn-figure"></figcaption></figure>
+<p>In the Harry Potter universe, Howlers were owl-delivered letters read aloud to recipients in senders’ voices. My eponymous idea, Howler®, builds on this; in-app personal voice messages are quickly converted into podcasts that sound like a synchronous conversation (<a href="https://firebasestorage.googleapis.com/v0/b/howler-beta-test.appspot.com/o/howlcasts%2FPFMmCatcLcPHo1XOvfBIjrXDVqI2%2F6D002CC7-1C74-401A-A3AA-A962020DBA23?alt=media&amp;token=e3d8ad8e-b6a7-40bb-8ed0-fd55d9488259">listen to exemplar Howlcast</a>). Howler’s vision is to democratise podcasting while providing non-toxic content. <strong>I am requesting support from Emergent Ventures AI to continue building Howler</strong>.</p>
+
+<h2 id="novelty">Novelty</h2>
+<ol>
+  <li>
+    <p><strong>Consensus-based publication model</strong>: Consider current social media; Facebook and Instagram users tag others in posts, typically without consent. Twitter power users publish posts as individuals which are not assessed prior to publication. These examples of non-consensus social media incentivise individual actions, leading to polarising toxic content. Contrast these to another socially produced media where multi-author publications are more common than solo ones: academic papers. Consent between authors followed by objective review moderates content pre-publication; civil, non-violent communication is the bedrock for achieving publication. Howler embraces a similar model.</p>
+  </li>
+  <li>
+    <p><strong>AI-augmented moderation</strong>: After this consensus step, incorporating an AI-layer to evaluate content pre-publication would support realising a non-toxic social media. At the scale of a global internet, relying on human moderation alone is unrealistic; humans will, of course, continue to provide feedback. Simultaneously, AI-based mechanisms for verification will need to be developed for fake/spam account detection. We believe rapid progress in AI techniques supporting Natural Language Programming technologies (e.g., sentiment analysis of speech and/or voice-to-text for hate speech detection, <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">speaker diarization</a>) will become indispensable in future social media content moderation. This stack will also benefit our users by: aiding podcasters to auto-generate transcripts with speaker identity; and allowing text-based consumption of content by people with hearing disabilities and in noisy environments.</p>
+  </li>
+  <li>
+    <p><strong>Publication from inbox</strong>: When one considers the volumes of potential content in inboxes that go unpublished (which could be kernels for proposals, blogs, etc.), such easy publication from one’s inbox is another valuable novelty.</p>
+  </li>
+  <li>
+    <p><strong>Flexible creativity</strong>: Asynchronous podcast creation enables location and temporal flexibility for hosts and guests that should result in more thoughtful questions and responses.</p>
+  </li>
+</ol>
+
+<h2 id="progress">Progress</h2>
+<p>My achievements from solely driving Howler over ~14 months:</p>
+<ol>
+  <li><strong>iOS Prototype on App Store</strong>: Single-handedly designed, built, and launched the iOS prototype in April 2022 with no prior experience in app development.</li>
+  <li><strong>Accelerator shortlisting</strong>: Howler is currently shortlisted for Digital Catapult’s flagship accelerator program (<a href="https://www.digicatapult.org.uk/case-studies/study/machine-intelligence-garage/">Machine Intelligence Garage</a>) to secure $100k of cloud computing resources for AI/ML developments. Interview date: 1st July 2022.</li>
+  <li><strong>Initial User Acquisition</strong>: &gt;70 users recruited (family and friends providing regular feedback to improve the app), some of whom have previously worked in radio and are helping with podcast creation. The next phase will involve acquiring:
+    <ul>
+      <li><u>Comedy podcasters</u>: As a <a href="https://www.youtube.com/watch?app=desktop&amp;v=-WD9QPQhWPU&amp;feature=youtu.be">budding standup comic</a>, I have connections to others with popular podcasts; I will approach them to test/create on Howler.</li>
+      <li><u>Amateur and professional podcasting community</u>: Grow amateur user-base within my university (students, staff, and academics). Request two early Howler users working in radio (a BBC podcaster; and a former KQED employee) to help spread the word in the professional podcasting community.</li>
+      <li><u>Voice message users</u>: A large community globally and particularly in <a href="https://restofworld.org/2021/facebook-didnt-know-why-half-of-messengers-voice-traffic-comes-from-cambodia-heres-why/">developing economies</a>. People with disabilities; one nearly blind user believes Howler is a stronger alternative to WhatsApp-style voice messaging.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="how-ev-helps">How EV helps</h2>
+<p>Howlerʼs main early stage challenge is reaching ”<a href="https://paulgraham.com/ramenprofitable.html">ramen profitability</a>” which is why I have, so far, built it myself (often working full-time, alongside my full-time academic post). Emeregent Venures’ recognition alongside $250K cash support will help Howler:</p>
+<ol>
+  <li>recruit <a href="https://www.linkedin.com/in/mugheesasif/">Mughees</a> and <a href="https://www.linkedin.com/in/johnpeterflynn/">John</a> to drive Android and AI developments, respectively ($150k shared between three of us);</li>
+  <li>purchase $100k of Google Cloud Platform credits to develop/test AI content moderation;</li>
+  <li>gain visibility, ideally through use in producing Tyler’s and Shruti’s podcasts.</li>
+</ol>
+
+<p>Howler will then be in a strong position to pitch investors for further investment and connect to a strong talent pool to scale our team (with Tyler’s expertise and network, if possible)</p>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>I am especially privileged from an Indian context with 19 mostlycomfortable years abroad (UK: 5, America: 8, and Nigeria: 6). <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#grants" class="page__taxonomy-item p-category" rel="tag">Grants</a><span class="sep">, </span>
+    
+      <a href="/categories/#social-media" class="page__taxonomy-item p-category" rel="tag">Social Media</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-06-22T13:14:30+01:00">June 22, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://bsky.app/intent/compose?text=Howler:%20https%3A%2F%2Fangadhn.com%2Fopinions%2FHowler_EV4AI%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Bluesky"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span></a>
+
+  <a href="https://twitter.com/intent/tweet?text=Howler%20https%3A%2F%2Fangadhn.com%2Fopinions%2FHowler_EV4AI%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fangadhn.com%2Fopinions%2FHowler_EV4AI%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fangadhn.com%2Fopinions%2FHowler_EV4AI%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/opinions/Post1/" class="pagination--pager" title="Moravec’s Paradox
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/angadhn" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://soundcloud.com/angadh-nanjangud" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-soundcloud" aria-hidden="true"></i> Soundcloud</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Angadh Nanjangud. Powered by
+	<a href="https://clayh53.github.io/tufte-jekyll/" rel="nofollow">clayh53</a>,
+	<a href="http://claude.ai" rel="nofollow">Claude</a>,
+	<a href="http://chat.openai.com" rel="nofollow">ChatGPT</a> &amp;
+	<a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
+</div>
+<div class="page__footer-copyright">The views presented on this website are the author's own and do not represent the views of their employer(s).</div>
+
+	<div id="viewCounter">Views: 0</div>
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBZQTH82T2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MBZQTH82T2');
+</script>
+
+
+
+
+
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
+
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+ </script>
+ 
+
+    <!-- Begin: ChatGPT stuff for firebase site views counter-->
+<script>
+  // Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBHfzThmGgycGkU3bROZBoVSWON08n8yUc",
+    authDomain: "mywebsite-4914a.firebaseapp.com",
+    projectId: "mywebsite-4914a",
+    storageBucket: "mywebsite-4914a.appspot.com",
+    messagingSenderId: "966713391944",
+    appId: "1:966713391944:web:ba2e3ce5166884ec9c117d",
+    measurementId: "G-5DZQBSQQF2"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // If using Firebase Analytics
+  firebase.analytics();
+
+  var db = firebase.firestore();
+
+function getCleanPath() {
+  let path = window.location.pathname;
+  // Check if the path is just a slash, which is the root of the site
+  if (path === '/') {
+    return 'root'; // Use a placeholder like 'root' for the root path
+  }
+  // Remove leading and trailing slashes and replace internal slashes with a different character
+  path = path.replace(/^\/|\/$/g, '').replace(/\//g, '_');
+  return path;
+}
+  
+
+  // Function to increment view count
+  function updatePageViews() {
+    const pagePath = getCleanPath();
+    const pageRef = db.collection('pageViews').doc('total');
+
+    pageRef.get().then((doc) => {
+      if (doc.exists) {
+        pageRef.update({ views: firebase.firestore.FieldValue.increment(1) });
+      } else {
+        pageRef.set({ views: 1 });
+      }
+    });
+  }
+
+  // Function to display page views
+  // Function to display page views
+function displayPageViews() {
+  const pagePath = getCleanPath(); // Use the getCleanPath function here as well
+  const pageRef = db.collection('pageViews').doc('total');
+
+  pageRef.get().then((doc) => {
+    if (doc.exists) {
+      document.getElementById('viewCounter').innerText = `Views: ${doc.data().views}`;
+    } else {
+      document.getElementById('viewCounter').innerText = 'Views: 0';
+    }
+  }).catch((error) => {
+    console.error("Error getting document:", error); // For debugging
+  });
+}
+
+  // Call the functions when the window loads
+  window.addEventListener('load', function() {
+  updatePageViews();
+  displayPageViews();
+});
+</script>
+    <!-- End: ChatGPT stuff for firebase site views counter-->
+
+    <!-- Claude says to Add this line to include custom.js -->
+    <script src="/assets/js/custom.js"></script>
+  </body>
+</html>
